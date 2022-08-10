@@ -1,0 +1,56 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    compileSdk Versions.compileSdkVersion
+
+    defaultConfig {
+        applicationId Versions.applicationId
+        minSdk Versions.minSdkVersion
+        targetSdk Versions.targetSdkVersion
+        versionCode Versions.versionCode
+        versionName Versions.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    //UI
+    implementation(Dependencies.ui.materialComponents)
+    implementation(Dependencies.androidX.constraintLayout)
+
+    // AndroidX
+    implementation(Dependencies.androidX.coreKtx)
+    implementation(Dependencies.androidX.appCompat)
+
+    // Navigation
+    implementation(Dependencies.jetpack.navigationComponentFragmentKtx)
+    implementation(Dependencies.jetpack.navigationComponentUiKtx)
+
+    // Test
+    testImplementation(Dependencies.test.junit)
+    androidTestImplementation(Dependencies.test.junitExt)
+    androidTestImplementation(Dependencies.test.espresso)
+
+
+
+
+}
