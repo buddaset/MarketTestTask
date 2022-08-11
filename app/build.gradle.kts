@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    compileSdkVersion(ConfigVersions.compileSdkVersion)
+    compileSdk = ConfigVersions.compileSdkVersion
 
     defaultConfig {
         applicationId = ConfigVersions.applicationId
@@ -32,17 +32,22 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
 
     implementation(project(Modules.core))
+    implementation(project(Modules.mainScreen))
 
     implementation(Dependencies.Androidx.coreKtx)
     implementation(Dependencies.Androidx.appCompat)
+
     implementation(Dependencies.UI.constraintLayout)
     implementation(Dependencies.UI.materialComponents)
-
 
     implementation(Dependencies.Navigation.navigationComponentFragmentKtx)
     implementation(Dependencies.Navigation.navigationComponentUiKtx)

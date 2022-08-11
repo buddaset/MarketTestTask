@@ -35,9 +35,11 @@ android {
 dependencies {
 
     implementation(Dependencies.Androidx.coreKtx)
-    implementation("androidx.appcompat:appcompat:1.4.2")
-    implementation("com.google.android.material:material:1.6.1")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.3")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
+    implementation(Dependencies.Androidx.appCompat)
+    implementation(Dependencies.UI.materialComponents)
+    implementation(Dependencies.UI.constraintLayout)
+    implementation(Dependencies.Navigation.navigationComponentFragmentKtx)
+    implementation(Dependencies.Navigation.navigationComponentUiKtx)
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
+    implementation(Dependencies.Lifecycle.viewModel)
 }

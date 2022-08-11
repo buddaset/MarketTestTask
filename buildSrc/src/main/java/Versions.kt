@@ -17,6 +17,8 @@ object Versions {
     const val junit = "4.13.2"
     const val junitExt = "1.1.3"
     const val espresso = "3.4.0"
+    // LifeCycle
+    const val lifecycle = "2.5.1"
 
 
 }
@@ -26,6 +28,12 @@ object Dependencies {
     object Androidx {
         const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
         const val coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
+
+    }
+
+    object Lifecycle {
+        const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}"
+
     }
 
     object UI {
