@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/main_screen_graph"
+        android:icon="@drawable/ic_test_home"
+        android:title="Test"/>
+
+    <item android:id="@+id/nowhere"
+        android:icon="@drawable/ic_test_home"
+        android:title="Nowhere"/>
+
+
+
+
+</menu>
