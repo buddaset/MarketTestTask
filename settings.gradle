@@ -13,6 +13,7 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "MarketTestTask"
+
 include ':app'
 include ':core'
-
+include ':feature-main-screen'
