@@ -1,45 +1,52 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id ("kotlinx-serialization")
+    id ("kotlin-kapt")
 }
 
 android {
-    compileSdk = 32
+    compileSdk = ConfigVersions.compileSdkVersion
 
     defaultConfig {
-        minSdk = 23
-        targetSdk = 32
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles("consumer-rules.pro")
+        minSdk = ConfigVersions.minSdkVersion
+        targetSdk = ConfigVersions.targetSdkVersion
     }
-
     buildTypes {
         release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            isMinifyEnabled = true
+
         }
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = "1.8"
     }
 }
 
 dependencies {
 
-    implementation(Dependencies.Androidx.coreKtx)
-    implementation(Dependencies.Androidx.appCompat)
-    implementation(Dependencies.UI.materialComponents)
+    implementation(Dependencies.AndroidKTX.core)
+    implementation(Dependencies.AndroidKTX.runtime)
+    implementation(Dependencies.AndroidKTX.viewModel)
+    implementation(Dependencies.AndroidKTX.fragment)
+
+    implementation(Dependencies.UI.appCompat)
     implementation(Dependencies.UI.constraintLayout)
+    implementation(Dependencies.UI.materialComponents)
+
     implementation(Dependencies.Navigation.navigationComponentFragmentKtx)
     implementation(Dependencies.Navigation.navigationComponentUiKtx)
-    implementation("androidx.legacy:legacy-support-v4:1.0.0")
-    implementation(Dependencies.Lifecycle.viewModel)
+
+    implementation(Dependencies.Dagger2.dagger2)
+    kapt(Dependencies.Dagger2.kapt)
+
+
+    // Retrofit
+    implementation(Dependencies.Retrofit.retrofit)
+    implementation(Dependencies.Retrofit.jsonSerialization)
+    implementation(Dependencies.Retrofit.converter)
+    implementation(Dependencies.Retrofit.interceptor)
+
+
+    // Coroutines
+    implementation(Dependencies.Kotlin.coroutinesCore)
+    implementation(Dependencies.Kotlin.coroutinesAndroid)
+//    implementation("androidx.legacy:legacy-support-v4:1.0.0")
 }

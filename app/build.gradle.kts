@@ -1,6 +1,9 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id ("kotlinx-serialization")
+    id ("kotlin-kapt")
+
 }
 
 android {
@@ -43,9 +46,12 @@ dependencies {
     implementation(project(Modules.core))
     implementation(project(Modules.mainScreen))
 
-    implementation(Dependencies.Androidx.coreKtx)
-    implementation(Dependencies.Androidx.appCompat)
+    implementation(Dependencies.AndroidKTX.core)
+    implementation(Dependencies.AndroidKTX.runtime)
+    implementation(Dependencies.AndroidKTX.viewModel)
+    implementation(Dependencies.AndroidKTX.fragment)
 
+    implementation(Dependencies.UI.appCompat)
     implementation(Dependencies.UI.constraintLayout)
     implementation(Dependencies.UI.materialComponents)
 
@@ -55,6 +61,22 @@ dependencies {
     testImplementation(Dependencies.Tests.junit)
     androidTestImplementation(Dependencies.Tests.junitExt)
     androidTestImplementation(Dependencies.Tests.junitExt)
+
+    implementation(Dependencies.Dagger2.dagger2)
+    kapt(Dependencies.Dagger2.kapt)
+
+
+    // Retrofit
+    implementation(Dependencies.Retrofit.retrofit)
+    implementation(Dependencies.Retrofit.jsonSerialization)
+    implementation(Dependencies.Retrofit.converter)
+    implementation(Dependencies.Retrofit.interceptor)
+
+
+    // Coroutines
+    implementation(Dependencies.Kotlin.coroutinesCore)
+    implementation(Dependencies.Kotlin.coroutinesAndroid)
+
 
 
 }
