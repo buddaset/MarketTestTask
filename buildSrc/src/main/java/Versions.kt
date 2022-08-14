@@ -26,7 +26,7 @@ object Versions {
     // LifeCycle
 
     // Dagger 2
-    const val dagger = "2.40.1"
+    const val dagger = "2.38.1"
     //Retrofit
     const val retrofit = "2.9.0"
     // Json-Serialization

@@ -17,6 +17,10 @@ android {
         versionName = ConfigVersions.versionName
 
         testInstrumentationRunner ="androidx.test.runner.AndroidJUnitRunner"
+
+
+
+        buildConfigField("String", "BASE_URL", "\"${properties["BASE_URL"]}\"")
     }
 
     buildTypes {
