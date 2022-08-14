@@ -22,6 +22,8 @@ android {
 
 dependencies {
 
+    implementation(project(Modules.core))
+
     implementation(Dependencies.AndroidKTX.core)
     implementation(Dependencies.AndroidKTX.runtime)
     implementation(Dependencies.AndroidKTX.viewModel)
