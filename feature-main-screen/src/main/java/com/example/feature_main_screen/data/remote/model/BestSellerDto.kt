@@ -7,7 +7,7 @@ import kotlinx.serialization.Serializable
 data class BestSellerDto(
     @SerialName("discount_price") val discountPrice: Int,
     @SerialName("id") val id: Int,
-    @SerialName("is_favorites") val isFavorites: Boolean,
+    @SerialName("is_favorites") val isFavorites: Boolean = false,
     @SerialName("picture") val picture: String,
     @SerialName("price_without_discount") val priceWithoutDiscount: Int,
     @SerialName("title") val title: String
