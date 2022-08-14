@@ -1,0 +1,14 @@
+package com.example.feature_main_screen.data.remote.model
+
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
+
+@Serializable
+data class HomeStoreDto(
+    @SerialName("id") val id: Int,
+    @SerialName("is_buy") val isBuy: Boolean,
+    @SerialName("is_new") val isNew: Boolean,
+    @SerialName("picture") val picture: String,
+    @SerialName("subtitle") val subtitle: String,
+    @SerialName("title") val title: String
+)
