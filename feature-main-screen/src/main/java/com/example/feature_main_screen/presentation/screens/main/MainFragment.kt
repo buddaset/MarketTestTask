@@ -26,7 +26,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     private val binding by viewBinding<FragmentMainBinding>()
 
     @Inject
-    lateinit var viewModelFactory: ViewModelFactory
+    internal  lateinit var viewModelFactory: ViewModelFactory
 
     private val viewModel: MainScreenViewModel by viewModels { viewModelFactory }
 

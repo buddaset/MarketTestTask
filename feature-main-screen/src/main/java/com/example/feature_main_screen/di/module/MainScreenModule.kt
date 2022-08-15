@@ -12,7 +12,7 @@ import dagger.Provides
 import retrofit2.Retrofit
 
 @Module
-interface MainScreenModule {
+internal interface MainScreenModule {
 
     @FeatureScope
     @Binds

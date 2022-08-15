@@ -5,7 +5,7 @@ import com.example.feature_main_screen.domain.repository.MainScreenRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class GetDataMainScreenUseCase @Inject constructor(
+internal class GetDataMainScreenUseCase @Inject constructor(
     private val repository: MainScreenRepository) {
 
 

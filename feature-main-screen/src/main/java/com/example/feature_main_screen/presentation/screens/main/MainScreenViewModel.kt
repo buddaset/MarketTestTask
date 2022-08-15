@@ -9,7 +9,7 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.*
 
 
-class MainScreenViewModel( getDataMainScreenUseCase: GetDataMainScreenUseCase ) : ViewModel() {
+internal class MainScreenViewModel( getDataMainScreenUseCase: GetDataMainScreenUseCase ) : ViewModel() {
 
 
 

@@ -8,14 +8,14 @@ import com.example.feature_main_screen.domain.model.HomeStore
 import com.example.feature_main_screen.domain.model.MainScreenData
 
 
-fun MainScreenDataDto.toDomain() =
+internal fun MainScreenDataDto.toDomain() =
     MainScreenData(
         bestSeller = bestSeller.toDomain(),
         homeStore =  homeStore.toDomain()
         )
 
 
-fun BestSellerDto.toDomain() =
+internal fun BestSellerDto.toDomain() =
     BestSeller(
         discountPrice = discountPrice,
         id = id,
@@ -25,11 +25,11 @@ fun BestSellerDto.toDomain() =
         title = title
     )
 
-fun List<BestSellerDto>.toDomain(): List<BestSeller> =
+internal fun List<BestSellerDto>.toDomain(): List<BestSeller> =
     this.map { bestSellerDto -> bestSellerDto.toDomain() }
 
 
-fun HomeStoreDto.toDomain(): HomeStore =
+internal fun HomeStoreDto.toDomain(): HomeStore =
     HomeStore(
         id = id,
         isBuy = isBuy,
@@ -40,7 +40,7 @@ fun HomeStoreDto.toDomain(): HomeStore =
     )
 
 @JvmName("toDomainHomeStoreDto")
-fun List<HomeStoreDto>.toDomain(): List<HomeStore> =
+internal fun List<HomeStoreDto>.toDomain(): List<HomeStore> =
     this.map { HomeStoreDto -> HomeStoreDto.toDomain() }
 
 

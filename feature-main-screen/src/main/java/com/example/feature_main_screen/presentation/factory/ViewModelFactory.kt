@@ -6,7 +6,7 @@ import com.example.feature_main_screen.domain.usecase.GetDataMainScreenUseCase
 import com.example.feature_main_screen.presentation.screens.main.MainScreenViewModel
 import javax.inject.Inject
 
-class ViewModelFactory @Inject constructor(
+internal class ViewModelFactory @Inject constructor(
     private val getDataMainScreenUseCase: GetDataMainScreenUseCase
 ): ViewModelProvider.Factory {
 

@@ -3,7 +3,7 @@ package com.example.feature_main_screen.data.remote.api
 import com.example.feature_main_screen.data.remote.model.MainScreenDataDto
 import retrofit2.http.GET
 
-interface MainScreenApi {
+internal interface MainScreenApi {
 
 
     @GET(MAIN_SCREEN_PATH)

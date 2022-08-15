@@ -1,6 +1,6 @@
 package com.example.feature_main_screen.domain.model
 
-data class BestSeller(
+internal data class BestSeller(
     val discountPrice: Int,
     val id: Int,
     val isFavorites: Boolean,

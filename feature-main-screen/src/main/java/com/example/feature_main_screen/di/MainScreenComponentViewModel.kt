@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import com.example.feature_main_screen.di.component.DaggerMainScreenComponent
 import kotlin.properties.Delegates
 
-class MainScreenComponentViewModel : ViewModel() {
+internal class MainScreenComponentViewModel : ViewModel() {
 
     val mainScreenComponent =
         DaggerMainScreenComponent.factory().create(MainScreenDependenciesProvider.dependencies)

@@ -5,7 +5,7 @@ import com.example.feature_main_screen.data.remote.api.MainScreenApi
 import com.example.feature_main_screen.data.remote.model.MainScreenDataDto
 import javax.inject.Inject
 
-class MainScreenRemoteDataSourceImpl @Inject constructor(
+internal class MainScreenRemoteDataSourceImpl @Inject constructor(
     private val mainScreenApi: MainScreenApi
 ) : MainScreenRemoteDataSource {
 

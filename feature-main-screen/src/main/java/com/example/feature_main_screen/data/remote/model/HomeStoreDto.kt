@@ -4,7 +4,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class HomeStoreDto(
+internal data class HomeStoreDto(
     @SerialName("id") val id: Int,
     @SerialName("is_buy") val isBuy: Boolean = false,
     @SerialName("is_new") val isNew: Boolean = false,

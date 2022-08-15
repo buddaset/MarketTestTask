@@ -9,7 +9,7 @@ import dagger.Component
 
 @FeatureScope
 @Component(dependencies = [MainScreenDependencies::class] , modules = [MainScreenModule::class])
-interface MainScreenComponent {
+internal interface MainScreenComponent {
 
     fun inject(fragment: MainFragment)
 

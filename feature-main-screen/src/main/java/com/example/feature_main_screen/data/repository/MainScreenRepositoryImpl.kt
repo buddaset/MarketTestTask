@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import javax.inject.Inject
 
-class MainScreenRepositoryImpl @Inject constructor(
+internal class MainScreenRepositoryImpl @Inject constructor(
     private val remoteSource: MainScreenRemoteDataSource
 ) : MainScreenRepository {
 
