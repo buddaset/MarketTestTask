@@ -3,11 +3,11 @@
 
     <item android:id="@+id/main_screen_graph"
         android:icon="@drawable/ic_test_home"
-        android:title="Test"/>
+        android:title="Explorer"/>
 
-    <item android:id="@+id/nowhere"
+    <item android:id="@+id/testFragment"
         android:icon="@drawable/ic_test_home"
-        android:title="Nowhere"/>
+        android:title="Test"/>
 
 
 
