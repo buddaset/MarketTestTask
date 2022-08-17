@@ -3,18 +3,83 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".presentation.screens.PhonesFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/hotSalesCategoryTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Phone Fragment"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="18dp"
+        android:fontFamily="@font/mark_pro_heavy"
+        android:text="@string/hot_sales_title"
+        android:textColor="@color/blue"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/seeMoreHotSalesCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="22dp"
+        android:fontFamily="@font/mark_pro"
+        android:text="@string/see_more"
+        android:textColor="@color/orange"
+        app:layout_constraintBottom_toBottomOf="@id/hotSalesCategoryTitle"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/hotSalesRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="190dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/hotSalesCategoryTitle"
+        tools:listitem="@layout/hot_sales_item" />
+
+    <TextView
+        android:id="@+id/bestSellerCategoryTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="18dp"
+        android:fontFamily="@font/mark_pro_heavy"
+        android:text="@string/hot_sales_title"
+        android:textColor="@color/blue"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/hotSalesRecyclerView" />
+
+
+    <TextView
+        android:id="@+id/seeMoreBestSellerCategory"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="22dp"
+        android:fontFamily="@font/mark_pro"
+        android:text="@string/see_more"
+        android:textColor="@color/orange"
+        app:layout_constraintBottom_toBottomOf="@id/bestSellerCategoryTitle"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/bestSellerRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bestSellerCategoryTitle"
+        app:spanCount="2"
+        tools:itemCount="2"
+        tools:listitem="@layout/best_seller_item" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

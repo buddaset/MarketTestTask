@@ -51,7 +51,12 @@ dependencies {
     // Coroutines
     implementation(Dependencies.Kotlin.coroutinesCore)
     implementation(Dependencies.Kotlin.coroutinesAndroid)
+
+    implementation(Dependencies.AdapterDelegates.adapterDelegates)
+    implementation(Dependencies.AdapterDelegates.viewBinding)
+
+
+
 //    implementation("androidx.legacy:legacy-support-v4:1.0.0")
 
-//    implementation(Dependencies.ViewPager.viewPager2)
 }

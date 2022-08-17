@@ -42,11 +42,18 @@ object Versions {
 
     // ViewPager2
     const val viewPager = "1.0.0"
+    // AdapterDelegates
+    const val adapterDelegates ="4.3.2"
 
 
 }
 
 object Dependencies {
+
+    object AdapterDelegates {
+        const val adapterDelegates = "com.hannesdorfmann:adapterdelegates4-kotlin-dsl:${Versions.adapterDelegates}"
+        const val viewBinding = "com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:${Versions.adapterDelegates}"
+    }
 
     object Dagger2 {
         const val dagger2 = "com.google.dagger:dagger:${Versions.dagger}"

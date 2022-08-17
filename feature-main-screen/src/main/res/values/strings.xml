@@ -9,4 +9,6 @@
     <string name="phones_category">Phones</string>
     <string name="buy_now">Buy now!</string>
     <string name="text_new_icon_hot_sales_item">New</string>
+    <string name="see_more">see more</string>
+    <string name="hot_sales_title">Hot sales</string>
 </resources>

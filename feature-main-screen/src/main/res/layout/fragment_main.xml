@@ -55,12 +55,12 @@
         />
 
     <TextView
-        android:id="@+id/selectCategoryTitle"
+        android:id="@+id/hotSalesCategoryTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="18dp"
         android:text="@string/select_category_title"
-        android:textSize="25sp"
+        android:textSize="24sp"
         android:layout_marginStart="8dp"
         android:fontFamily="@font/mark_pro_heavy"
         android:textColor="@color/blue"
@@ -84,8 +84,8 @@
         android:fontFamily="@font/mark_pro"
         android:layout_marginEnd="22dp"
         app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
-        app:layout_constraintTop_toTopOf="@id/selectCategoryTitle"
-        app:layout_constraintBottom_toBottomOf="@id/selectCategoryTitle"
+        app:layout_constraintTop_toTopOf="@id/hotSalesCategoryTitle"
+        app:layout_constraintBottom_toBottomOf="@id/hotSalesCategoryTitle"
         />
 
     <androidx.constraintlayout.widget.Barrier
@@ -93,7 +93,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:barrierDirection="bottom"
-        app:constraint_referenced_ids="selectCategoryTitle, viewAllTextView"/>
+        app:constraint_referenced_ids="hotSalesCategoryTitle, viewAllTextView"/>
 
 
     <com.google.android.material.tabs.TabLayout
