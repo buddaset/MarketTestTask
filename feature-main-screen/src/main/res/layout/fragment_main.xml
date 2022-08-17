@@ -4,17 +4,182 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/main_color"
     tools:context=".presentation.screens.main.MainFragment">
 
-    <TextView
-        android:id="@+id/textView"
+
+    <ImageView
+        android:id="@+id/locationImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Main Fragment"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/ic_location"
+        app:layout_constraintEnd_toStartOf="@id/locationTextView"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@id/guidelineTop" />
+
+
+    <TextView
+        android:id="@+id/locationTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/mark_pro_medium"
+        android:text="@string/example_location"
+        android:textColor="@color/blue"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/locationImage"
+        app:layout_constraintEnd_toStartOf="@id/arrowDownImage"
+        app:layout_constraintStart_toEndOf="@id/locationImage" />
+
+    <ImageView
+        android:id="@+id/arrowDownImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:src="@drawable/ic_arrow_down"
+        app:layout_constraintBottom_toBottomOf="@id/locationImage"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintStart_toEndOf="@id/locationTextView"
+        app:layout_constraintTop_toTopOf="@id/locationImage" />
+
+    <ImageView
+        android:id="@+id/filterImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_filter"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintTop_toBottomOf="@id/guidelineTop"
+
+        />
+
+    <TextView
+        android:id="@+id/selectCategoryTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="@string/select_category_title"
+        android:textSize="25sp"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/mark_pro_heavy"
+        android:textColor="@color/blue"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@id/barrierLocation"
+        />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrierLocation"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="locationImage, locationTextView, arrowDownImage" />
+
+    <TextView
+        android:id="@+id/viewAllTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/view_all"
+        android:textColor="@color/orange"
+        android:fontFamily="@font/mark_pro"
+        android:layout_marginEnd="22dp"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintTop_toTopOf="@id/selectCategoryTitle"
+        app:layout_constraintBottom_toBottomOf="@id/selectCategoryTitle"
+        />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrierCategory"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="selectCategoryTitle, viewAllTextView"/>
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/categoryTabLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/barrierCategory"
+        android:layout_marginTop="24dp"
+        app:tabIndicator="@null"
+        app:tabMode="scrollable"
+        android:background="@color/main_color"
+        app:tabRippleColor="@null"
+        app:tabIndicatorAnimationMode="elastic"/>
+
+
+
+    <EditText
+        android:id="@+id/searchView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="10dp"
+        android:hint="@string/search_hint"
+        android:drawableStart="@drawable/ic_search"
+        android:drawablePadding="12dp"
+        android:paddingStart="24dp"
+        android:background="@drawable/custom_search"
+        app:layout_constraintCircleRadius="100dp"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toTopOf="@id/searchButton"
+        app:layout_constraintEnd_toStartOf="@id/searchButton"
+        app:layout_constraintBottom_toBottomOf="@id/searchButton" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/searchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintTop_toBottomOf="@id/categoryTabLayout"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="22dp"
+        app:fabCustomSize="40dp"
+        android:backgroundTint="@color/orange"
+        app:tint="@color/white"
+        app:maxImageSize="20dp"
+        android:src="@drawable/ic_search_menu"
+        android:contentDescription="@string/search_action" />
+    
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/categoryViewPager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintTop_toBottomOf="@id/searchButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+
+
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="10dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="10dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="30dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

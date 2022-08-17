@@ -1,0 +1,10 @@
+<resources>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="example_location">Zihuatanejo, Gro</string>
+    <string name="select_category_title">Select Category</string>
+    <string name="view_all">view_all</string>
+    <string name="search_action">search action</string>
+    <string name="search_hint">Search</string>
+    <string name="phones_category">Phones</string>
+</resources>

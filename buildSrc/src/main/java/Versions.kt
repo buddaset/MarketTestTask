@@ -27,15 +27,21 @@ object Versions {
 
     // Dagger 2
     const val dagger = "2.38.1"
+
     //Retrofit
     const val retrofit = "2.9.0"
+
     // Json-Serialization
     const val json = "1.2.2"
+
     // Converter Json
     const val converter = "0.8.0"
-    //Interceptor
-    const val interceptor ="4.9.0"
 
+    // Interceptor
+    const val interceptor = "4.9.0"
+
+    // ViewPager2
+    const val viewPager = "1.0.0"
 
 
 }
@@ -49,8 +55,10 @@ object Dependencies {
 
     object Retrofit {
         const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
-        const val jsonSerialization =  "org.jetbrains.kotlinx:kotlinx-serialization-json:${Versions.json}"
-        const val converter = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:${Versions.converter}"
+        const val jsonSerialization =
+            "org.jetbrains.kotlinx:kotlinx-serialization-json:${Versions.json}"
+        const val converter =
+            "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:${Versions.converter}"
         const val interceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.interceptor}"
 
     }
@@ -65,22 +73,27 @@ object Dependencies {
 
     object Kotlin {
 
-        const val coroutinesCore =  "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutine}"
-        const val coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutine}"
+        const val coroutinesCore =
+            "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutine}"
+        const val coroutinesAndroid =
+            "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutine}"
     }
-
 
 
     object UI {
         const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
-        const val materialComponents = "com.google.android.material:material:${Versions.materialComponent}"
-        const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
+        const val materialComponents =
+            "com.google.android.material:material:${Versions.materialComponent}"
+        const val constraintLayout =
+            "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
 
     }
 
     object Navigation {
-        const val navigationComponentFragmentKtx = "androidx.navigation:navigation-fragment-ktx:${Versions.navigationComponent}"
-        const val navigationComponentUiKtx = "androidx.navigation:navigation-ui-ktx:${Versions.navigationComponent}"
+        const val navigationComponentFragmentKtx =
+            "androidx.navigation:navigation-fragment-ktx:${Versions.navigationComponent}"
+        const val navigationComponentUiKtx =
+            "androidx.navigation:navigation-ui-ktx:${Versions.navigationComponent}"
 
     }
 
@@ -89,6 +102,11 @@ object Dependencies {
         const val junitExt = "androidx.test.ext:junit:${Versions.junitExt}"
         const val espresso = "androidx.test.espresso:espresso-core:${Versions.espresso}"
 
+    }
+
+    object ViewPager {
+
+        const val viewPager2 = "androidx.viewpager2:viewpager:${Versions.viewPager}"
     }
 
 
