@@ -1,17 +1,17 @@
 package com.example.feature_main_screen.data.mapper
 
 import com.example.feature_main_screen.data.remote.model.BestSellerDto
-import com.example.feature_main_screen.data.remote.model.HomeStoreDto
+import com.example.feature_main_screen.data.remote.model.HotSalesDto
 import com.example.feature_main_screen.data.remote.model.MainScreenDataDto
 import com.example.feature_main_screen.domain.model.BestSeller
-import com.example.feature_main_screen.domain.model.HomeStore
+import com.example.feature_main_screen.domain.model.HotSales
 import com.example.feature_main_screen.domain.model.MainScreenData
 
 
 internal fun MainScreenDataDto.toDomain() =
     MainScreenData(
         bestSeller = bestSeller.toDomain(),
-        homeStore =  homeStore.toDomain()
+        hotSales =  hotSales.toDomain()
         )
 
 
@@ -29,8 +29,8 @@ internal fun List<BestSellerDto>.toDomain(): List<BestSeller> =
     this.map { bestSellerDto -> bestSellerDto.toDomain() }
 
 
-internal fun HomeStoreDto.toDomain(): HomeStore =
-    HomeStore(
+internal fun HotSalesDto.toDomain(): HotSales =
+    HotSales(
         id = id,
         isBuy = isBuy,
         isNew = isNew,
@@ -40,7 +40,7 @@ internal fun HomeStoreDto.toDomain(): HomeStore =
     )
 
 @JvmName("toDomainHomeStoreDto")
-internal fun List<HomeStoreDto>.toDomain(): List<HomeStore> =
+internal fun List<HotSalesDto>.toDomain(): List<HotSales> =
     this.map { HomeStoreDto -> HomeStoreDto.toDomain() }
 
 

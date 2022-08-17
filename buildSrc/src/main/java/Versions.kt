@@ -44,11 +44,19 @@ object Versions {
     const val viewPager = "1.0.0"
     // AdapterDelegates
     const val adapterDelegates ="4.3.2"
+    // Glide
+    const val glide = "4.13.2"
 
 
 }
 
 object Dependencies {
+
+    object Glide {
+
+        const val glide ="com.github.bumptech.glide:glide:${Versions.glide}"
+        const val kapt = "com.github.bumptech.glide:compiler:${Versions.glide}"
+    }
 
     object AdapterDelegates {
         const val adapterDelegates = "com.hannesdorfmann:adapterdelegates4-kotlin-dsl:${Versions.adapterDelegates}"

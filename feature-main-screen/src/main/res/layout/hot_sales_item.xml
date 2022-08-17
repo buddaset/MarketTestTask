@@ -3,16 +3,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="10dp">
 
-    app:cardCornerRadius="10dp"
-    android:layout_margin="8dp"
-    android:layout_height="wrap_content">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraint"
+        android:id="@+id/product_container"
         android:layout_width="match_parent"
-        android:layout_height="182dp"
-        tools:background="@tools:sample/backgrounds/scenic">
+        android:layout_height="182dp">
+
+        <ImageView
+            android:id="@+id/imageProduct"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="@id/product_container"
+            app:layout_constraintEnd_toEndOf="@id/product_container"
+            app:layout_constraintTop_toTopOf="@id/product_container"
+            app:layout_constraintBottom_toBottomOf="@id/product_container"
+
+            tools:src="@tools:sample/backgrounds/scenic"/>
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelineStart"
@@ -36,26 +46,32 @@
             android:id="@+id/textNewIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="10sp"
-            android:textColor="@color/white"
+            android:fontFamily="@font/mark_pro_bold"
             android:text="@string/text_new_icon_hot_sales_item"
             android:textAllCaps="false"
-            android:fontFamily="@font/mark_pro_bold"
-            app:layout_constraintStart_toStartOf="@id/iconNew"
-            app:layout_constraintEnd_toEndOf="@id/iconNew"
-            app:layout_constraintTop_toTopOf="@id/iconNew"
+            android:textColor="@color/white"
+            android:textSize="10sp"
             app:layout_constraintBottom_toBottomOf="@id/iconNew"
+            app:layout_constraintEnd_toEndOf="@id/iconNew"
+            app:layout_constraintStart_toStartOf="@id/iconNew"
+            app:layout_constraintTop_toTopOf="@id/iconNew"
             tools:ignore="SmallSp" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/newProductGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="iconNew,textNewIcon" />
 
 
         <TextView
             android:id="@+id/nameProduct"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
             android:fontFamily="@font/mark_pro_bold"
             android:textColor="@color/white"
             android:textSize="25sp"
-            android:layout_marginBottom="4dp"
             app:layout_constraintBottom_toTopOf="@id/briefDescriptionProduct"
             app:layout_constraintStart_toStartOf="@id/guidelineStart"
             tools:text="Iphone 12" />
@@ -65,9 +81,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
-            android:textSize="11sp"
             android:fontFamily="@font/mark_pro"
             android:textColor="@color/white"
+            android:textSize="11sp"
             app:layout_constraintBottom_toTopOf="@id/buyNowButton"
             app:layout_constraintStart_toStartOf="@id/guidelineStart"
             tools:text="Super.Mego.Rapido"
@@ -81,6 +97,7 @@
             android:layout_marginBottom="8dp"
             android:backgroundTint="@color/white"
             android:fontFamily="@font/mark_pro_bold"
+            android:textColor="@color/blue"
             android:text="@string/buy_now"
             android:textAllCaps="false"
             android:textSize="12sp"

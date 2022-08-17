@@ -55,6 +55,9 @@ dependencies {
     implementation(Dependencies.AdapterDelegates.adapterDelegates)
     implementation(Dependencies.AdapterDelegates.viewBinding)
 
+    implementation(Dependencies.Glide.glide)
+    kapt(Dependencies.Glide.kapt)
+
 
 
 //    implementation("androidx.legacy:legacy-support-v4:1.0.0")

@@ -24,11 +24,6 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
 
 
-    override fun onAttach(context: Context) {
-        ViewModelProvider(this).get<MainScreenComponentViewModel>()
-            .mainScreenComponent.inject(this)
-        super.onAttach(context)
-    }
 
 
 
@@ -53,6 +48,8 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             tabBinding.iconCategory.setBackgroundResource(category.iconId)
             tab.customView = tabBinding.root
         }).attach()
+
+        categoryViewPager.isUserInputEnabled =false  // disable scroll viewpager2
 
     }
 

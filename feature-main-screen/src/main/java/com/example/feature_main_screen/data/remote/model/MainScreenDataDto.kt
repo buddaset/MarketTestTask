@@ -6,5 +6,5 @@ import kotlinx.serialization.Serializable
 @Serializable
 internal data class MainScreenDataDto(
     @SerialName("best_seller") val bestSeller: List<BestSellerDto>,
-    @SerialName("home_store") val homeStore: List<HomeStoreDto>
+    @SerialName("home_store") val hotSales: List<HotSalesDto>
 )
