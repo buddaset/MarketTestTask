@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint"
+        android:layout_width="match_parent"
+        android:layout_height="182dp"
+        tools:background="@tools:sample/backgrounds/scenic">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="28dp" />
+
+        <ImageView
+            android:id="@+id/iconNew"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="18dp"
+            android:background="@drawable/circle"
+            android:backgroundTint="@color/orange"
+            app:layout_constraintBottom_toTopOf="@id/nameProduct"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart" />
+
+        <TextView
+            android:id="@+id/textNewIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:textColor="@color/white"
+            android:text="@string/text_new_icon_hot_sales_item"
+            android:textAllCaps="false"
+            android:fontFamily="@font/mark_pro_bold"
+            app:layout_constraintStart_toStartOf="@id/iconNew"
+            app:layout_constraintEnd_toEndOf="@id/iconNew"
+            app:layout_constraintTop_toTopOf="@id/iconNew"
+            app:layout_constraintBottom_toBottomOf="@id/iconNew"
+            tools:ignore="SmallSp" />
+
+
+        <TextView
+            android:id="@+id/nameProduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/mark_pro_bold"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:layout_marginBottom="4dp"
+            app:layout_constraintBottom_toTopOf="@id/briefDescriptionProduct"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            tools:text="Iphone 12" />
+
+        <TextView
+            android:id="@+id/briefDescriptionProduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:textSize="11sp"
+            android:fontFamily="@font/mark_pro"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/buyNowButton"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            tools:text="Super.Mego.Rapido"
+
+            />
+
+        <Button
+            android:id="@+id/buyNowButton"
+            android:layout_width="98dp"
+            android:layout_height="36dp"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="@color/white"
+            android:fontFamily="@font/mark_pro_bold"
+            android:text="@string/buy_now"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

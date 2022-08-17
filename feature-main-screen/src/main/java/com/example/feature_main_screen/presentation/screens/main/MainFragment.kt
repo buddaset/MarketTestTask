@@ -58,6 +58,8 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
     private fun getCategories(): List<Category> = Category.values().toList()
 
+    //todo write extension for selectedListener
+
     private fun setupSelectedListenerForTabLayout() {
         binding.categoryTabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {
