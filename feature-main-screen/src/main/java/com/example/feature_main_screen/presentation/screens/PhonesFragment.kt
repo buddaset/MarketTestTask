@@ -1,27 +1,25 @@
 package com.example.feature_main_screen.presentation.screens
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.get
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.core.precentation.Extension.collectFlow
 import com.example.core.precentation.Extension.showToast
 import com.example.core.precentation.UiState
 import com.example.disneyperson.core.delegate.viewBinding
 import com.example.feature_main_screen.R
-import com.example.feature_main_screen.databinding.FragmentMainBinding
 import com.example.feature_main_screen.databinding.FragmentPhonesBinding
 import com.example.feature_main_screen.di.MainScreenComponentViewModel
+import com.example.feature_main_screen.domain.model.BestSeller
+import com.example.feature_main_screen.domain.model.HotSales
 import com.example.feature_main_screen.domain.model.MainScreenData
-import com.example.feature_main_screen.presentation.adapters.MainScreenDelegates
+import com.example.feature_main_screen.presentation.adapters.delegateAdapter.DisplayableItem
+import com.example.feature_main_screen.presentation.adapters.delegateAdapter.MainScreenDelegates
 import com.example.feature_main_screen.presentation.factory.ViewModelFactory
 import com.example.feature_main_screen.presentation.screens.main.MainScreenViewModel
 import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
@@ -37,8 +35,9 @@ class PhonesFragment : Fragment(R.layout.fragment_phones) {
     private val viewModel: MainScreenViewModel by viewModels { viewModelFactory }
 
 
-    private val adapter = ListDelegationAdapter(
-        MainScreenDelegates.hotSalesDelegate
+    private val adapter = ListDelegationAdapter<List<DisplayableItem>>(
+        MainScreenDelegates.bestSellerHorizontalAdapterDelegate(),
+        MainScreenDelegates.hotSaleSHorizontalAdapterDelegate()
     )
 
     override fun onAttach(context: Context) {
@@ -58,7 +57,7 @@ class PhonesFragment : Fragment(R.layout.fragment_phones) {
     }
 
     private fun setupAdapter() {
-        binding.hotSalesRecyclerView.adapter = adapter
+        binding.recyclerView.adapter = adapter
 
     }
 
@@ -70,8 +69,7 @@ class PhonesFragment : Fragment(R.layout.fragment_phones) {
             is UiState.Success -> {
 
                 Log.d("MainFragment", "hotSales ---${state.data.hotSales}")
-                adapter.items = state.data.hotSales
-                adapter.notifyDataSetChanged()
+                renderData(state.data)
 
             }
             is UiState.Error -> {
@@ -80,7 +78,24 @@ class PhonesFragment : Fragment(R.layout.fragment_phones) {
         }
     }
 
+    private fun renderData(data: MainScreenData) {
+        adapter.items = listOf( ListHotSales(hotSales = data.hotSales), ListBestSeller(bestSellers = data.bestSeller ),)
+        adapter.notifyDataSetChanged()
 
-
+    }
 
 }
+
+
+data class TitleEx(
+    val title: String ,
+    val button : String = "see more"
+) : DisplayableItem
+
+internal data class ListBestSeller(
+   val  bestSellers: List<BestSeller>
+): DisplayableItem
+
+internal data class ListHotSales(
+    val hotSales : List<HotSales>
+) : DisplayableItem

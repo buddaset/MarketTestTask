@@ -109,7 +109,7 @@
         app:tabMode="scrollable"
         android:background="@color/main_color"
         app:tabRippleColor="@null"
-        app:tabIndicatorAnimationMode="elastic"/>
+        />
 
 
 
