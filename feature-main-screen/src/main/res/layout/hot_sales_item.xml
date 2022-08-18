@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="10dp">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/product_container"
+        android:layout_width="match_parent"
+        android:layout_height="182dp">
+
+        <ImageView
+            android:id="@+id/imageProduct"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="@id/product_container"
+            app:layout_constraintEnd_toEndOf="@id/product_container"
+            app:layout_constraintTop_toTopOf="@id/product_container"
+            app:layout_constraintBottom_toBottomOf="@id/product_container"
+
+            tools:src="@tools:sample/backgrounds/scenic"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="28dp" />
+
+        <ImageView
+            android:id="@+id/iconNew"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="18dp"
+            android:background="@drawable/circle"
+            android:backgroundTint="@color/orange"
+            app:layout_constraintBottom_toTopOf="@id/nameProduct"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart" />
+
+        <TextView
+            android:id="@+id/textNewIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/mark_pro_bold"
+            android:text="@string/text_new_icon_hot_sales_item"
+            android:paddingBottom="4dp"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@id/iconNew"
+            app:layout_constraintEnd_toEndOf="@id/iconNew"
+            app:layout_constraintStart_toStartOf="@id/iconNew"
+            app:layout_constraintTop_toTopOf="@id/iconNew"
+            tools:ignore="SmallSp" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/newProductGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="iconNew,textNewIcon" />
+
+
+        <TextView
+            android:id="@+id/nameProduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:fontFamily="@font/mark_pro_bold"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toTopOf="@id/briefDescriptionProduct"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            tools:text="Iphone 12" />
+
+        <TextView
+            android:id="@+id/briefDescriptionProduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:fontFamily="@font/mark_pro"
+            android:textColor="@color/white"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toTopOf="@id/buyNowButton"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            tools:text="Super.Mego.Rapido"
+
+            />
+
+        <Button
+            android:id="@+id/buyNowButton"
+            android:layout_width="98dp"
+            android:layout_height="36dp"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="@color/white"
+            android:fontFamily="@font/mark_pro_bold"
+            android:textColor="@color/blue"
+            android:text="@string/buy_now"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

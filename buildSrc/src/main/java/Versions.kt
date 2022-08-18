@@ -7,8 +7,14 @@ object Versions {
     const val constraintLayout = "2.1.4"
     const val appCompat = "1.4.2"
 
-    // Kotlin
+    // Ktx
     const val coreKtx = "1.7.0"
+    const val fragmentKtx = "1.5.2"
+    const val runtimeKtx = "2.5.1"
+    const val viewModelKtx = "2.5.1"
+
+    // Kotlin
+    const val coroutine = "1.6.2"
 
     // Navigation
     const val navigationComponent = "2.5.1"
@@ -18,25 +24,79 @@ object Versions {
     const val junitExt = "1.1.3"
     const val espresso = "3.4.0"
     // LifeCycle
-    const val lifecycle = "2.5.1"
+
+    // Dagger 2
+    const val dagger = "2.38.1"
+
+    //Retrofit
+    const val retrofit = "2.9.0"
+
+    // Json-Serialization
+    const val json = "1.2.2"
+
+    // Converter Json
+    const val converter = "0.8.0"
+
+    // Interceptor
+    const val interceptor = "4.9.0"
+
+    // ViewPager2
+    const val viewPager = "1.0.0"
+    // AdapterDelegates
+    const val adapterDelegates ="4.3.2"
+    // Glide
+    const val glide = "4.13.2"
 
 
 }
 
 object Dependencies {
 
-    object Androidx {
-        const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
-        const val coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
+    object Glide {
+
+        const val glide ="com.github.bumptech.glide:glide:${Versions.glide}"
+        const val kapt = "com.github.bumptech.glide:compiler:${Versions.glide}"
+    }
+
+    object AdapterDelegates {
+        const val adapterDelegates = "com.hannesdorfmann:adapterdelegates4-kotlin-dsl:${Versions.adapterDelegates}"
+        const val viewBinding = "com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:${Versions.adapterDelegates}"
+    }
+
+    object Dagger2 {
+        const val dagger2 = "com.google.dagger:dagger:${Versions.dagger}"
+        const val kapt = "com.google.dagger:dagger-compiler:${Versions.dagger}"
+    }
+
+    object Retrofit {
+        const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
+        const val jsonSerialization =
+            "org.jetbrains.kotlinx:kotlinx-serialization-json:${Versions.json}"
+        const val converter =
+            "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:${Versions.converter}"
+        const val interceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.interceptor}"
 
     }
 
-    object Lifecycle {
-        const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}"
+    object AndroidKTX {
+        const val core = "androidx.core:core-ktx:${Versions.coreKtx}"
+        const val runtime = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.runtimeKtx}"
+        const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.viewModelKtx}"
+        const val fragment = "androidx.fragment:fragment-ktx:${Versions.fragmentKtx}"
 
     }
+
+    object Kotlin {
+
+        const val coroutinesCore =
+            "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutine}"
+        const val coroutinesAndroid =
+            "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutine}"
+    }
+
 
     object UI {
+        const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
         const val materialComponents =
             "com.google.android.material:material:${Versions.materialComponent}"
         const val constraintLayout =
@@ -59,6 +119,11 @@ object Dependencies {
 
     }
 
+    object ViewPager {
+
+        const val viewPager2 = "androidx.viewpager2:viewpager:${Versions.viewPager}"
+    }
+
 
 }
 
@@ -75,8 +140,8 @@ object Modules {
 
 object ConfigVersions {
 
-    const val compileSdkVersion = 32
-    const val targetSdkVersion = 32
+    const val compileSdkVersion = 31
+    const val targetSdkVersion = 31
     const val minSdkVersion = 23
     const val buildToolsVersion = "30.2.2"
     const val versionCode = 1

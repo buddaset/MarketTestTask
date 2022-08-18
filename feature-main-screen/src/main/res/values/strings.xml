@@ -1,0 +1,41 @@
+<resources>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="example_location">Zihuatanejo, Gro</string>
+    <string name="select_category_title">Select Category</string>
+    <string name="view_all">view_all</string>
+    <string name="search_action">search action</string>
+    <string name="search_hint">Search</string>
+    <string name="phones_category">Phones</string>
+    <string name="buy_now">Buy now!</string>
+    <string name="text_new_icon_hot_sales_item">New</string>
+    <string name="see_more">see more</string>
+    <string name="hot_sales_title">Hot sales</string>
+    <string name="best_seller_title">Best Seller</string>
+    <string name="filter_options_title">Filter Options</string>
+    <string name="done">Done</string>
+    <string name="title_filter_brand">Brand</string>
+    <string name="title_filter_price">Price</string>
+    <string name="title_filter_size">Size</string>
+
+
+    <string-array name="phones_brand_filter">
+        <item>Samsung</item>
+        <item>Xiaomi</item>
+        <item>Apple</item>
+    </string-array>
+
+    <string-array name="phones_size_filter">
+        <item>5 to 5.3 inches</item>
+        <item>5.3 to 6.0 inches</item>
+        <item>6.0 to 7.5 inches</item>
+    </string-array>
+
+    <string-array name="phones_price_filter">
+        <item>$300 - $500</item>
+        <item>$500 - $5000</item>
+        <item>$5000 - $10000</item>
+    </string-array>
+
+
+</resources>
