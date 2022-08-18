@@ -32,6 +32,9 @@ class FilterBottomSheetDialogFragment : BottomSheetDialogFragment() {
         setupListener()
     }
 
+    override fun getTheme(): Int = R.style.CustomBottomSheetDialogTheme
+
+
     private fun setupSpinnerAdapters() = with(binding) {
 
          val simpleLayout =  R.layout.simple_spinner_layout

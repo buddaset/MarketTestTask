@@ -1,120 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/bottom_sheet_background"
-    app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
-    tools:context=".presentation.screens.FilterBottomSheetDialogFragment">
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineStart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="24dp" />
+    app:cardCornerRadius="30dp"
+    app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior">
 
 
-    <ImageView
-        android:id="@+id/closeFab"
-        android:layout_width="36dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintDimensionRatio="1:1"
-        android:background="@drawable/fab_close_background"
-        android:src="@drawable/ic_close"
-        android:scaleType="center"
-        app:layout_constraintStart_toStartOf="@id/guidelineStart"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.screens.FilterBottomSheetDialogFragment">
 
-    <TextView
-        android:id="@+id/filterOptionsTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
-        android:fontFamily="@font/mark_pro_medium"
-        android:text="@string/filter_options_title"
-        android:textColor="@color/blue"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@id/closeFab"
-        app:layout_constraintStart_toEndOf="@id/closeFab"
-        app:layout_constraintTop_toTopOf="@id/closeFab" />
-
-    <Button
-        android:id="@+id/doneButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="20dp"
-        android:backgroundTint="@color/orange"
-        android:fontFamily="@font/mark_pro_medium"
-        android:text="@string/done"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:cornerRadius="10dp"
-        app:layout_constraintBottom_toBottomOf="@id/closeFab"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.constraintlayout.widget.Barrier
-        android:id="@+id/barrierFilterOptions"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:barrierDirection="bottom"
-        app:constraint_referenced_ids="closeFab,doneButton" />
-
-    <TextView
-        android:id="@+id/titleBrand"
-        style="@style/TitleFilterBottomSheetDialogFragment"
-        android:layout_marginTop="40dp"
-        android:text="@string/title_filter_brand"
-        app:layout_constraintStart_toStartOf="@id/guidelineStart"
-        app:layout_constraintTop_toBottomOf="@id/barrierFilterOptions" />
-
-    <Spinner
-        android:id="@+id/spinnerBrand"
-        style="@style/SpinnerFilterBottomSheetDialogFragment"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/guidelineStart"
-        app:layout_constraintTop_toBottomOf="@id/titleBrand" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="24dp" />
 
 
-    <TextView
-        android:id="@+id/titlePrice"
-        style="@style/TitleFilterBottomSheetDialogFragment"
-        android:layout_marginTop="15dp"
-        android:text="@string/title_filter_price"
-        app:layout_constraintStart_toStartOf="@id/guidelineStart"
-        app:layout_constraintTop_toBottomOf="@id/spinnerBrand" />
+        <ImageView
+            android:id="@+id/closeFab"
+            android:layout_width="36dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/fab_close_background"
+            android:scaleType="center"
+            android:src="@drawable/ic_close"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <Spinner
-        android:id="@+id/spinnerPrice"
-        style="@style/SpinnerFilterBottomSheetDialogFragment"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/guidelineStart"
-        app:layout_constraintTop_toBottomOf="@id/titlePrice" />
+        <TextView
+            android:id="@+id/filterOptionsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="70dp"
+            android:fontFamily="@font/mark_pro_medium"
+            android:text="@string/filter_options_title"
+            android:textColor="@color/blue"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@id/closeFab"
+            app:layout_constraintStart_toEndOf="@id/closeFab"
+            app:layout_constraintTop_toTopOf="@id/closeFab" />
 
-    <TextView
-        android:id="@+id/titleSize"
-        style="@style/TitleFilterBottomSheetDialogFragment"
-        android:layout_marginTop="15dp"
-        android:text="@string/title_filter_size"
-        app:layout_constraintStart_toStartOf="@id/guidelineStart"
-        app:layout_constraintTop_toBottomOf="@id/spinnerPrice" />
+        <Button
+            android:id="@+id/doneButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="20dp"
+            android:backgroundTint="@color/orange"
+            android:fontFamily="@font/mark_pro_medium"
+            android:text="@string/done"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="@id/closeFab"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <Spinner
-        android:id="@+id/spinnerSize"
-        style="@style/SpinnerFilterBottomSheetDialogFragment"
-        android:layout_marginBottom="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/guidelineStart"
-        app:layout_constraintTop_toBottomOf="@id/titleSize" />
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrierFilterOptions"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="closeFab,doneButton" />
+
+        <TextView
+            android:id="@+id/titleBrand"
+            style="@style/TitleFilterBottomSheetDialogFragment"
+            android:layout_marginTop="40dp"
+            android:text="@string/title_filter_brand"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/barrierFilterOptions" />
+
+        <Spinner
+            android:id="@+id/spinnerBrand"
+            style="@style/SpinnerFilterBottomSheetDialogFragment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/titleBrand" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/titlePrice"
+            style="@style/TitleFilterBottomSheetDialogFragment"
+            android:layout_marginTop="15dp"
+            android:text="@string/title_filter_price"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/spinnerBrand" />
+
+        <Spinner
+            android:id="@+id/spinnerPrice"
+            style="@style/SpinnerFilterBottomSheetDialogFragment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/titlePrice" />
+
+        <TextView
+            android:id="@+id/titleSize"
+            style="@style/TitleFilterBottomSheetDialogFragment"
+            android:layout_marginTop="15dp"
+            android:text="@string/title_filter_size"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/spinnerPrice" />
+
+        <Spinner
+            android:id="@+id/spinnerSize"
+            style="@style/SpinnerFilterBottomSheetDialogFragment"
+            android:layout_marginBottom="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/titleSize" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>
 
