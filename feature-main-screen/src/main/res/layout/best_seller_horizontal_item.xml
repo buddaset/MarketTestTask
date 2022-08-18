@@ -9,7 +9,7 @@
         android:id="@+id/bestSellerCategoryTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="8dp"
         android:fontFamily="@font/mark_pro_heavy"
         android:text="@string/best_seller_title"
         android:textColor="@color/blue"

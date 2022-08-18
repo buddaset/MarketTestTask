@@ -52,9 +52,12 @@ class PhonesFragment : Fragment(R.layout.fragment_phones) {
 
 
         setupAdapter()
+
       collectFlow(viewModel.data, ::handleState)
 
     }
+
+
 
     private fun setupAdapter() {
         binding.recyclerView.adapter = adapter

@@ -7,6 +7,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.get
+import androidx.navigation.fragment.findNavController
 import com.example.disneyperson.core.delegate.viewBinding
 import com.example.feature_main_screen.R
 import com.example.feature_main_screen.databinding.CategoryPagerItemBinding
@@ -32,6 +33,13 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
         setupPageAdapter()
         setupSelectedListenerForTabLayout()
+        setupListener()
+    }
+
+    private fun setupListener() = with(binding) {
+       filterImageView.setOnClickListener {
+           findNavController().navigate(R.id.action_mainFragment_to_filterBottomSheetDialogFragment)
+       }
     }
 
 
@@ -56,6 +64,17 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     private fun getCategories(): List<Category> = Category.values().toList()
 
     //todo write extension for selectedListener
+
+    /*
+    DIFFuTIL И РЕФАфакторинг для адаптеров
+    доводка адаптера до сдледующего елемента, чтобы не застревал по середине
+    работа с состояниями
+    дописать обработчик в дата слое
+    создать модели для адаптера в пресентейшен слое
+    подключение кнопок
+
+
+     */
 
     private fun setupSelectedListenerForTabLayout() {
         binding.categoryTabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {

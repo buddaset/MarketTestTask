@@ -140,8 +140,8 @@ object Modules {
 
 object ConfigVersions {
 
-    const val compileSdkVersion = 32
-    const val targetSdkVersion = 32
+    const val compileSdkVersion = 31
+    const val targetSdkVersion = 31
     const val minSdkVersion = 23
     const val buildToolsVersion = "30.2.2"
     const val versionCode = 1

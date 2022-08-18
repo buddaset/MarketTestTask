@@ -27,4 +27,6 @@ dependencies {
     // Coroutines
     implementation(Dependencies.Kotlin.coroutinesCore)
     implementation(Dependencies.Kotlin.coroutinesAndroid)
+
+    implementation(Dependencies.Navigation.navigationComponentFragmentKtx)
 }
