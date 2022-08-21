@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <style name="ImageButtonViewNavigationItem">
+        <item name="android:layout_width">36dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:background">@drawable/bc_image_button_navigation_item</item>
+        <item name="android:scaleType">center</item>
+
+    </style>
+</resources>

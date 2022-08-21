@@ -46,7 +46,7 @@ class FilterBottomSheetDialogFragment : BottomSheetDialogFragment() {
     }
 
     private fun setupListener() {
-        binding.closeFab.setOnClickListener { dismiss() }
+        binding.closeButton.setOnClickListener { dismiss() }
         binding.doneButton.setOnClickListener { dismiss() }
     }
 
