@@ -15,7 +15,7 @@ class ProductDetailsRemoteDataSourceImpl @Inject constructor(
         try {
             return productDetailsApi.loadProductDetail()
         } catch (e: Exception) {
-            Log.d("ProductDetail", "source ---- exception $e")
+            Log.d("ProductDetails", "source ---- exception $e")
             throw e
         }
 

@@ -1,19 +1,14 @@
 package com.example.feature_main_screen.presentation.screens.main
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.get
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.disneyperson.core.delegate.viewBinding
 import com.example.feature_main_screen.R
 import com.example.feature_main_screen.databinding.CategoryPagerItemBinding
 import com.example.feature_main_screen.databinding.FragmentMainBinding
-import com.example.feature_main_screen.di.MainScreenComponentViewModel
 import com.example.feature_main_screen.domain.model.Category
 import com.example.feature_main_screen.presentation.adapters.pagerAdapter.CategoryPagerAdapter
 import com.google.android.material.tabs.TabLayout
@@ -38,10 +33,6 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             findNavController().navigate(R.id.action_mainFragment_to_filterBottomSheetDialogFragment)
         }
 
-        viewAllTextView.setOnClickListener {
-            requireActivity().findNavController(com.example.core.R.id.nav_host_fragment)
-                .navigate(com.example.core.R.id.action_tabBarFragment_to_testFragment)
-        }
     }
 
 

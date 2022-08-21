@@ -15,7 +15,7 @@ data class ProductDetailsDto(
     @SerialName("isFavorites")  val isFavorites: Boolean,
     @SerialName("price") val price: Int,
     @SerialName("rating")  val rating: Double,
-    @SerialName(" sd") val sd: String,
+    @SerialName("sd") val sd: String,
     @SerialName("ssd")  val ssd: String,
     @SerialName("title")  val title: String
 )

@@ -44,12 +44,12 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
 
 
     private fun handleState(state: UiState<ProductDetails>) {
-        Log.d("MainFragment", "state  ---$state")
+        Log.d("ProductDetails", "state  ---$state")
         when (state) {
             is UiState.Loading -> {}
             is UiState.Success -> {
 
-                Log.d("MainFragment", "hotSales ---${state.data}")
+                Log.d("ProductDetails", "productDetails ---${state.data}")
                 binding.textView.text = "${state.data}"
 
 

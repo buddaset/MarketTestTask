@@ -8,6 +8,8 @@ import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.get
+import com.example.core.common.navigation.navigate
+import com.example.core.R.id.global_host
 import com.example.core.precentation.Extension.collectFlow
 import com.example.core.precentation.Extension.showToast
 import com.example.core.precentation.UiState
@@ -59,6 +61,8 @@ class PhonesFragment : Fragment(R.layout.fragment_phones) {
 
     private fun  onProductClick(item: DisplayableItem ) {
         Log.d("MainScreen", "id item ---- ${item.itemId}")
+        navigate( actionId = R.id.action_tabBarFragment_to_productDetailsFragment,
+        hostId =global_host)
     }
 
 
