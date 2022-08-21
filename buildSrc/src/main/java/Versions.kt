@@ -119,10 +119,6 @@ object Dependencies {
 
     }
 
-    object ViewPager {
-
-        const val viewPager2 = "androidx.viewpager2:viewpager:${Versions.viewPager}"
-    }
 
 
 }
@@ -132,6 +128,8 @@ object Modules {
 
     const val app = ":app"
     const val core = ":core"
+    const val core_ui = ":core-ui"
+    const val productDetails = ":feature-product-details"
     const val mainScreen = ":feature-main-screen"
 
 
@@ -140,8 +138,8 @@ object Modules {
 
 object ConfigVersions {
 
-    const val compileSdkVersion = 31
-    const val targetSdkVersion = 31
+    const val compileSdkVersion = 32
+    const val targetSdkVersion = 32
     const val minSdkVersion = 23
     const val buildToolsVersion = "30.2.2"
     const val versionCode = 1

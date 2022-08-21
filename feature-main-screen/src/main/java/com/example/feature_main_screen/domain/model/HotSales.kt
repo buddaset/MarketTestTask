@@ -9,4 +9,6 @@ internal data class HotSales(
     val picture: String,
     val subtitle: String,
     val title: String
-) : DisplayableItem
+) : DisplayableItem {
+    override val itemId: Long = id.toLong()
+}

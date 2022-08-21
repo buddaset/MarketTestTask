@@ -1,6 +1,5 @@
 package com.example.feature_main_screen.data.repository
 
-import android.util.Log
 import com.example.feature_main_screen.data.mapper.toDomain
 import com.example.feature_main_screen.data.remote.source.MainScreenRemoteDataSource
 import com.example.feature_main_screen.domain.model.MainScreenData
@@ -18,7 +17,6 @@ internal class MainScreenRepositoryImpl @Inject constructor(
     override fun getMainScreenData(): Flow<MainScreenData> = flow {
 
         val result = remoteSource.loadMainScreenData()
-        Log.d("MainFragment", "repo ----${result.bestSeller}")
 
         emit(result.toDomain())
     }.flowOn(Dispatchers.IO)

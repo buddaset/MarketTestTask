@@ -3,12 +3,14 @@ package com.example.feature_main_screen.presentation.adapters.delegateAdapter
 import androidx.core.view.isVisible
 import com.bumptech.glide.Glide
 import com.example.feature_main_screen.R
-import com.example.feature_main_screen.databinding.*
+import com.example.feature_main_screen.databinding.BestSellerHorizontalItemBinding
+import com.example.feature_main_screen.databinding.BestSellerItemBinding
+import com.example.feature_main_screen.databinding.HotSalesHorizontalItemBinding
+import com.example.feature_main_screen.databinding.HotSalesItemBinding
 import com.example.feature_main_screen.domain.model.BestSeller
 import com.example.feature_main_screen.domain.model.HotSales
 import com.example.feature_main_screen.presentation.screens.ListBestSeller
 import com.example.feature_main_screen.presentation.screens.ListHotSales
-import com.example.feature_main_screen.presentation.screens.TitleEx
 import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 
@@ -16,13 +18,15 @@ import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 object MainScreenDelegates {
 
 
-    fun bestSellerHorizontalAdapterDelegate() =
+    fun bestSellerCardsAdapterDelegate(
+        onProductClick: (DisplayableItem) -> Unit
+    ) =
         adapterDelegateViewBinding<ListBestSeller, DisplayableItem, BestSellerHorizontalItemBinding>(
             { layoutInflater, parent ->
                 BestSellerHorizontalItemBinding.inflate(layoutInflater, parent, false)
             }
         ) {
-            val adapter = ListDelegationAdapter(bestSellerAdapterDelegate())
+            val adapter = BestSellerProductCardsAdapter(onProductClick)
 
             binding.bestSellerRecyclerView.adapter = adapter
             bind {
@@ -48,9 +52,7 @@ object MainScreenDelegates {
         }
 
 
-
-
-    private fun hotSalesAdapterDelegate() =
+    fun hotSalesAdapterDelegate() =
         adapterDelegateViewBinding<HotSales, DisplayableItem, HotSalesItemBinding>(
             { layoutInflater, parent -> HotSalesItemBinding.inflate(layoutInflater, parent, false) }
         ) {
@@ -65,15 +67,11 @@ object MainScreenDelegates {
         }
 
 
-    private fun bestSellerAdapterDelegate() =
+    fun bestSellerAdapterDelegate(
+        onProductClick: (DisplayableItem) -> Unit
+    ) =
         adapterDelegateViewBinding<BestSeller, DisplayableItem, BestSellerItemBinding>(
-            { layoutInflater, parent ->
-                BestSellerItemBinding.inflate(
-                    layoutInflater,
-                    parent,
-                    false
-                )
-            }
+            { inflater, parent -> BestSellerItemBinding.inflate(inflater, parent, false) }
         ) {
 
             bind {
@@ -85,6 +83,8 @@ object MainScreenDelegates {
                 Glide.with(itemView)
                     .load(item.picture)
                     .into(binding.productImage)
+
+                binding.root.setOnClickListener { onProductClick(item) }
             }
         }
 

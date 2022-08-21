@@ -19,6 +19,7 @@ import com.example.feature_main_screen.domain.model.BestSeller
 import com.example.feature_main_screen.domain.model.HotSales
 import com.example.feature_main_screen.domain.model.MainScreenData
 import com.example.feature_main_screen.presentation.adapters.delegateAdapter.DisplayableItem
+import com.example.feature_main_screen.presentation.adapters.delegateAdapter.MainScreenAdapter
 import com.example.feature_main_screen.presentation.adapters.delegateAdapter.MainScreenDelegates
 import com.example.feature_main_screen.presentation.factory.ViewModelFactory
 import com.example.feature_main_screen.presentation.screens.main.MainScreenViewModel
@@ -35,9 +36,8 @@ class PhonesFragment : Fragment(R.layout.fragment_phones) {
     private val viewModel: MainScreenViewModel by viewModels { viewModelFactory }
 
 
-    private val adapter = ListDelegationAdapter<List<DisplayableItem>>(
-        MainScreenDelegates.bestSellerHorizontalAdapterDelegate(),
-        MainScreenDelegates.hotSaleSHorizontalAdapterDelegate()
+    private val adapter = MainScreenAdapter(
+        this::onProductClick
     )
 
     override fun onAttach(context: Context) {
@@ -55,6 +55,10 @@ class PhonesFragment : Fragment(R.layout.fragment_phones) {
 
       collectFlow(viewModel.data, ::handleState)
 
+    }
+
+    private fun  onProductClick(item: DisplayableItem ) {
+        Log.d("MainScreen", "id item ---- ${item.itemId}")
     }
 
 
@@ -83,22 +87,25 @@ class PhonesFragment : Fragment(R.layout.fragment_phones) {
 
     private fun renderData(data: MainScreenData) {
         adapter.items = listOf( ListHotSales(hotSales = data.hotSales), ListBestSeller(bestSellers = data.bestSeller ),)
-        adapter.notifyDataSetChanged()
+
 
     }
 
 }
 
 
-data class TitleEx(
-    val title: String ,
-    val button : String = "see more"
-) : DisplayableItem
+
 
 internal data class ListBestSeller(
+    val title: String = "Best Seller",
    val  bestSellers: List<BestSeller>
-): DisplayableItem
+): DisplayableItem {
+    override val itemId: Long = title.hashCode().toLong()
+}
 
 internal data class ListHotSales(
+    val title: String = "Hot Sales",
     val hotSales : List<HotSales>
-) : DisplayableItem
+) : DisplayableItem {
+    override val itemId: Long = title.hashCode().toLong()
+}

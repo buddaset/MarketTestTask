@@ -2,13 +2,19 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_graph"
-    app:startDestination="@id/main_screen_graph">
-
-    <include app:graph="@navigation/main_screen_graph" />
+    android:id="@+id/application_graph"
+    app:startDestination="@id/tabBarFragment">
     <fragment
-        android:id="@+id/testFragment"
-        android:name="com.example.markettesttask.TestFragment"
-        android:label="fragment_test"
-        tools:layout="@layout/fragment_test" />
+        android:id="@+id/tabBarFragment"
+        android:name="com.example.markettesttask.fragments.TabBarFragment"
+        android:label="fragment_tab_bar"
+        tools:layout="@layout/fragment_tab_bar" >
+        <action
+            android:id="@+id/action_tabBarFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailsFragment"
+        android:name="com.example.feature_product_details.presentation.screens.product_details.ProductDetailsFragment"
+        android:label="ProductDetailsFragment" />
 </navigation>
