@@ -2,7 +2,7 @@ package com.example.feature_main_screen.presentation.adapters.delegateAdapter
 
 import androidx.core.view.isVisible
 import com.bumptech.glide.Glide
-import com.example.feature_main_screen.R
+import com.example.core_ui.R.drawable.ic_favorite_on
 import com.example.feature_main_screen.databinding.BestSellerHorizontalItemBinding
 import com.example.feature_main_screen.databinding.BestSellerItemBinding
 import com.example.feature_main_screen.databinding.HotSalesHorizontalItemBinding
@@ -76,7 +76,7 @@ object MainScreenDelegates {
 
             bind {
 
-                if (item.isFavorites) binding.isFavoriteProduct.setImageResource(R.drawable.favorite_on)
+                if (item.isFavorites) binding.isFavoriteProduct.setImageResource(ic_favorite_on)
                 binding.priceDiscount.text = item.discountPrice.toString()
                 binding.priceFull.text = item.priceWithoutDiscount.toString()
                 binding.titleProduct.text = item.title

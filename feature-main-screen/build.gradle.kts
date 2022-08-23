@@ -35,6 +35,7 @@ dependencies {
     implementation(Dependencies.UI.constraintLayout)
     implementation(Dependencies.UI.materialComponents)
 
+
     implementation(Dependencies.Navigation.navigationComponentFragmentKtx)
     implementation(Dependencies.Navigation.navigationComponentUiKtx)
 

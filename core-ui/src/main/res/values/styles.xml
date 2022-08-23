@@ -1,12 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+          <!--  Common styles  -->
 
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/gray</item>
+        <item name="colorControlActivated">@color/yellow</item>
+    </style>
+
+    <style name="CustomBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/CustomBottomSheetStyle</item>
+    </style>
+
+    <style name="CustomBottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
 
     <style name="ImageButtonViewNavigationItem">
         <item name="android:layout_width">36dp</item>
         <item name="android:layout_height">0dp</item>
         <item name="android:background">@drawable/bc_image_button_navigation_item</item>
         <item name="android:scaleType">center</item>
+    </style>
+    
+    <style name="NameTitleFragmentTextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/mark_pro_medium</item>
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+
+
+
+
+    <!--    FilterBottomSheetDialogFragment  -->
+
+    <style name="TitleFilterBottomSheetDialogFragment">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/mark_pro_medium</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/blue</item>
 
     </style>
+
+    <style name="SpinnerFilterBottomSheetDialogFragment">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">36dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:background">@drawable/spinner_background</item>
+
+    </style>
+
+
+<!--       ProductDetailsFragment     -->
+
+    <style name="CustomTextAppearanceTabItem" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:color">@color/gray</item>
+        <item name="android:fontFamily">@font/mark_pro_medium</item>
+    </style>
+
+
+<!--    ShopSectionFragment       -->
+
+    <style name="ImageViewIconShopSectionFragment">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+
+    </style>
+
+    <style name="TextViewIconShopSectionFragment">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/gray</item>
+    </style>
+
+
 </resources>

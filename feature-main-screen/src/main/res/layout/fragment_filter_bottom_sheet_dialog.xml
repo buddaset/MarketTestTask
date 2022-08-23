@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardCornerRadius="30dp"
+
     app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior">
 
 
@@ -33,13 +34,9 @@
 
         <TextView
             android:id="@+id/filterOptionsTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/NameTitleFragmentTextView"
             android:layout_marginStart="70dp"
-            android:fontFamily="@font/mark_pro_medium"
             android:text="@string/filter_options_title"
-            android:textColor="@color/blue"
-            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="@id/closeButton"
             app:layout_constraintStart_toEndOf="@id/closeButton"
             app:layout_constraintTop_toTopOf="@id/closeButton" />

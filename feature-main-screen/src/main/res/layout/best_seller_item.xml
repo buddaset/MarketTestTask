@@ -37,7 +37,7 @@
             android:id="@+id/isFavoriteProduct"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/favorite_off"
+            android:src="@drawable/ic_favorite_off"
             app:layout_constraintBottom_toBottomOf="@id/favoriteBackground"
             app:layout_constraintEnd_toEndOf="@id/favoriteBackground"
             app:layout_constraintStart_toStartOf="@id/favoriteBackground"

@@ -42,17 +42,16 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
         TabLayoutMediator(
             categoryTabLayout,
-            categoryViewPager,
-            TabLayoutMediator.TabConfigurationStrategy { tab, position ->
-                val category = categories[position]
-                val tabBinding = CategoryPagerItemBinding.inflate(
-                    LayoutInflater.from(categoryTabLayout.context), categoryTabLayout, false
-                )
+            categoryViewPager) { tab, position ->
+            val category = categories[position]
+            val tabBinding = CategoryPagerItemBinding.inflate(
+                LayoutInflater.from(categoryTabLayout.context), categoryTabLayout, false
+            )
 
-                tabBinding.titleCategory.text = category.title
-                tabBinding.iconCategory.setBackgroundResource(category.iconId)
-                tab.customView = tabBinding.root
-            }).attach()
+            tabBinding.titleCategory.text = category.title
+            tabBinding.iconCategory.setBackgroundResource(category.iconId)
+            tab.customView = tabBinding.root
+        }.attach()
 
         categoryViewPager.isUserInputEnabled = false  // disable scroll viewpager2
 

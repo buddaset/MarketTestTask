@@ -1,6 +1,6 @@
 package com.example.feature_main_screen.presentation.screens
 
-import android.content.Context
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import com.example.disneyperson.core.delegate.viewBinding
 import com.example.feature_main_screen.R
+import com.example.core_ui.R.style.CustomBottomSheetDialogTheme
 import com.example.feature_main_screen.databinding.FragmentFilterBottomSheetDialogBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
@@ -32,7 +33,7 @@ class FilterBottomSheetDialogFragment : BottomSheetDialogFragment() {
         setupListener()
     }
 
-    override fun getTheme(): Int = R.style.CustomBottomSheetDialogTheme
+    override fun getTheme(): Int = CustomBottomSheetDialogTheme
 
 
     private fun setupSpinnerAdapters() = with(binding) {

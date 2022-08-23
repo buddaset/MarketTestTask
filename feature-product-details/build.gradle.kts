@@ -39,9 +39,11 @@ dependencies {
     implementation(Dependencies.Navigation.navigationComponentUiKtx)
 
     implementation(Dependencies.Dagger2.dagger2)
+    implementation("com.github.peceoqicka:GalleryLayoutManagerX:1.0.0")
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.5.1")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
+
     kapt(Dependencies.Dagger2.kapt)
 
 

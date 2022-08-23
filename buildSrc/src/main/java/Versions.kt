@@ -46,11 +46,25 @@ object Versions {
     const val adapterDelegates ="4.3.2"
     // Glide
     const val glide = "4.13.2"
+    // CarouselLayoutManager
+    const val carouselRecyclerView = "2.0.22"
 
 
 }
 
 object Dependencies {
+
+    object UI {
+        const val carouselRecyclerView = "com.github.hamedsj:CenterZoomLinearLayoutManager:0.0.1"
+
+
+        const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
+        const val materialComponents =
+            "com.google.android.material:material:${Versions.materialComponent}"
+        const val constraintLayout =
+            "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
+
+    }
 
     object Glide {
 
@@ -95,14 +109,7 @@ object Dependencies {
     }
 
 
-    object UI {
-        const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
-        const val materialComponents =
-            "com.google.android.material:material:${Versions.materialComponent}"
-        const val constraintLayout =
-            "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
 
-    }
 
     object Navigation {
         const val navigationComponentFragmentKtx =
