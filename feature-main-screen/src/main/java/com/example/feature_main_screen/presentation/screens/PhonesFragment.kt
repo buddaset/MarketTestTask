@@ -60,7 +60,7 @@ class PhonesFragment : Fragment(R.layout.fragment_phones) {
     }
 
     private fun  onProductClick(item: DisplayableItem ) {
-        Log.d("MainScreen", "id item ---- ${item.itemId}")
+
         navigate( actionId = R.id.action_tabBarFragment_to_productDetailsFragment,
         hostId =global_host)
     }

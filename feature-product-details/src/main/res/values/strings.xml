@@ -5,4 +5,8 @@
     <string name="product_details_title">Product Details</string>
     <string name="content_description_my_card">My card</string>
     <string name="select_color_and_capacity">Select color and capacity</string>
+
+
+    <string name="capacity_radio_button">%s  gb</string>
+    <string name="add_to_cart_1500">Add to cart "      "$%d</string>
 </resources>

@@ -5,9 +5,11 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.get
+import androidx.navigation.fragment.findNavController
 
 import com.example.core.precentation.Extension.collectFlow
 import com.example.core.precentation.Extension.showToast
@@ -52,24 +54,32 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
 
         setupImageProductAdapter()
         setupPageAdapter()
+        setupClickListener()
+
+        // todo create simple cache in repository for inner fragment
 
 
-
+        Log.d("LifeDetails", "viewModel --- parent  ---  v${viewModel.hashCode()}")
 
         collectFlow(viewModel.data, ::handleState)
 
 
     }
 
+    private fun setupClickListener() = with(binding) {
+
+        backButton.setOnClickListener { findNavController().popBackStack() }
+
+        myCardButton.setOnClickListener {}
+    }
+
     private fun setupImageProductAdapter() = with(binding) {
         imageProductRecyclerView.adapter = adapter
-        val layoutManager= GalleryLayoutManager.create {
+        val layoutManager = GalleryLayoutManager.create {
             itemSpace = 100
-            viewTransformListener = SimpleViewTransformListener(1.0f,1.2f)
+            viewTransformListener = SimpleViewTransformListener(1.0f, 1.2f)
         }
         imageProductRecyclerView.layoutManager = layoutManager
-
-
 
 
     }
@@ -94,9 +104,17 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
         when (state) {
             is UiState.Loading -> {}
             is UiState.Success -> {
+                val data = state.data
 
                 Log.d("ProductDetails", "productDetails ---${state.data}")
-                adapter.items = state.data.images
+                adapter.items = data.images
+                binding.ratingProduct.rating = data.rating.toFloat()
+                binding.addToCartButton.text =
+                    context?.getString(R.string.add_to_cart_1500, data.price)
+                binding.titleProductName.text = data.title
+                if (data.isFavorites) binding.favoriteButton.setImageResource(R.drawable.ic_favorite_product_details_on)
+
+
             }
             is UiState.Error -> {
                 showToast(state.error.message.toString())

@@ -1,4 +1,4 @@
-package com.example.feature_product_details.presentation.screens
+package com.example.feature_product_details.presentation.screens.empty
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
