@@ -1,4 +1,4 @@
-package com.example.core_ui
+package com.example.feature_my_cart
 
 import org.junit.Test
 
