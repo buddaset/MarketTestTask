@@ -47,8 +47,11 @@ android {
 
 dependencies {
 
+
     implementation(project(Modules.core))
+    implementation(project(Modules.core_ui))
     implementation(project(Modules.mainScreen))
+    implementation(project(Modules.productDetails))
 
     implementation(Dependencies.AndroidKTX.core)
     implementation(Dependencies.AndroidKTX.runtime)

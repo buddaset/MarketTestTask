@@ -46,11 +46,25 @@ object Versions {
     const val adapterDelegates ="4.3.2"
     // Glide
     const val glide = "4.13.2"
+    // CarouselLayoutManager
+    const val carouselRecyclerView = "2.0.22"
 
 
 }
 
 object Dependencies {
+
+    object UI {
+        const val carouselRecyclerView = "com.github.hamedsj:CenterZoomLinearLayoutManager:0.0.1"
+
+
+        const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
+        const val materialComponents =
+            "com.google.android.material:material:${Versions.materialComponent}"
+        const val constraintLayout =
+            "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
+
+    }
 
     object Glide {
 
@@ -95,14 +109,7 @@ object Dependencies {
     }
 
 
-    object UI {
-        const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
-        const val materialComponents =
-            "com.google.android.material:material:${Versions.materialComponent}"
-        const val constraintLayout =
-            "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
 
-    }
 
     object Navigation {
         const val navigationComponentFragmentKtx =
@@ -119,10 +126,6 @@ object Dependencies {
 
     }
 
-    object ViewPager {
-
-        const val viewPager2 = "androidx.viewpager2:viewpager:${Versions.viewPager}"
-    }
 
 
 }
@@ -132,6 +135,8 @@ object Modules {
 
     const val app = ":app"
     const val core = ":core"
+    const val core_ui = ":core-ui"
+    const val productDetails = ":feature-product-details"
     const val mainScreen = ":feature-main-screen"
 
 
@@ -140,8 +145,8 @@ object Modules {
 
 object ConfigVersions {
 
-    const val compileSdkVersion = 31
-    const val targetSdkVersion = 31
+    const val compileSdkVersion = 32
+    const val targetSdkVersion = 32
     const val minSdkVersion = 23
     const val buildToolsVersion = "30.2.2"
     const val versionCode = 1

@@ -1,10 +1,9 @@
 package com.example.feature_main_screen.di.component
 
 import com.example.core.di.scope.FeatureScope
-import com.example.feature_main_screen.di.MainScreenDependencies
+import com.example.feature_main_screen.di.dependency.MainScreenDependencies
 import com.example.feature_main_screen.di.module.MainScreenModule
 import com.example.feature_main_screen.presentation.screens.PhonesFragment
-import com.example.feature_main_screen.presentation.screens.main.MainFragment
 import dagger.Component
 
 
@@ -18,6 +17,7 @@ internal interface MainScreenComponent {
     interface Factory {
 
         fun create(
-            dependencies: MainScreenDependencies): MainScreenComponent
+            dependencies: MainScreenDependencies
+        ): MainScreenComponent
     }
 }

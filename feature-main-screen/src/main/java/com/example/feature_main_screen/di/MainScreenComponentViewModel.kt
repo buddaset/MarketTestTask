@@ -2,6 +2,7 @@ package com.example.feature_main_screen.di
 
 import androidx.lifecycle.ViewModel
 import com.example.feature_main_screen.di.component.DaggerMainScreenComponent
+import com.example.feature_main_screen.di.dependency.MainScreenDependencies
 import kotlin.properties.Delegates
 
 internal class MainScreenComponentViewModel : ViewModel() {

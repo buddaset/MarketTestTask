@@ -9,4 +9,6 @@ internal data class BestSeller(
     val picture: String,
     val priceWithoutDiscount: Int,
     val title: String
-) : DisplayableItem
+) : DisplayableItem {
+    override val itemId: Long = id.toLong()
+}

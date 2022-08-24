@@ -17,6 +17,7 @@
     <string name="title_filter_brand">Brand</string>
     <string name="title_filter_price">Price</string>
     <string name="title_filter_size">Size</string>
+    <string name="content_description_filter_close_button">close</string>
 
 
     <string-array name="phones_brand_filter">
