@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.screens.MyCartFragment">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="10dp" />
+
+
+    <ImageButton
+        android:id="@+id/backImageButton"
+        style="@style/ImageButtonViewNavigationItem"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/content_description_back_button"
+        android:src="@drawable/ic_arrow_left"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline_top" />
+
+    <TextView
+        android:id="@+id/addAddressTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/mark_pro_medium"
+        android:text="@string/add_address"
+        android:textColor="@color/blue"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/addAddressImageButton"
+        app:layout_constraintEnd_toStartOf="@id/addAddressImageButton"
+        app:layout_constraintTop_toTopOf="@id/addAddressImageButton" />
+
+    <ImageButton
+        android:id="@+id/addAddressImageButton"
+        style="@style/ImageButtonViewNavigationItem"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="46dp"
+        android:backgroundTint="@color/orange"
+        android:contentDescription="@string/add_address_description"
+        android:src="@drawable/ic_address"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline_top" />
+
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrierMyCartIconNavigation"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="backImageButton, addAddressImageButton" />
+
+
+    <TextView
+        android:id="@+id/myCartTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/mark_pro_bold"
+        android:text="@string/my_cart_title"
+        android:textColor="@color/blue"
+        android:textSize="36sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/barrierMyCartIconNavigation" />
+
+    <View
+        android:id="@+id/viewContainerMyCart"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/bc_container_my_cart"
+        app:layout_constraintTop_toBottomOf="@id/myCartTitle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/myCartRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/viewContainerMyCart"
+        app:layout_constraintBottom_toTopOf="@id/upperSimpleLine"
+
+        />
+
+    <View
+        android:id="@+id/upperSimpleLine"
+        style="@style/SimpleLineViewMyCartFragment"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/underSimpleLine"
+        android:layout_marginBottom="90dp"
+        />
+
+    <TextView
+        android:id="@+id/totalTitle"
+        style="@style/TextViewTitleResultMenuMyCartFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/total_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/upperSimpleLine"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/deliveryTitle"
+        style="@style/TextViewTitleResultMenuMyCartFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/delivery_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/totalTitle"
+        android:layout_marginTop="12dp" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrierResultMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="end"
+        app:constraint_referenced_ids="totalTitle, deliveryTitle" />
+
+
+    <TextView
+        android:id="@+id/totalTextView"
+        style="@style/TextViewResultMenuMyCartFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="$6,000 us"
+        app:layout_constraintStart_toStartOf="@id/barrierResultMenu"
+        app:layout_constraintTop_toBottomOf="@id/upperSimpleLine"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/deliveryTextView"
+        style="@style/TextViewResultMenuMyCartFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Free"
+        app:layout_constraintStart_toStartOf="@id/barrierResultMenu"
+        app:layout_constraintTop_toBottomOf="@id/totalTextView"
+        android:layout_marginTop="12dp" />
+
+    <View
+        android:id="@+id/underSimpleLine"
+        style="@style/SimpleLineViewMyCartFragment"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/checkoutButton"
+        android:layout_marginBottom="26dp"
+        />
+
+
+    <Button
+        android:id="@+id/checkoutButton"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:text="@string/checkout_button"
+        android:layout_marginStart="44dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="44dp"
+        app:cornerRadius="10dp"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:fontFamily="@font/mark_pro_bold"
+        android:backgroundTint="@color/orange"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,10 @@
 <resources>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="add_address">Add address</string>
+    <string name="add_address_description">add address</string>
+    <string name="my_cart_title">My cart</string>
+    <string name="checkout_button">Checkout</string>
+    <string name="total_title">Total</string>
+    <string name="delivery_title">Delivery</string>
 </resources>
