@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/blue">
+
+
+    <ImageView
+        android:id="@+id/cartItemImageView"
+        android:layout_width="88dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/bc_cart_item"
+        android:padding="4dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/nameItemTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="contentDescription"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/nameItemTextView"
+        style="@style/TextViewMyCartItem"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/white"
+        android:lines="2"
+        android:ellipsize="end"
+        app:layout_constraintEnd_toStartOf="@id/containerCountMenuView"
+        app:layout_constraintStart_toEndOf="@id/cartItemImageView"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Galaxy Note 20 Ultra" />
+
+    <TextView
+        android:id="@+id/priceItemTextView"
+        style="@style/TextViewMyCartItem"
+        android:layout_marginTop="6dp"
+        android:textColor="@color/orange"
+        app:layout_constraintEnd_toStartOf="@id/containerCountMenuView"
+        app:layout_constraintStart_toEndOf="@id/cartItemImageView"
+        app:layout_constraintTop_toBottomOf="@id/nameItemTextView"
+        tools:text="$3000.00" />
+
+    <View
+        android:id="@+id/containerCountMenuView"
+        android:layout_width="26dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/bc_count_menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/nameItemTextView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/decreaseImageButton"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_minus"
+        app:layout_constraintStart_toStartOf="@id/containerCountMenuView"
+        app:layout_constraintEnd_toEndOf="@id/containerCountMenuView"
+        app:layout_constraintTop_toTopOf="@id/containerCountMenuView"
+        tools:ignore="ContentDescription" />
+
+
+
+    <TextView
+        android:id="@+id/itemCountTextView"
+        android:fontFamily="@font/mark_pro_medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:layout_margin="6dp"
+        app:layout_constraintTop_toBottomOf="@id/decreaseImageButton"
+        app:layout_constraintStart_toStartOf="@id/containerCountMenuView"
+        app:layout_constraintEnd_toEndOf="@id/containerCountMenuView"
+        app:layout_constraintBottom_toTopOf="@id/increaseImageButton"
+        tools:text="2"
+         />
+
+
+    <ImageButton
+        android:id="@+id/increaseImageButton"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:layout_marginBottom="10dp"
+
+        android:src="@drawable/ic_plus"
+        app:layout_constraintTop_toBottomOf="@id/itemCountTextView"
+        app:layout_constraintStart_toStartOf="@id/containerCountMenuView"
+        app:layout_constraintEnd_toEndOf="@id/containerCountMenuView"
+        app:layout_constraintBottom_toBottomOf="@id/containerCountMenuView"
+
+        tools:ignore="ContentDescription" />
+
+    <ImageButton
+        android:id="@+id/deleteImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/ic_basket"
+        android:background="@color/blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/containerCountMenuView"
+        app:layout_constraintBottom_toBottomOf="@id/containerCountMenuView"
+        app:layout_constraintStart_toEndOf="@id/containerCountMenuView"
+
+        />
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

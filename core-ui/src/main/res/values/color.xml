@@ -8,6 +8,7 @@
     <color name="gray">#B3B3C3</color>
     <color name="yellow">#FFB800</color>
     <color name="brown">#772D03</color>
+    <color name="my_cart_count_menu">#282843</color>
     <color name="transparent">#00000000</color>
 
 </resources>
