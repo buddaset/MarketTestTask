@@ -23,6 +23,7 @@ class MyCartAdapter : AsyncListDifferDelegationAdapter<Basket>(DIFF_UTIL_CALLBAC
             bind {
                 binding.nameItemTextView.text = item.title
                 binding.priceItemTextView.text = item.price.toString()
+                binding.itemCountTextView.text = "1"
                 Glide.with(itemView)
                     .load(item.images)
                     .into(binding.cartItemImageView)

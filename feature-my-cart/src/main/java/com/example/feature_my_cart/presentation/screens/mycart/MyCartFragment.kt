@@ -1,10 +1,13 @@
 package com.example.feature_my_cart.presentation.screens.mycart
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.get
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.core.precentation.Extension.collectFlow
 import com.example.core.precentation.Extension.showToast
@@ -12,6 +15,7 @@ import com.example.core.precentation.UiState
 import com.example.disneyperson.core.delegate.viewBinding
 import com.example.feature_my_cart.R
 import com.example.feature_my_cart.databinding.FragmentMyCartBinding
+import com.example.feature_my_cart.di.MyCartComponentViewModel
 import com.example.feature_my_cart.domain.model.Cart
 import com.example.feature_my_cart.presentation.adapters.cart_adapter.MyCartAdapter
 import com.example.feature_my_cart.presentation.factory.ViewModelFactory
@@ -26,6 +30,12 @@ class MyCartFragment : Fragment(R.layout.fragment_my_cart) {
     @Inject
     lateinit var viewModelFactory: ViewModelFactory
     private val viewModel: MyCartViewModel by viewModels { viewModelFactory }
+
+    override fun onAttach(context: Context) {
+        ViewModelProvider(this).get<MyCartComponentViewModel>()
+            .myCartComponent.inject(this)
+        super.onAttach(context)
+    }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
