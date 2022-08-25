@@ -7,5 +7,5 @@ import kotlinx.coroutines.flow.Flow
 class GetCartUseCase(private val repository: MyCartRepository) {
 
     operator fun  invoke(): Flow<Cart> =
-        repository.getCart()
+        repository.getMyCart()
 }

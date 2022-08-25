@@ -37,7 +37,6 @@ class NetworkModule {
     fun provideJsonFactory(): Converter.Factory {
         val json = Json {
             ignoreUnknownKeys = true
-
         }
         return json.asConverterFactory("application/json".toMediaType())
     }

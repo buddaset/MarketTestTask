@@ -6,5 +6,5 @@ import kotlinx.coroutines.flow.Flow
 interface MyCartRepository {
 
 
-   fun  getCart(): Flow<Cart>
+   fun  getMyCart(): Flow<Cart>
 }
