@@ -25,6 +25,6 @@
 
     <fragment
         android:id="@+id/myCartFragment"
-        android:name="com.example.feature_my_cart.presentation.screens.MyCartFragment"
+        android:name="com.example.feature_my_cart.presentation.screens.mycart.MyCartFragment"
         android:label="MyCartFragment" />
 </navigation>

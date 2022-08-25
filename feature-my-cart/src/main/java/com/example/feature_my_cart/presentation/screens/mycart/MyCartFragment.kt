@@ -1,0 +1,78 @@
+package com.example.feature_my_cart.presentation.screens.mycart
+
+import android.os.Bundle
+import android.util.Log
+import android.view.View
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.core.precentation.Extension.collectFlow
+import com.example.core.precentation.Extension.showToast
+import com.example.core.precentation.UiState
+import com.example.disneyperson.core.delegate.viewBinding
+import com.example.feature_my_cart.R
+import com.example.feature_my_cart.databinding.FragmentMyCartBinding
+import com.example.feature_my_cart.domain.model.Cart
+import com.example.feature_my_cart.presentation.adapters.cart_adapter.MyCartAdapter
+import com.example.feature_my_cart.presentation.factory.ViewModelFactory
+import javax.inject.Inject
+
+
+class MyCartFragment : Fragment(R.layout.fragment_my_cart) {
+
+    private val binding: FragmentMyCartBinding by viewBinding()
+    private val adapter by lazy { MyCartAdapter() }
+
+    @Inject
+    lateinit var viewModelFactory: ViewModelFactory
+    private val viewModel: MyCartViewModel by viewModels { viewModelFactory }
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        setupMyAdapter()
+
+        collectFlow(viewModel.data, ::handleState)
+    }
+
+    private fun setupMyAdapter() {
+        binding.myCartRecyclerView.adapter = adapter
+        binding.myCartRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+
+    }
+
+
+    private fun handleState(state: UiState<Cart>) {
+        Log.d("MyCartFragment", "state  ---$state")
+        when(state) {
+            is UiState.Loading -> {}
+            is UiState.Success -> {
+
+                Log.d("MyCartFragment", "data ---${state.data}")
+                renderData(state.data)
+
+            }
+            is UiState.Error -> {
+                showToast(state.error.message.toString())
+            }
+        }
+    }
+
+  private fun renderData(cart: Cart) = with(binding) {
+
+
+      adapter.items = cart.basket
+      deliveryTextView.text = cart.delivery
+      totalTextView.text = cart.total.toString()
+
+
+
+
+  }
+
+
+
+
+}
+
