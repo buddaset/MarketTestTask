@@ -32,7 +32,7 @@ class TabBarFragment : Fragment(R.layout.fragment_tab_bar) {
         binding.bottomNavView.setOnItemSelectedListener { menuItem ->
             when(menuItem.itemId) {
 
-                R.id.productDetailsFragment -> findNavController().navigate(R.id.productDetailsFragment)
+                R.id.myCartFragment -> findNavController().navigate(R.id.myCartFragment)
             }
             true
         }

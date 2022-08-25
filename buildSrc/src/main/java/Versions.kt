@@ -138,6 +138,7 @@ object Modules {
     const val core_ui = ":core-ui"
     const val productDetails = ":feature-product-details"
     const val mainScreen = ":feature-main-screen"
+    const val myCart = ":feature-my-cart"
 
 
 }
