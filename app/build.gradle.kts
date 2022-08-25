@@ -79,6 +79,7 @@ dependencies {
     implementation(Dependencies.Retrofit.jsonSerialization)
     implementation(Dependencies.Retrofit.converter)
     implementation(Dependencies.Retrofit.interceptor)
+    implementation(Dependencies.Retrofit.flowAdapter)
 
 
     // Coroutines
