@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.get
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.core.precentation.Extension.collectFlow
 import com.example.core.precentation.Extension.showToast
@@ -42,8 +43,14 @@ class MyCartFragment : Fragment(R.layout.fragment_my_cart) {
         super.onViewCreated(view, savedInstanceState)
 
         setupMyAdapter()
+        setupClickListeners()
 
         collectFlow(viewModel.data, ::handleState)
+    }
+
+    private fun setupClickListeners() {
+
+        binding.backImageButton.setOnClickListener { findNavController().popBackStack() }
     }
 
     private fun setupMyAdapter() {

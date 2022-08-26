@@ -3,6 +3,7 @@ package com.example.markettesttask.fragments
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
@@ -36,6 +37,12 @@ class TabBarFragment : Fragment(R.layout.fragment_tab_bar) {
             }
             true
         }
+
+
+
+        val badge = binding.bottomNavView.getOrCreateBadge(R.id.myCartFragment)
+        badge.isVisible
+        badge.number = 2
 
 
     }
