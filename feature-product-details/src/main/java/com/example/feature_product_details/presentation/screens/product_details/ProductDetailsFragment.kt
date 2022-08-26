@@ -10,6 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.get
 import androidx.navigation.fragment.findNavController
+import com.example.core.common.navigation.navigate
 
 import com.example.core.precentation.Extension.collectFlow
 import com.example.core.precentation.Extension.showToast
@@ -70,7 +71,7 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
 
         backButton.setOnClickListener { findNavController().popBackStack() }
 
-        myCardButton.setOnClickListener {}
+        myCardButton.setOnClickListener { navigate(R.id.action_productDetailsFragment_to_myCartFragment)}
     }
 
     private fun setupImageProductAdapter() = with(binding) {

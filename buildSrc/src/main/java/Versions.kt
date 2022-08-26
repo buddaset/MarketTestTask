@@ -48,6 +48,8 @@ object Versions {
     const val glide = "4.13.2"
     // CarouselLayoutManager
     const val carouselRecyclerView = "2.0.22"
+    // FlowAdapter for Retrofit
+    const val flowAdapter = "0.2.0"
 
 
 }
@@ -89,6 +91,7 @@ object Dependencies {
         const val converter =
             "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:${Versions.converter}"
         const val interceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.interceptor}"
+        const val flowAdapter = "com.github.MohammadSianaki:Retrofit2-Flow-Call-Adapter:${Versions.flowAdapter}"
 
     }
 
@@ -138,6 +141,7 @@ object Modules {
     const val core_ui = ":core-ui"
     const val productDetails = ":feature-product-details"
     const val mainScreen = ":feature-main-screen"
+    const val myCart = ":feature-my-cart"
 
 
 }

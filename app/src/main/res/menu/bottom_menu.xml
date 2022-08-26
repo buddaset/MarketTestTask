@@ -5,9 +5,9 @@
         android:icon="@drawable/ic_test_home"
         android:title="Explorer"/>
 
-    <item android:id="@id/productDetailsFragment"
+    <item android:id="@id/myCartFragment"
         android:icon="@drawable/ic_test_home"
-        android:title="Detail"/>
+        android:title="My cart"/>
 
 
 

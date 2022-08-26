@@ -3,10 +3,12 @@
     <color name="blue">#010035</color>
     <color name="orange">#FF6E4E</color>
     <color name="white">#FFFFFF</color>
+    <color name="white_25">#19FFFFFF</color>
     <color name="main_color">#E5E5E5</color>
     <color name="gray">#B3B3C3</color>
     <color name="yellow">#FFB800</color>
     <color name="brown">#772D03</color>
+    <color name="my_cart_count_menu">#282843</color>
     <color name="transparent">#00000000</color>
 
 </resources>

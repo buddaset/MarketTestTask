@@ -13,8 +13,18 @@
             android:id="@+id/action_tabBarFragment_to_productDetailsFragment"
             app:destination="@id/productDetailsFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/productDetailsFragment"
         android:name="com.example.feature_product_details.presentation.screens.product_details.ProductDetailsFragment"
-        android:label="ProductDetailsFragment" />
+        android:label="ProductDetailsFragment" >
+        <action
+            android:id="@+id/action_productDetailsFragment_to_myCartFragment"
+            app:destination="@id/myCartFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/myCartFragment"
+        android:name="com.example.feature_my_cart.presentation.screens.mycart.MyCartFragment"
+        android:label="MyCartFragment" />
 </navigation>

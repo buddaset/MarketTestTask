@@ -3,6 +3,7 @@ package com.example.markettesttask.fragments
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
@@ -32,10 +33,16 @@ class TabBarFragment : Fragment(R.layout.fragment_tab_bar) {
         binding.bottomNavView.setOnItemSelectedListener { menuItem ->
             when(menuItem.itemId) {
 
-                R.id.productDetailsFragment -> findNavController().navigate(R.id.productDetailsFragment)
+                R.id.myCartFragment -> findNavController().navigate(R.id.myCartFragment)
             }
             true
         }
+
+
+
+        val badge = binding.bottomNavView.getOrCreateBadge(R.id.myCartFragment)
+        badge.isVisible
+        badge.number = 2
 
 
     }

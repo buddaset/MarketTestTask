@@ -52,6 +52,7 @@ dependencies {
     implementation(project(Modules.core_ui))
     implementation(project(Modules.mainScreen))
     implementation(project(Modules.productDetails))
+    implementation(project(Modules.myCart))
 
     implementation(Dependencies.AndroidKTX.core)
     implementation(Dependencies.AndroidKTX.runtime)
@@ -78,6 +79,7 @@ dependencies {
     implementation(Dependencies.Retrofit.jsonSerialization)
     implementation(Dependencies.Retrofit.converter)
     implementation(Dependencies.Retrofit.interceptor)
+    implementation(Dependencies.Retrofit.flowAdapter)
 
 
     // Coroutines

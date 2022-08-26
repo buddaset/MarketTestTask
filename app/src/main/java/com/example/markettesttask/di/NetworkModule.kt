@@ -7,6 +7,7 @@ import dagger.Module
 import dagger.Provides
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.Json
+import me.sianaki.flowretrofitadapter.FlowCallAdapterFactory
 import okhttp3.Interceptor
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
@@ -25,6 +26,7 @@ class NetworkModule {
         Retrofit.Builder()
             .baseUrl(BASE_URL) //todo change on buildConfig
             .client(client)
+            .addCallAdapterFactory(FlowCallAdapterFactory.create())
             .addConverterFactory(converterFactory)
             .build()
 
@@ -35,7 +37,6 @@ class NetworkModule {
     fun provideJsonFactory(): Converter.Factory {
         val json = Json {
             ignoreUnknownKeys = true
-
         }
         return json.asConverterFactory("application/json".toMediaType())
     }
