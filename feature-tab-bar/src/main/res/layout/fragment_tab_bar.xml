@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.example.common_tab_bar.presentation.screens.TabBarFragment">
+    tools:context="com.example.common_tab_bar.presentation.screens.tabbar.TabBarFragment">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/tab_bar_host"

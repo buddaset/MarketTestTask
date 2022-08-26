@@ -1,4 +1,4 @@
-package com.example.common_tab_bar.presentation.screens
+package com.example.common_tab_bar.presentation.screens.tabbar
 
 import android.os.Bundle
 import android.view.View

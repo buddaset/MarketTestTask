@@ -6,7 +6,7 @@
     app:startDestination="@id/tabBarFragment">
     <fragment
         android:id="@+id/tabBarFragment"
-        android:name="com.example.common_tab_bar.presentation.screens.TabBarFragment"
+        android:name="com.example.common_tab_bar.presentation.screens.tabbar.TabBarFragment"
         android:label="fragment_tab_bar"
         tools:layout="@layout/fragment_tab_bar" >
         <action
