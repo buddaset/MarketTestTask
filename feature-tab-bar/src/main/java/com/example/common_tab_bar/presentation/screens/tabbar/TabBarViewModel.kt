@@ -5,9 +5,10 @@ import androidx.lifecycle.viewModelScope
 import com.example.common_tab_bar.domain.model.CountCartItem
 import com.example.common_tab_bar.domain.usecase.GetCountCartItemUseCase
 import kotlinx.coroutines.flow.*
+import javax.inject.Inject
 
-class TabBarViewModel(
-    private val getCountCartItemUseCase: GetCountCartItemUseCase
+class TabBarViewModel @Inject constructor(
+     getCountCartItemUseCase: GetCountCartItemUseCase
 ) : ViewModel() {
 
 

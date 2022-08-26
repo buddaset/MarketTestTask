@@ -1,6 +1,7 @@
 package com.example.markettesttask.app
 
 import android.app.Application
+import com.example.common_tab_bar.di.TabBarDependenciesStore
 import com.example.feature_main_screen.di.MainScreenDependenciesStore
 import com.example.feature_my_cart.di.MyCartDependenciesStore
 import com.example.feature_product_details.di.ProductDetailsDependenciesStore
@@ -18,5 +19,6 @@ class App: Application() {
         ProductDetailsDependenciesStore.dependencies = appComponent
         MainScreenDependenciesStore.dependencies = appComponent
         MyCartDependenciesStore.dependencies = appComponent
+        TabBarDependenciesStore.dependencies = appComponent
     }
 }
