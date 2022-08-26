@@ -1,15 +1,15 @@
-package com.example.markettesttask.fragments
+package com.example.common_tab_bar.presentation.screens
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.common_tab_bar.R
+import com.example.common_tab_bar.databinding.FragmentTabBarBinding
 import com.example.disneyperson.core.delegate.viewBinding
-import com.example.markettesttask.R
-import com.example.markettesttask.databinding.FragmentTabBarBinding
+
 
 
 class TabBarFragment : Fragment(R.layout.fragment_tab_bar) {
