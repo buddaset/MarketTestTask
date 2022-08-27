@@ -22,7 +22,7 @@ class SplashScreenFragment : Fragment(R.layout.fragment_splash_screen) {
 
     companion object {
 
-        const val POST_DELAY_TIME =2000L
+        const val POST_DELAY_TIME =1500L
     }
 
 
