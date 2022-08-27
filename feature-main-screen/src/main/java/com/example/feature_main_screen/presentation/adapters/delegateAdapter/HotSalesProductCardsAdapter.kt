@@ -8,7 +8,7 @@ import com.example.feature_main_screen.domain.model.HotSales
 import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 
-class HotSalesCardsAdapter: AsyncListDifferDelegationAdapter<DisplayableItem>(BaseDiffUtilItemCallback()) {
+class HotSalesProductCardsAdapter: AsyncListDifferDelegationAdapter<DisplayableItem>(BaseDiffUtilItemCallback()) {
 
     init {
         delegatesManager
