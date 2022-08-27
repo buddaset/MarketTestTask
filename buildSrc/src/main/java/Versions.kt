@@ -143,6 +143,7 @@ object Modules {
     const val mainScreen = ":feature-main-screen"
     const val myCart = ":feature-my-cart"
     const val tabBar = ":feature-tab-bar"
+    const val splashScreen = ":feature-splash-screen"
 
 
 }
