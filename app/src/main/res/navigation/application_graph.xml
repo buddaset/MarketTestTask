@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/application_graph"
-    app:startDestination="@id/tabBarFragment">
+    app:startDestination="@id/splashScreenFragment">
     <fragment
         android:id="@+id/tabBarFragment"
         android:name="com.example.common_tab_bar.presentation.screens.tabbar.TabBarFragment"
@@ -27,4 +27,14 @@
         android:id="@+id/myCartFragment"
         android:name="com.example.feature_my_cart.presentation.screens.mycart.MyCartFragment"
         android:label="MyCartFragment" />
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="com.example.feature_splash_screen.presentation.SplashScreenFragment"
+        android:label="SplashScreenFragment" >
+        <action
+            app:popUpTo="@id/splashScreenFragment"
+            app:popUpToInclusive="true"
+            android:id="@+id/action_splashScreenFragment_to_tabBarFragment"
+            app:destination="@id/tabBarFragment" />
+    </fragment>
 </navigation>

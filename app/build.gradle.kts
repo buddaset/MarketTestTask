@@ -54,6 +54,8 @@ dependencies {
     implementation(project(Modules.productDetails))
     implementation(project(Modules.myCart))
     implementation(project(Modules.tabBar))
+    implementation(project(Modules.splashScreen))
+
 
     implementation(Dependencies.AndroidKTX.core)
     implementation(Dependencies.AndroidKTX.runtime)
