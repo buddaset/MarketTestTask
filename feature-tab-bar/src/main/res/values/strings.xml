@@ -1,4 +1,8 @@
 <resources>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="explorer_bottom_menu">Explorer</string>
+    <string name="my_cart__bottom_menu">My cart</string>
+    <string name="favorite_bottom_menu">Favorite</string>
+    <string name="profile_bottom_menu">Profile</string>
 </resources>

@@ -2,6 +2,7 @@ package com.example.common_tab_bar.presentation.screens.tabbar
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -10,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.get
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import com.example.common_tab_bar.R
 import com.example.common_tab_bar.databinding.FragmentTabBarBinding
@@ -39,7 +41,9 @@ class TabBarFragment : Fragment(R.layout.fragment_tab_bar) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
         setupBottomNavigation()
+
 
         collectFlow(viewModel.countCartItem, ::updateMyCartBadge)
 
@@ -48,21 +52,24 @@ class TabBarFragment : Fragment(R.layout.fragment_tab_bar) {
 
     override fun onStart() {
         super.onStart()
-        setMainScreenBottomNavOnStart()
+        setMainScreenBottomNavigationViewOnStart()
+
+    }
+
+    private fun setMainScreenBottomNavigationViewOnStart(){
+        binding.bottomNavView.selectedItemId = com.example.feature_main_screen.R.id.main_screen_graph
 
 
     }
 
-    private fun setMainScreenBottomNavOnStart() {
-        binding.bottomNavView.selectedItemId =
-            com.example.feature_main_screen.R.id.main_screen_graph
-    }
+
+
 
     private fun updateMyCartBadge(countCartItem: CountCartItem) {
         if (countCartItem.count == 0) return
         val myCartBadge = binding.bottomNavView.getOrCreateBadge(R.id.myCartFragment)
-        myCartBadge.isVisible = true
-        myCartBadge.number = countCartItem.count
+        myCartBadge.number= countCartItem.count
+        
 
     }
 
@@ -72,6 +79,7 @@ class TabBarFragment : Fragment(R.layout.fragment_tab_bar) {
             childFragmentManager.findFragmentById(R.id.tab_bar_host) as NavHostFragment
         val navController = navHostFragment.navController
         binding.bottomNavView.setupWithNavController(navController)
+
 
         setupSelectedListener()
 
@@ -88,6 +96,7 @@ class TabBarFragment : Fragment(R.layout.fragment_tab_bar) {
         }
 
     }
+
 
 
 }

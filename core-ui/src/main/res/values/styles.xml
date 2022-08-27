@@ -82,4 +82,9 @@
     </style>
 
 
+    <style name="Widget.BottomNavigationView" parent="Widget.Design.BottomNavigationView">
+        <item name="fontFamily">@font/mark_pro_medium</item>
+    </style>
+
+
 </resources>

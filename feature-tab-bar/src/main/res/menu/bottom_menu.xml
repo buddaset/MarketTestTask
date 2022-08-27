@@ -2,12 +2,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:id="@id/main_screen_graph"
-        android:icon="@drawable/ic_test_home"
-        android:title="Explorer"/>
+        android:icon="@drawable/ic_explorer"
+        android:title="@string/explorer_bottom_menu"/>
 
     <item android:id="@+id/myCartFragment"
-        android:icon="@drawable/ic_test_home"
-        android:title="My cart"/>
+        android:icon="@drawable/ic_my_cart"
+        android:title="@string/my_cart__bottom_menu"/>
+
+    <item android:id="@+id/myFavoriteFragment"
+        android:icon="@drawable/ic_favorite"
+
+        android:title="@string/favorite_bottom_menu"/>
+
+
+    <item android:id="@+id/myProfileFragment"
+        android:icon="@drawable/ic_profile"
+        android:title="@string/profile_bottom_menu"/>
 
 
 
