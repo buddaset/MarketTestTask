@@ -1,6 +1,6 @@
 package com.example.feature_main_screen.domain.model
 
-import com.example.feature_main_screen.presentation.adapters.delegateAdapter.DisplayableItem
+import com.example.feature_main_screen.presentation.adapters.delegateAdapter.ItemUi
 
 internal data class BestSeller(
     val discountPrice: Int,
@@ -9,6 +9,6 @@ internal data class BestSeller(
     val picture: String,
     val priceWithoutDiscount: Int,
     val title: String
-) : DisplayableItem {
+) : ItemUi {
     override val itemId: Long = id.toLong()
 }

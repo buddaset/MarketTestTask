@@ -9,8 +9,8 @@ import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 
 class BestSellerProductCardsAdapter(
-    onProductClick: (DisplayableItem) -> Unit
-) : AsyncListDifferDelegationAdapter<DisplayableItem>(BaseDiffUtilItemCallback())  {
+    onProductClick: (ItemUi) -> Unit
+) : AsyncListDifferDelegationAdapter<ItemUi>(BaseDiffUtilItemCallback())  {
 
     init {
         delegatesManager
@@ -18,9 +18,9 @@ class BestSellerProductCardsAdapter(
     }
 
    private fun bestSellerAdapterDelegate(
-        onProductClick: (DisplayableItem) -> Unit
+        onProductClick: (ItemUi) -> Unit
     ) =
-        adapterDelegateViewBinding<BestSeller, DisplayableItem, BestSellerItemBinding>(
+        adapterDelegateViewBinding<BestSeller, ItemUi, BestSellerItemBinding>(
             { inflater, parent -> BestSellerItemBinding.inflate(inflater, parent, false) }
         ) {
 

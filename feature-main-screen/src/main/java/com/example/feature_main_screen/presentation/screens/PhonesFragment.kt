@@ -17,12 +17,12 @@ import com.example.disneyperson.core.delegate.viewBinding
 import com.example.feature_main_screen.R
 import com.example.feature_main_screen.databinding.FragmentPhonesBinding
 import com.example.feature_main_screen.di.MainScreenComponentViewModel
-import com.example.feature_main_screen.domain.model.BestSeller
-import com.example.feature_main_screen.domain.model.HotSales
 import com.example.feature_main_screen.domain.model.MainScreenData
-import com.example.feature_main_screen.presentation.adapters.delegateAdapter.DisplayableItem
+import com.example.feature_main_screen.presentation.adapters.delegateAdapter.ItemUi
 import com.example.feature_main_screen.presentation.adapters.delegateAdapter.MainScreenAdapter
 import com.example.feature_main_screen.presentation.factory.ViewModelFactory
+import com.example.feature_main_screen.presentation.model.BestSellersItemsUi
+import com.example.feature_main_screen.presentation.model.HotSalesItemsUi
 import com.example.feature_main_screen.presentation.screens.main.MainScreenViewModel
 import javax.inject.Inject
 
@@ -52,7 +52,7 @@ class PhonesFragment : Fragment(R.layout.fragment_phones) {
 
     }
 
-    private fun onProductClick(item: DisplayableItem) {
+    private fun onProductClick(item: ItemUi) {
 
         navigate(
             actionId = R.id.action_tabBarFragment_to_productDetailsFragment,
@@ -84,8 +84,8 @@ class PhonesFragment : Fragment(R.layout.fragment_phones) {
 
     private fun renderData(data: MainScreenData) {
         adapter.items = listOf(
-            ListHotSales(hotSales = data.hotSales),
-            ListBestSeller(bestSellers = data.bestSeller),
+            HotSalesItemsUi(hotSales = data.hotSales),
+            BestSellersItemsUi(bestSellers = data.bestSeller),
         )
 
 
@@ -94,16 +94,4 @@ class PhonesFragment : Fragment(R.layout.fragment_phones) {
 }
 
 
-internal data class ListBestSeller(
-    val title: String = "Best Seller",
-    val bestSellers: List<BestSeller>
-) : DisplayableItem {
-    override val itemId: Long = title.hashCode().toLong()
-}
 
-internal data class ListHotSales(
-    val title: String = "Hot Sales",
-    val hotSales: List<HotSales>
-) : DisplayableItem {
-    override val itemId: Long = title.hashCode().toLong()
-}

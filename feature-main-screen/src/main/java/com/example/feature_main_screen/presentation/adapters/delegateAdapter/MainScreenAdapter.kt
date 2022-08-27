@@ -3,14 +3,15 @@ package com.example.feature_main_screen.presentation.adapters.delegateAdapter
 import androidx.recyclerview.widget.PagerSnapHelper
 import com.example.feature_main_screen.databinding.BestSellerHorizontalItemBinding
 import com.example.feature_main_screen.databinding.HotSalesHorizontalItemBinding
-import com.example.feature_main_screen.presentation.screens.ListBestSeller
-import com.example.feature_main_screen.presentation.screens.ListHotSales
+import com.example.feature_main_screen.presentation.model.BestSellersItemsUi
+import com.example.feature_main_screen.presentation.model.HotSalesItemsUi
+
 import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 
 class MainScreenAdapter(
-    onProductClick: (DisplayableItem) -> Unit,
-) : AsyncListDifferDelegationAdapter<DisplayableItem>(BaseDiffUtilItemCallback()) {
+    onProductClick: (ItemUi) -> Unit,
+) : AsyncListDifferDelegationAdapter<ItemUi>(BaseDiffUtilItemCallback()) {
 
     init {
         delegatesManager
@@ -19,9 +20,9 @@ class MainScreenAdapter(
     }
 
     private fun bestSellerCardsAdapterDelegate(
-        onProductClick: (DisplayableItem) -> Unit
+        onProductClick: (ItemUi) -> Unit
     ) =
-        adapterDelegateViewBinding<ListBestSeller, DisplayableItem, BestSellerHorizontalItemBinding>(
+        adapterDelegateViewBinding<BestSellersItemsUi, ItemUi, BestSellerHorizontalItemBinding>(
             { layoutInflater, parent ->
                 BestSellerHorizontalItemBinding.inflate(layoutInflater, parent, false)
             }
@@ -37,7 +38,7 @@ class MainScreenAdapter(
 
 
     private fun hotSaleSCardsAdapterDelegate() =
-        adapterDelegateViewBinding<ListHotSales, DisplayableItem, HotSalesHorizontalItemBinding>(
+        adapterDelegateViewBinding<HotSalesItemsUi, ItemUi, HotSalesHorizontalItemBinding>(
             { layoutInflater, parent ->
                 HotSalesHorizontalItemBinding.inflate(layoutInflater, parent, false)
             }) {
