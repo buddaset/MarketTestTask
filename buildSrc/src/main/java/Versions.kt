@@ -142,6 +142,7 @@ object Modules {
     const val productDetails = ":feature-product-details"
     const val mainScreen = ":feature-main-screen"
     const val myCart = ":feature-my-cart"
+    const val tabBar = ":feature-tab-bar"
 
 
 }
