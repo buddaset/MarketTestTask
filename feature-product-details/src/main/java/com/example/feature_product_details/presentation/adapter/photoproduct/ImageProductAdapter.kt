@@ -2,6 +2,7 @@ package com.example.feature_product_details.presentation.adapter.photoproduct
 
 import androidx.recyclerview.widget.DiffUtil
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.example.feature_product_details.databinding.ImageProductItemBinding
 import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
@@ -19,6 +20,7 @@ class ImageProductAdapter : AsyncListDifferDelegationAdapter<String>(DIFF_UTIL_C
         bind {
             Glide.with(itemView)
                 .load(item)
+                .transition(DrawableTransitionOptions.withCrossFade())
                 .into(binding.productImage)
         }
     }
