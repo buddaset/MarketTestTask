@@ -8,18 +8,15 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
 internal class MainScreenRepositoryImpl @Inject constructor(
     private val remoteSource: MainScreenRemoteDataSource
 ) : MainScreenRepository {
 
-    override fun getMainScreenData(): Flow<MainScreenData> = flow {
-
-        val result = remoteSource.loadMainScreenData()
-
-        emit(result.toDomain())
-    }.flowOn(Dispatchers.IO)
-
+    override fun getMainScreenData(): Flow<MainScreenData> =
+        remoteSource.loadMainScreenData()
+            .map { dataDto -> dataDto.toDomain() }
 
 }
