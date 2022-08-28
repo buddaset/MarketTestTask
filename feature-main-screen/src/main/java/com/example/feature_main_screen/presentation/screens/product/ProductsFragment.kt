@@ -2,7 +2,6 @@ package com.example.feature_main_screen.presentation.screens.product
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 
 import androidx.fragment.app.Fragment
 import android.view.View
@@ -19,7 +18,7 @@ import com.example.core.precentation.onError
 import com.example.core.precentation.onSuccess
 import com.example.disneyperson.core.delegate.viewBinding
 import com.example.feature_main_screen.R
-import com.example.feature_main_screen.databinding.FragmentPhonesBinding
+import com.example.feature_main_screen.databinding.FragmentProductsBinding
 import com.example.feature_main_screen.di.MainScreenComponentViewModel
 import com.example.feature_main_screen.presentation.adapters.delegateAdapter.ItemUi
 import com.example.feature_main_screen.presentation.adapters.delegateAdapter.MainScreenAdapter
@@ -27,13 +26,13 @@ import com.example.feature_main_screen.presentation.factory.ViewModelFactory
 import com.example.feature_main_screen.presentation.model.MainScreenDataUi
 import javax.inject.Inject
 
-class PhonesFragment : Fragment(R.layout.fragment_phones) {
+class ProductsFragment : Fragment(R.layout.fragment_products) {
 
-    private val binding by viewBinding<FragmentPhonesBinding>()
+    private val binding by viewBinding<FragmentProductsBinding>()
 
     @Inject
     internal lateinit var viewModelFactory: ViewModelFactory
-    private val viewModel: ProductViewModel by viewModels { viewModelFactory }
+    private val viewModel: ProductsViewModel by viewModels { viewModelFactory }
 
     private val adapter = MainScreenAdapter(this::onProductClick)
 
@@ -58,7 +57,6 @@ class PhonesFragment : Fragment(R.layout.fragment_phones) {
 
     private fun handleState(state: UiState<MainScreenDataUi>) = with(binding) {
 
-        Log.d("State","state ---- $state")
 
         stateView.progressBar.isVisible = state is UiState.Loading
         stateView.messageExceptionTextView.isVisible = state is UiState.Error

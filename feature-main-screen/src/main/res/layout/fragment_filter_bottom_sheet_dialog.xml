@@ -23,7 +23,7 @@
 
 
         <ImageButton
-            android:id="@+id/closeButton"
+            android:id="@+id/closeImageButton"
             style="@style/ImageButtonViewNavigationItem"
             android:layout_marginTop="24dp"
             android:src="@drawable/ic_close"
@@ -37,9 +37,9 @@
             style="@style/NameTitleFragmentTextView"
             android:layout_marginStart="70dp"
             android:text="@string/filter_options_title"
-            app:layout_constraintBottom_toBottomOf="@id/closeButton"
-            app:layout_constraintStart_toEndOf="@id/closeButton"
-            app:layout_constraintTop_toTopOf="@id/closeButton" />
+            app:layout_constraintBottom_toBottomOf="@id/closeImageButton"
+            app:layout_constraintStart_toEndOf="@id/closeImageButton"
+            app:layout_constraintTop_toTopOf="@id/closeImageButton" />
 
         <Button
             android:id="@+id/doneButton"
@@ -56,7 +56,7 @@
             android:textColor="@color/white"
             android:textSize="18sp"
             app:cornerRadius="10dp"
-            app:layout_constraintBottom_toBottomOf="@id/closeButton"
+            app:layout_constraintBottom_toBottomOf="@id/closeImageButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -65,10 +65,10 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:barrierDirection="bottom"
-            app:constraint_referenced_ids="closeButton,doneButton" />
+            app:constraint_referenced_ids="closeImageButton,doneButton" />
 
         <TextView
-            android:id="@+id/titleBrand"
+            android:id="@+id/titleBrandTextView"
             style="@style/TitleFilterBottomSheetDialogFragment"
             android:layout_marginTop="40dp"
             android:text="@string/title_filter_brand"
@@ -80,11 +80,11 @@
             style="@style/SpinnerFilterBottomSheetDialogFragment"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/guidelineStart"
-            app:layout_constraintTop_toBottomOf="@id/titleBrand" />
+            app:layout_constraintTop_toBottomOf="@id/titleBrandTextView" />
 
 
         <TextView
-            android:id="@+id/titlePrice"
+            android:id="@+id/titlePriceTextView"
             style="@style/TitleFilterBottomSheetDialogFragment"
             android:layout_marginTop="15dp"
             android:text="@string/title_filter_price"
@@ -96,10 +96,10 @@
             style="@style/SpinnerFilterBottomSheetDialogFragment"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/guidelineStart"
-            app:layout_constraintTop_toBottomOf="@id/titlePrice" />
+            app:layout_constraintTop_toBottomOf="@id/titlePriceTextView" />
 
         <TextView
-            android:id="@+id/titleSize"
+            android:id="@+id/titleSizeTextView"
             style="@style/TitleFilterBottomSheetDialogFragment"
             android:layout_marginTop="15dp"
             android:text="@string/title_filter_size"
@@ -113,7 +113,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/guidelineStart"
-            app:layout_constraintTop_toBottomOf="@id/titleSize" />
+            app:layout_constraintTop_toBottomOf="@id/titleSizeTextView" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

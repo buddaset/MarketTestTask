@@ -2,6 +2,8 @@
 <resources>
           <!--  Common styles  -->
 
+
+
     <style name="RatingBar" parent="Theme.AppCompat">
         <item name="colorControlNormal">@color/gray</item>
         <item name="colorControlActivated">@color/yellow</item>
@@ -29,6 +31,28 @@
         <item name="android:textColor">@color/blue</item>
         <item name="android:textSize">18sp</item>
         <item name="android:letterSpacing">-0.04</item>
+
+    </style>
+
+    <style name="LinkTextViewMainScreen">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/mark_pro</item>
+        <item name="android:textColor">@color/orange</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_marginEnd">22dp</item>
+
+
+    </style>
+
+    <style name="TitleTextViewMainScreen">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/mark_pro_bold</item>
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:letterSpacing">-0.04</item>
+        <item name="android:layout_marginStart">8dp</item>
 
     </style>
 

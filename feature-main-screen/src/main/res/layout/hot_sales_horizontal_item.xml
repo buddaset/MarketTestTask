@@ -7,25 +7,17 @@
 
     <TextView
         android:id="@+id/hotSalesCategoryTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        style="@style/TitleTextViewMainScreen"
         android:layout_marginTop="18dp"
-        android:fontFamily="@font/mark_pro_heavy"
         android:text="@string/hot_sales_title"
-        android:textColor="@color/blue"
-        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/seeMoreHotSalesCategory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="22dp"
-        android:fontFamily="@font/mark_pro"
+        style="@style/LinkTextViewMainScreen"
         android:text="@string/see_more"
-        android:textColor="@color/orange"
+        app:layout_constraintTop_toTopOf="@id/hotSalesCategoryTitle"
         app:layout_constraintBottom_toBottomOf="@id/hotSalesCategoryTitle"
         app:layout_constraintEnd_toEndOf="parent" />
 

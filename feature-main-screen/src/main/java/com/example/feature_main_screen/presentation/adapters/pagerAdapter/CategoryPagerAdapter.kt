@@ -4,7 +4,7 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.feature_main_screen.domain.model.Category
 import com.example.feature_main_screen.presentation.screens.EmptyFragment
-import com.example.feature_main_screen.presentation.screens.product.PhonesFragment
+import com.example.feature_main_screen.presentation.screens.product.ProductsFragment
 
 class CategoryPagerAdapter(
     fragment: Fragment,
@@ -17,7 +17,7 @@ class CategoryPagerAdapter(
     override fun createFragment(position: Int): Fragment =
         when(categories[position]) {
 
-            Category.PHONES -> PhonesFragment()
+            Category.PHONES -> ProductsFragment()
 
             else -> EmptyFragment()
         }

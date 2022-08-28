@@ -13,7 +13,7 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.*
 
 
-internal class ProductViewModel(
+internal class ProductsViewModel(
     getDataMainScreenUseCase: GetDataMainScreenUseCase,
    ) : ViewModel() {
 
