@@ -18,7 +18,7 @@ dependencies {
 
 
     implementation(Dependencies.AndroidKTX.fragment)
-
+    implementation(Dependencies.UI.materialComponents)
     implementation(Dependencies.Dagger2.dagger2)
 
     // Coroutines

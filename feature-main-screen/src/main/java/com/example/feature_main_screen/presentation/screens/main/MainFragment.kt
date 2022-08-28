@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.core.common.navigation.navigate
+import com.example.core.precentation.extension.onTabSelectedListener
 import com.example.disneyperson.core.delegate.viewBinding
 import com.example.feature_main_screen.R
 import com.example.feature_main_screen.databinding.CategoryPagerItemBinding
@@ -24,16 +26,9 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         super.onViewCreated(view, savedInstanceState)
 
         setupViewPager()
-        setupSelectedListenerForTabLayout()
-        setupListener()
+        setupListeners()
     }
 
-    private fun setupListener() = with(binding) {
-        filterImageView.setOnClickListener {
-            findNavController().navigate(R.id.action_mainFragment_to_filterBottomSheetDialogFragment)
-        }
-
-    }
 
 
     private fun setupViewPager() = with(binding) {
@@ -54,25 +49,22 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         }.attach()
 
         categoryViewPager.isUserInputEnabled = false  // disable scroll viewpager2
-
     }
 
     private fun getCategories(): List<Category> = Category.values().toList()
 
+    private fun setupListeners() = with(binding) {
 
+        filterImageView.setOnClickListener {
+           navigate(R.id.action_mainFragment_to_filterBottomSheetDialogFragment)
+        }
 
-
-
-    private fun setupSelectedListenerForTabLayout() {
-        binding.categoryTabLayout.addOnTabSelectedListener(object :
-            TabLayout.OnTabSelectedListener {
-            override fun onTabSelected(tab: TabLayout.Tab) {
-                binding.categoryViewPager.currentItem = tab.position
-            }
-
-            override fun onTabUnselected(tab: TabLayout.Tab?) {}
-            override fun onTabReselected(tab: TabLayout.Tab?) {}
-        })
+        categoryTabLayout.onTabSelectedListener { tab ->
+            categoryViewPager.currentItem = tab.position
+        }
     }
 
+
 }
+
+

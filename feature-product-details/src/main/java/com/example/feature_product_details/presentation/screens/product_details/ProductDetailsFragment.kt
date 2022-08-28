@@ -5,15 +5,14 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.get
 import androidx.navigation.fragment.findNavController
 import com.example.core.common.navigation.navigate
 
-import com.example.core.precentation.Extension.collectFlow
-import com.example.core.precentation.Extension.showToast
+import com.example.core.precentation.extension.collectFlow
+import com.example.core.precentation.extension.showToast
 import com.example.core.precentation.UiState
 import com.example.disneyperson.core.delegate.viewBinding
 import com.example.feature_product_details.R

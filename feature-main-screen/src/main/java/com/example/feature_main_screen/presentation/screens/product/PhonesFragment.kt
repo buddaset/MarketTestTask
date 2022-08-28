@@ -10,19 +10,16 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.get
 import com.example.core.common.navigation.navigate
 import com.example.core.R.id.global_host
-import com.example.core.precentation.Extension.collectFlow
-import com.example.core.precentation.Extension.showToast
+import com.example.core.precentation.extension.collectFlow
+import com.example.core.precentation.extension.showToast
 import com.example.core.precentation.UiState
 import com.example.disneyperson.core.delegate.viewBinding
 import com.example.feature_main_screen.R
 import com.example.feature_main_screen.databinding.FragmentPhonesBinding
 import com.example.feature_main_screen.di.MainScreenComponentViewModel
-import com.example.feature_main_screen.domain.model.MainScreenData
 import com.example.feature_main_screen.presentation.adapters.delegateAdapter.ItemUi
 import com.example.feature_main_screen.presentation.adapters.delegateAdapter.MainScreenAdapter
 import com.example.feature_main_screen.presentation.factory.ViewModelFactory
-import com.example.feature_main_screen.presentation.model.BestSellerItemsUi
-import com.example.feature_main_screen.presentation.model.HotSalesItemsUi
 import javax.inject.Inject
 
 class PhonesFragment : Fragment(R.layout.fragment_phones) {

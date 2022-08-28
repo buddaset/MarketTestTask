@@ -10,8 +10,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.get
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.core.precentation.Extension.collectFlow
-import com.example.core.precentation.Extension.showToast
+import com.example.core.precentation.extension.collectFlow
+import com.example.core.precentation.extension.showToast
 import com.example.core.precentation.UiState
 import com.example.disneyperson.core.delegate.viewBinding
 import com.example.feature_my_cart.R
