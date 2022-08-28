@@ -1,11 +1,10 @@
 package com.example.feature_main_screen.presentation.adapters.delegateAdapter
 
 import androidx.recyclerview.widget.PagerSnapHelper
-import com.example.feature_main_screen.databinding.BestSellerHorizontalItemBinding
-import com.example.feature_main_screen.databinding.HotSalesHorizontalItemBinding
+import com.example.feature_main_screen.databinding.BestSellerCardsItemBinding
+import com.example.feature_main_screen.databinding.HotSalesCardsItemBinding
 import com.example.feature_main_screen.presentation.model.BestSellerItemsUi
 import com.example.feature_main_screen.presentation.model.HotSalesItemsUi
-
 import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 
@@ -22,9 +21,9 @@ class MainScreenAdapter(
     private fun bestSellerCardsAdapterDelegate(
         onProductClick: (ItemUi) -> Unit
     ) =
-        adapterDelegateViewBinding<BestSellerItemsUi, ItemUi, BestSellerHorizontalItemBinding>(
+        adapterDelegateViewBinding<BestSellerItemsUi, ItemUi, BestSellerCardsItemBinding>(
             { layoutInflater, parent ->
-                BestSellerHorizontalItemBinding.inflate(layoutInflater, parent, false)
+                BestSellerCardsItemBinding.inflate(layoutInflater, parent, false)
             }
         ) {
             val adapter = BestSellerProductCardsAdapter(onProductClick)
@@ -38,9 +37,9 @@ class MainScreenAdapter(
 
 
     private fun hotSaleSCardsAdapterDelegate() =
-        adapterDelegateViewBinding<HotSalesItemsUi, ItemUi, HotSalesHorizontalItemBinding>(
+        adapterDelegateViewBinding<HotSalesItemsUi, ItemUi, HotSalesCardsItemBinding>(
             { layoutInflater, parent ->
-                HotSalesHorizontalItemBinding.inflate(layoutInflater, parent, false)
+                HotSalesCardsItemBinding.inflate(layoutInflater, parent, false)
             }) {
             val adapter = HotSalesProductCardsAdapter()
 

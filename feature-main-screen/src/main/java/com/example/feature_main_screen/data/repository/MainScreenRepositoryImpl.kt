@@ -1,5 +1,6 @@
 package com.example.feature_main_screen.data.repository
 
+import com.example.core.common.dispatcher.Dispatcher
 import com.example.feature_main_screen.data.mapper.toDomain
 import com.example.feature_main_screen.data.remote.source.MainScreenRemoteDataSource
 import com.example.feature_main_screen.domain.model.MainScreenData
@@ -12,11 +13,13 @@ import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
 internal class MainScreenRepositoryImpl @Inject constructor(
-    private val remoteSource: MainScreenRemoteDataSource
+    private val remoteSource: MainScreenRemoteDataSource,
+    private val dispatcher: Dispatcher
 ) : MainScreenRepository {
 
     override fun getMainScreenData(): Flow<MainScreenData> =
         remoteSource.loadMainScreenData()
             .map { dataDto -> dataDto.toDomain() }
+            .flowOn(dispatcher.io)
 
 }

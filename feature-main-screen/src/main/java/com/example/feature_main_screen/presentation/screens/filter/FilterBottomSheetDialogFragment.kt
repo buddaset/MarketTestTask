@@ -38,7 +38,7 @@ class FilterBottomSheetDialogFragment : BottomSheetDialogFragment() {
 
     private fun setupSpinnerAdapters() = with(binding) {
 
-         val simpleLayout =  R.layout.simple_spinner_layout
+         val simpleLayout =  R.layout.simple_spinner
         spinnerBrand.adapter = ArrayAdapter(requireContext(), simpleLayout, resources.getTextArray(R.array.phones_brand_filter))
         spinnerPrice.adapter = ArrayAdapter(requireContext(), simpleLayout, resources.getTextArray(R.array.phones_price_filter))
         spinnerSize.adapter = ArrayAdapter(requireContext(), simpleLayout, resources.getTextArray(R.array.phones_size_filter))

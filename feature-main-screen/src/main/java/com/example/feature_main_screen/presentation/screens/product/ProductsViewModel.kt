@@ -2,6 +2,7 @@ package com.example.feature_main_screen.presentation.screens.product
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.core.common.resource_manager.ResourceManager
 import com.example.core.precentation.UiState
 import com.example.feature_main_screen.domain.model.MainScreenData
 import com.example.feature_main_screen.domain.usecase.GetDataMainScreenUseCase
@@ -15,6 +16,7 @@ import kotlinx.coroutines.flow.*
 
 internal class ProductsViewModel(
     getDataMainScreenUseCase: GetDataMainScreenUseCase,
+    private val resourceManager: ResourceManager
    ) : ViewModel() {
 
 
