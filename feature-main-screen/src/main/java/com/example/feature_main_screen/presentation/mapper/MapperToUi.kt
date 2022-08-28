@@ -4,6 +4,7 @@ import com.example.feature_main_screen.domain.model.BestSeller
 import com.example.feature_main_screen.domain.model.HotSales
 import com.example.feature_main_screen.presentation.model.BestSellerUi
 import com.example.feature_main_screen.presentation.model.HotSalesUi
+import java.text.DecimalFormat
 
 
 internal fun List<BestSeller>.toUi(): List<BestSellerUi> =
@@ -12,11 +13,11 @@ internal fun List<BestSeller>.toUi(): List<BestSellerUi> =
 
 internal fun BestSeller.toUi() =
     BestSellerUi(
-        discountPrice = discountPrice,
+        discountPrice = formatPrice(discountPrice),
         id = id,
         isFavorites = isFavorites,
         picture = picture,
-        priceWithoutDiscount = priceWithoutDiscount,
+        priceWithoutDiscount = formatPrice(priceWithoutDiscount),
         title = title
     )
 
@@ -36,6 +37,8 @@ internal fun HotSales.toUi(): HotSalesUi =
     )
 
 
+ fun formatPrice(price: Int): String =
+     "$${DecimalFormat("#,##0").format(price)}"
 
 
 

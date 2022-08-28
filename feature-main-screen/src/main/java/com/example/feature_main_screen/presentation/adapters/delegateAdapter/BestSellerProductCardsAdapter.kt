@@ -1,5 +1,6 @@
 package com.example.feature_main_screen.presentation.adapters.delegateAdapter
 
+import android.graphics.Paint
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.example.core_ui.R
@@ -11,26 +12,29 @@ import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 
 class BestSellerProductCardsAdapter(
     onProductClick: (ItemUi) -> Unit
-) : AsyncListDifferDelegationAdapter<ItemUi>(BaseDiffUtilItemCallback())  {
+) : AsyncListDifferDelegationAdapter<ItemUi>(BaseDiffUtilItemCallback()) {
 
     init {
         delegatesManager
             .addDelegate(bestSellerAdapterDelegate(onProductClick))
     }
 
-   private fun bestSellerAdapterDelegate(
+    private fun bestSellerAdapterDelegate(
         onProductClick: (ItemUi) -> Unit
     ) =
         adapterDelegateViewBinding<BestSellerUi, ItemUi, BestSellerItemBinding>(
             { inflater, parent -> BestSellerItemBinding.inflate(inflater, parent, false) }
         ) {
 
-
             bind {
-
-                if (item.isFavorites) binding.isFavoriteProduct.setImageResource(R.drawable.ic_favorite_on)
-                binding.priceDiscount.text = item.discountPrice.toString()
-                binding.priceFull.text = item.priceWithoutDiscount.toString()
+                val isFavoriteRes = if (item.isFavorites) R.drawable.ic_favorite_on
+                else R.drawable.ic_favorite_off
+                binding.isFavoriteProduct.setImageResource(isFavoriteRes)
+                binding.priceDiscount.text = item.discountPrice
+                binding.priceFull.apply {
+                    paintFlags = paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
+                    text = item.priceWithoutDiscount
+                }
                 binding.titleProduct.text = item.title
                 Glide.with(itemView)
                     .load(item.picture)

@@ -1,4 +1,4 @@
-package com.example.feature_main_screen.presentation.screens.product
+package com.example.feature_main_screen.presentation.screens.products
 
 import android.content.Context
 import android.os.Bundle

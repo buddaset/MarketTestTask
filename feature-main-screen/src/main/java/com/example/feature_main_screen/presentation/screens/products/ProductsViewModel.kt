@@ -1,9 +1,10 @@
-package com.example.feature_main_screen.presentation.screens.product
+package com.example.feature_main_screen.presentation.screens.products
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.core.common.resource_manager.ResourceManager
 import com.example.core.precentation.UiState
+import com.example.feature_main_screen.R
 import com.example.feature_main_screen.domain.model.MainScreenData
 import com.example.feature_main_screen.domain.usecase.GetDataMainScreenUseCase
 import com.example.feature_main_screen.presentation.mapper.toUi
@@ -24,7 +25,6 @@ internal class ProductsViewModel(
     @OptIn(ExperimentalCoroutinesApi::class)
     val data: StateFlow<UiState<MainScreenDataUi>> =
         getDataMainScreenUseCase()
-
             .mapLatest { data -> handleSuccessData(data)  }
             .catch { error -> UiState.Error<MainScreenDataUi>(error = error) }
             .stateIn(
@@ -37,11 +37,11 @@ internal class ProductsViewModel(
     private fun handleSuccessData( data: MainScreenData) : UiState.Success<MainScreenDataUi> {
         val  dataUi = MainScreenDataUi(
             bestSeller = BestSellerItemsUi(
-                title = "Best Seller",
+                title = resourceManager.getString(R.string.best_seller_title),
                 bestSellers = data.bestSeller.toUi()) ,
 
             hotSales = HotSalesItemsUi(
-                title = "Hot Sales",
+                title = resourceManager.getString(R.string.hot_sales_title),
                 hotSales = data.hotSales.toUi()
             ))
 

@@ -4,11 +4,11 @@ import com.example.feature_main_screen.presentation.adapters.delegateAdapter.Ite
 
 
 internal data class BestSellerUi(
-    val discountPrice: Int,
+    val discountPrice: String,
     val id: Int,
     val isFavorites: Boolean,
     val picture: String,
-    val priceWithoutDiscount: Int,
+    val priceWithoutDiscount: String,
     val title: String
 ) : ItemUi {
     override val itemId: Long = id.toLong()
