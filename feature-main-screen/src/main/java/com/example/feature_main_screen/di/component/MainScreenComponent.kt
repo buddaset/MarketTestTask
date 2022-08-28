@@ -3,7 +3,7 @@ package com.example.feature_main_screen.di.component
 import com.example.core.di.scope.FeatureScope
 import com.example.feature_main_screen.di.dependency.MainScreenDependencies
 import com.example.feature_main_screen.di.module.MainScreenModule
-import com.example.feature_main_screen.presentation.screens.PhonesFragment
+import com.example.feature_main_screen.presentation.screens.product.PhonesFragment
 import dagger.Component
 
 

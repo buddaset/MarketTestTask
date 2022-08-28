@@ -3,7 +3,7 @@ package com.example.feature_main_screen.presentation.factory
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.feature_main_screen.domain.usecase.GetDataMainScreenUseCase
-import com.example.feature_main_screen.presentation.screens.main.MainScreenViewModel
+import com.example.feature_main_screen.presentation.screens.product.ProductViewModel
 import javax.inject.Inject
 
 internal class ViewModelFactory @Inject constructor(
@@ -12,6 +12,6 @@ internal class ViewModelFactory @Inject constructor(
 
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T =
-         MainScreenViewModel(getDataMainScreenUseCase) as T
+         ProductViewModel(getDataMainScreenUseCase) as T
 
 }

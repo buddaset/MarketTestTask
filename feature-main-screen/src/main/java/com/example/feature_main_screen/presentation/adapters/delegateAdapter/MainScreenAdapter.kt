@@ -3,7 +3,7 @@ package com.example.feature_main_screen.presentation.adapters.delegateAdapter
 import androidx.recyclerview.widget.PagerSnapHelper
 import com.example.feature_main_screen.databinding.BestSellerHorizontalItemBinding
 import com.example.feature_main_screen.databinding.HotSalesHorizontalItemBinding
-import com.example.feature_main_screen.presentation.model.BestSellersItemsUi
+import com.example.feature_main_screen.presentation.model.BestSellerItemsUi
 import com.example.feature_main_screen.presentation.model.HotSalesItemsUi
 
 import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
@@ -22,7 +22,7 @@ class MainScreenAdapter(
     private fun bestSellerCardsAdapterDelegate(
         onProductClick: (ItemUi) -> Unit
     ) =
-        adapterDelegateViewBinding<BestSellersItemsUi, ItemUi, BestSellerHorizontalItemBinding>(
+        adapterDelegateViewBinding<BestSellerItemsUi, ItemUi, BestSellerHorizontalItemBinding>(
             { layoutInflater, parent ->
                 BestSellerHorizontalItemBinding.inflate(layoutInflater, parent, false)
             }

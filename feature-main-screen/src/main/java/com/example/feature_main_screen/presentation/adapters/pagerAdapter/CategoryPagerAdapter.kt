@@ -4,7 +4,7 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.feature_main_screen.domain.model.Category
 import com.example.feature_main_screen.presentation.screens.EmptyFragment
-import com.example.feature_main_screen.presentation.screens.PhonesFragment
+import com.example.feature_main_screen.presentation.screens.product.PhonesFragment
 
 class CategoryPagerAdapter(
     fragment: Fragment,

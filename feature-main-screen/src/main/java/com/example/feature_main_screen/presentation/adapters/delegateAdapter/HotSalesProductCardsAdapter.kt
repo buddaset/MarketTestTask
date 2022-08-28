@@ -5,6 +5,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade
 import com.example.feature_main_screen.databinding.HotSalesItemBinding
 import com.example.feature_main_screen.domain.model.HotSales
+import com.example.feature_main_screen.presentation.model.HotSalesUi
 import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 
@@ -17,7 +18,7 @@ class HotSalesProductCardsAdapter: AsyncListDifferDelegationAdapter<ItemUi>(Base
 
 
    private fun hotSalesAdapterDelegate() =
-        adapterDelegateViewBinding<HotSales, ItemUi, HotSalesItemBinding>(
+        adapterDelegateViewBinding<HotSalesUi, ItemUi, HotSalesItemBinding>(
             { layoutInflater, parent -> HotSalesItemBinding.inflate(layoutInflater, parent, false) }
         ) {
             bind {

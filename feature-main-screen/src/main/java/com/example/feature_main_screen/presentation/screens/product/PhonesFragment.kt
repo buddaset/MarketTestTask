@@ -1,4 +1,4 @@
-package com.example.feature_main_screen.presentation.screens
+package com.example.feature_main_screen.presentation.screens.product
 
 import android.content.Context
 import android.os.Bundle
@@ -21,9 +21,8 @@ import com.example.feature_main_screen.domain.model.MainScreenData
 import com.example.feature_main_screen.presentation.adapters.delegateAdapter.ItemUi
 import com.example.feature_main_screen.presentation.adapters.delegateAdapter.MainScreenAdapter
 import com.example.feature_main_screen.presentation.factory.ViewModelFactory
-import com.example.feature_main_screen.presentation.model.BestSellersItemsUi
+import com.example.feature_main_screen.presentation.model.BestSellerItemsUi
 import com.example.feature_main_screen.presentation.model.HotSalesItemsUi
-import com.example.feature_main_screen.presentation.screens.main.MainScreenViewModel
 import javax.inject.Inject
 
 class PhonesFragment : Fragment(R.layout.fragment_phones) {
@@ -32,7 +31,7 @@ class PhonesFragment : Fragment(R.layout.fragment_phones) {
 
     @Inject
     internal lateinit var viewModelFactory: ViewModelFactory
-    private val viewModel: MainScreenViewModel by viewModels { viewModelFactory }
+    private val viewModel: ProductViewModel by viewModels { viewModelFactory }
 
     private val adapter = MainScreenAdapter(this::onProductClick)
 
@@ -66,7 +65,7 @@ class PhonesFragment : Fragment(R.layout.fragment_phones) {
     }
 
 
-    private fun handleState(state: UiState<MainScreenData>) {
+    private fun handleState(state: UiState<MainScreenDataUi>) {
         Log.d("MainFragment", "state  ---$state")
         when (state) {
             is UiState.Loading -> {}
@@ -82,12 +81,8 @@ class PhonesFragment : Fragment(R.layout.fragment_phones) {
         }
     }
 
-    private fun renderData(data: MainScreenData) {
-        adapter.items = listOf(
-            HotSalesItemsUi(hotSales = data.hotSales),
-            BestSellersItemsUi(bestSellers = data.bestSeller),
-        )
-
+    private fun renderData(data: MainScreenDataUi) {
+        adapter.items = listOf( data.hotSales , data.bestSeller)
 
     }
 

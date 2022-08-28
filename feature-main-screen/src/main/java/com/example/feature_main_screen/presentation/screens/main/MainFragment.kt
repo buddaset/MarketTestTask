@@ -23,7 +23,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setupPageAdapter()
+        setupViewPager()
         setupSelectedListenerForTabLayout()
         setupListener()
     }
@@ -36,7 +36,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     }
 
 
-    private fun setupPageAdapter() = with(binding) {
+    private fun setupViewPager() = with(binding) {
         val categories = getCategories()
         categoryViewPager.adapter = CategoryPagerAdapter(this@MainFragment, categories)
 
@@ -59,18 +59,9 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
     private fun getCategories(): List<Category> = Category.values().toList()
 
-    //todo write extension for selectedListener
-
-    /*
-    DIFFuTIL И РЕФАфакторинг для адаптеров
-    доводка адаптера до сдледующего елемента, чтобы не застревал по середине
-    работа с состояниями
-    дописать обработчик в дата слое
-    создать модели для адаптера в пресентейшен слое
-    подключение кнопок
 
 
-     */
+
 
     private fun setupSelectedListenerForTabLayout() {
         binding.categoryTabLayout.addOnTabSelectedListener(object :

@@ -1,4 +1,4 @@
-package com.example.feature_main_screen.presentation.screens
+package com.example.feature_main_screen.presentation.screens.filter
 
 
 import android.os.Bundle
