@@ -1,5 +1,7 @@
 package com.example.markettesttask.di
 
+import com.example.core.common.dispatcher.Dispatcher
+import com.example.core.common.dispatcher.DispatcherMainUI
 import com.example.core.di.scope.ApplicationScope
 import com.example.markettesttask.BuildConfig
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
@@ -31,6 +33,7 @@ class NetworkModule {
             .build()
 
 
+
     @OptIn(ExperimentalSerializationApi::class)
     @Provides
     @ApplicationScope
@@ -55,6 +58,13 @@ class NetworkModule {
             .setLevel(HttpLoggingInterceptor.Level.BODY)
 
     companion object {
+
+
+        @Provides
+        @ApplicationScope
+        fun providesDispatcher(): Dispatcher =
+            DispatcherMainUI()
+
 
         private const val BASE_URL = "https://run.mocky.io/v3/"
         private const val TIME_OUT: Long = 10

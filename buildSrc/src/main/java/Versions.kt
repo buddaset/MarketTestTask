@@ -158,8 +158,16 @@ object ConfigVersions {
     const val versionCode = 1
     const val versionName = "1.0"
     const val applicationId = "com.example.markettesttask"
-    const val kotlinVersion = "1.6.20"
+    const val kotlin = "1.6.20"
+    const val gradle = "7.0.4"
     val javaVersion = JavaVersion.VERSION_1_8
+
+}
+
+object BuildPlugins {
+    const val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${ConfigVersions.kotlin}"
+    const val gradle = "com.android.tools.build:gradle:${ConfigVersions.gradle}"
+    const val androidLibrary = "com.android.tools.build:gradle:${ConfigVersions.gradle}"
 
 }
 
