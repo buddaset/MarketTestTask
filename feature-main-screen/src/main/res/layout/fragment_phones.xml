@@ -16,5 +16,12 @@
         tools:itemCount="10"
         tools:listitem="@layout/hot_sales_horizontal_item" />
 
+    <include
+        android:id="@+id/stateView"
+        layout="@layout/state_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center" />
+
 
 </FrameLayout>

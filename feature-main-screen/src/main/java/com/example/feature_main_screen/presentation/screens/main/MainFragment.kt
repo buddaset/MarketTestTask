@@ -18,9 +18,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 
 class MainFragment : Fragment(R.layout.fragment_main) {
 
-
     private val binding by viewBinding<FragmentMainBinding>()
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -28,8 +26,6 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         setupViewPager()
         setupListeners()
     }
-
-
 
     private fun setupViewPager() = with(binding) {
         val categories = getCategories()

@@ -45,9 +45,7 @@ class NetworkModule {
     @ApplicationScope
     fun provideOkHttpClient(): OkHttpClient =
         OkHttpClient.Builder()
-            .connectTimeout(TIME_OUT, TimeUnit.SECONDS)
-            .writeTimeout(TIME_OUT, TimeUnit.SECONDS)
-            .readTimeout(TIME_OUT, TimeUnit.SECONDS)
+
             .addInterceptor(createLoggingInterceptor())
             .build()
 
