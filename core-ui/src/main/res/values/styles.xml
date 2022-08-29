@@ -64,9 +64,6 @@
     </style>
 
 
-
-
-
     <!--    FilterBottomSheetDialogFragment  -->
 
     <style name="TitleFilterBottomSheetDialogFragment">
@@ -133,7 +130,7 @@
         <item name="android:textSize">14sp</item>
         <item name="android:gravity">center</item>
         <item name="android:fontFamily">@font/mark_pro_bold</item>
-        <item name="android:background">@drawable/capacity_radio_button_selector</item>
+        <item name="android:background">@drawable/radio_button_capacity_selector</item>
         <item name="android:textColor">@drawable/capacity_text_view_selector</item>
 
     </style>
