@@ -4,6 +4,7 @@ import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
@@ -13,6 +14,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.core.precentation.extension.collectFlow
 import com.example.core.precentation.extension.showToast
 import com.example.core.precentation.UiState
+import com.example.core.precentation.common.VerticalSpaceItemDecorator
+import com.example.core.precentation.onError
+import com.example.core.precentation.onSuccess
 import com.example.disneyperson.core.delegate.viewBinding
 import com.example.feature_my_cart.R
 import com.example.feature_my_cart.databinding.FragmentMyCartBinding
@@ -53,43 +57,29 @@ class MyCartFragment : Fragment(R.layout.fragment_my_cart) {
         binding.backImageButton.setOnClickListener { findNavController().popBackStack() }
     }
 
-    private fun setupMyAdapter() {
-        binding.myCartRecyclerView.adapter = adapter
-        binding.myCartRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+    private fun setupMyAdapter() = with(binding.myCartRecyclerView) {
+        adapter = this@MyCartFragment.adapter
+        layoutManager = LinearLayoutManager(requireContext())
+        addItemDecoration(VerticalSpaceItemDecorator(100))
 
     }
 
 
-    private fun handleState(state: UiState<CartUi>) {
-        Log.d("MyCartFragment", "state  ---$state")
-        when(state) {
-            is UiState.Loading -> {}
-            is UiState.Success -> {
+    private fun handleState(state: UiState<CartUi>) = with(binding) {
+        stateView.progressBar.isVisible = state is UiState.Loading
+        stateView.messageExceptionTextView.isVisible = state is UiState.Error
+        myCartGroup.isVisible = state is UiState.Success
 
-                Log.d("MyCartFragment", "data ---${state.data}")
-                renderData(state.data)
-
-            }
-            is UiState.Error -> {
-                showToast(state.error.message.toString())
-            }
-        }
+        state
+            .onSuccess(::renderData)
+            .onError { error -> showToast(error.toString()) }
     }
 
   private fun renderData(data: CartUi) = with(binding) {
-
-
       adapter.items = data.basket
       deliveryTextView.text = data.delivery
       totalTextView.text = context?.getString(R.string.total_price_pattern, data.total)
-
-
-
-
   }
-
-
-
 
 }
 

@@ -70,11 +70,11 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
     private fun setupImageProductAdapter() = with(binding) {
         productImageRecyclerView.adapter = adapter
         val layoutManager = GalleryLayoutManager.create {
-            itemSpace = 100
-            viewTransformListener = SimpleViewTransformListener(1.0f, 1.2f)
+            itemSpace = ITEM_SPACE_IMAGE
+            viewTransformListener = SimpleViewTransformListener(SCALE_X, SCALE_Y)
         }
         productImageRecyclerView.layoutManager = layoutManager
-
+        productImageRecyclerView.setHasFixedSize(true)
 
     }
 
@@ -111,6 +111,13 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
         productNameTextView.text = data.title
         if (data.isFavorites) favoriteImageButton.setImageResource(R.drawable.ic_favorite_product_details_on)
 
+    }
+
+    companion object {
+
+        const val ITEM_SPACE_IMAGE = 100
+        const val SCALE_X = 1f
+        const val SCALE_Y = 1.2f
     }
 
 }

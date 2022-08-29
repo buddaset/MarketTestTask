@@ -163,6 +163,7 @@
 
 
     <include
+        tools:visibility="gone"
         android:id="@+id/stateView"
         layout="@layout/state_layout"
         android:layout_width="match_parent"

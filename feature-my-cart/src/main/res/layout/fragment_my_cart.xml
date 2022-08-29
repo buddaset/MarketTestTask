@@ -78,7 +78,7 @@
         android:id="@+id/viewContainerMyCart"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/bc_container_my_cart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -90,7 +90,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="12dp"
         app:layout_constraintBottom_toTopOf="@id/upperSimpleLine"
@@ -169,12 +169,29 @@
         style="@style/GlobalButtonView"
         android:layout_marginStart="44dp"
         android:layout_marginEnd="44dp"
-        android:layout_marginBottom="44dp"
+        android:layout_marginBottom="30dp"
         android:text="@string/checkout_button"
         app:cornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+
+    <include
+        android:id="@+id/stateView"
+        layout="@layout/state_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/myCartGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="viewContainerMyCart, myCartRecyclerView,
+underSimpleLine, upperSimpleLine ,
+ deliveryTitle, totalTitle, totalTextView , deliveryTextView,
+checkoutButton" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
