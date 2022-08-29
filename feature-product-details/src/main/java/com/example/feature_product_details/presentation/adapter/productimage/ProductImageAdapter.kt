@@ -7,7 +7,7 @@ import com.example.feature_product_details.databinding.ImageProductItemBinding
 import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 
-class ProductImageAdapter : AsyncListDifferDelegationAdapter<String>(DIFF_UTIL_CALLBACK) {
+internal class ProductImageAdapter : AsyncListDifferDelegationAdapter<String>(DIFF_UTIL_CALLBACK) {
 
     init {
         delegatesManager

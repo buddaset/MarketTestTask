@@ -5,13 +5,13 @@ import com.example.common_tab_bar.di.dependency.TabBarDependencies
 import kotlin.properties.Delegates
 import com.example.common_tab_bar.di.component.DaggerTabBarComponent
 
-class TabBarComponentViewModel : ViewModel() {
+internal class TabBarComponentViewModel : ViewModel() {
 
     val tabBarComponent =
         DaggerTabBarComponent.factory().create(TabBarDependenciesProvider.dependencies)
 }
 
-interface TabBarDependenciesProvider {
+internal interface TabBarDependenciesProvider {
 
     val dependencies: TabBarDependencies
 

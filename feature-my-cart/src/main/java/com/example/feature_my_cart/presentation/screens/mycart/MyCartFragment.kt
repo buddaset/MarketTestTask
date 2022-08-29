@@ -29,7 +29,7 @@ class MyCartFragment : Fragment(R.layout.fragment_my_cart) {
     private val adapter by lazy { MyCartAdapter() }
 
     @Inject
-    lateinit var viewModelFactory: ViewModelFactory
+    internal lateinit var viewModelFactory: ViewModelFactory
     private val viewModel: MyCartViewModel by viewModels { viewModelFactory }
 
     override fun onAttach(context: Context) {

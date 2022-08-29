@@ -4,7 +4,7 @@ import com.example.feature_my_cart.data.remote.model.CartDto
 import kotlinx.coroutines.flow.Flow
 import retrofit2.http.GET
 
-interface CartApi {
+internal interface CartApi {
 
 
 

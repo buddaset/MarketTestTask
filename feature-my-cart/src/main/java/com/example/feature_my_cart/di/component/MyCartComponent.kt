@@ -9,7 +9,7 @@ import dagger.Component
 
 @FeatureScope
 @Component(dependencies = [MyCartDependencies::class], modules = [MyCartModule::class])
-interface MyCartComponent {
+internal interface MyCartComponent {
 
 
     fun inject(fragment: MyCartFragment)

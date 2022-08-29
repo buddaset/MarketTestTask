@@ -27,7 +27,7 @@ class TabBarFragment : Fragment(R.layout.fragment_tab_bar) {
     private val binding: FragmentTabBarBinding by viewBinding()
 
     @Inject
-    lateinit var viewModelFactory: ViewModelFactory
+    internal lateinit var viewModelFactory: ViewModelFactory
     private val viewModel: TabBarViewModel by viewModels { viewModelFactory }
 
     override fun onAttach(context: Context) {
@@ -66,7 +66,7 @@ class TabBarFragment : Fragment(R.layout.fragment_tab_bar) {
 
 
     private fun updateMyCartBadge(countCartItem: CountCartItem) {
-        if (countCartItem.count == 0) return
+        if (countCartItem.count == EMPTY_CART) return
         val myCartBadge = binding.bottomNavView.getOrCreateBadge(R.id.myCartFragment)
         myCartBadge.number = countCartItem.count
     }
@@ -83,6 +83,10 @@ class TabBarFragment : Fragment(R.layout.fragment_tab_bar) {
     }
 
 
+    companion object {
+
+        const val EMPTY_CART = 0
+    }
 }
 
 

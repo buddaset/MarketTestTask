@@ -8,7 +8,7 @@ import com.example.feature_my_cart.domain.usecase.GetMyCartUseCase
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.*
 
-class MyCartViewModel(
+internal class MyCartViewModel(
    getMyCartUseCase: GetMyCartUseCase
 ) : ViewModel() {
 

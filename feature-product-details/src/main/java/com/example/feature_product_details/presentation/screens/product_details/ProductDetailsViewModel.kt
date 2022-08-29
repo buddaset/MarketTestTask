@@ -11,7 +11,7 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.*
 import javax.inject.Inject
 
-class ProductDetailsViewModel @Inject constructor(
+internal class ProductDetailsViewModel @Inject constructor(
       getProductDetailsUseCase: GetProductDetailsUseCase
 ) : ViewModel() {
 

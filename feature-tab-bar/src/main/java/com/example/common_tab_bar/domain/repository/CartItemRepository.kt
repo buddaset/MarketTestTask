@@ -3,7 +3,7 @@ package com.example.common_tab_bar.domain.repository
 import com.example.common_tab_bar.domain.model.CountCartItem
 import kotlinx.coroutines.flow.Flow
 
-interface CartItemRepository {
+internal interface CartItemRepository {
 
     fun getCountItem(): Flow<CountCartItem>
 }

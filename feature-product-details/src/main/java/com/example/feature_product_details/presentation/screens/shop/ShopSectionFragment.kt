@@ -23,7 +23,7 @@ import com.example.feature_product_details.presentation.screens.product_details.
 import javax.inject.Inject
 
 
-class ShopSectionFragment : Fragment(R.layout.fragment_shop_section) {
+internal class ShopSectionFragment : Fragment(R.layout.fragment_shop_section) {
 
     private val binding: FragmentShopSectionBinding by viewBinding()
 

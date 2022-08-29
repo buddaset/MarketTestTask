@@ -8,7 +8,7 @@ import com.example.feature_my_cart.domain.model.Basket
 import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 
-class MyCartAdapter : AsyncListDifferDelegationAdapter<Basket>(DIFF_UTIL_CALLBACK) {
+internal class MyCartAdapter : AsyncListDifferDelegationAdapter<Basket>(DIFF_UTIL_CALLBACK) {
 
 
     init {

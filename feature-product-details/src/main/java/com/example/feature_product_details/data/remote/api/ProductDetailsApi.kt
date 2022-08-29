@@ -4,7 +4,7 @@ import com.example.feature_product_details.data.remote.model.ProductDetailsDto
 import kotlinx.coroutines.flow.Flow
 import retrofit2.http.GET
 
-interface ProductDetailsApi {
+internal interface ProductDetailsApi {
 
 
     @GET(PRODUCT_DETAIL_PATH)

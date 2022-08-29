@@ -1,6 +1,6 @@
 package com.example.feature_product_details.domain.model
 
-data class ProductDetails(
+internal data class ProductDetails(
     val CPU: String,
     val camera: String,
     val capacity: List<String>,

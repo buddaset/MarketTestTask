@@ -4,7 +4,7 @@ import com.example.feature_product_details.data.remote.model.ProductDetailsDto
 import com.example.feature_product_details.domain.model.ProductDetails
 
 
-fun ProductDetailsDto.toDomain(): ProductDetails =
+internal fun ProductDetailsDto.toDomain(): ProductDetails =
     ProductDetails(
         CPU = CPU,
         camera = camera,

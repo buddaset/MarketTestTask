@@ -5,7 +5,7 @@ import com.example.common_tab_bar.domain.repository.CartItemRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class GetCountCartItemUseCase @Inject constructor(
+internal class GetCountCartItemUseCase @Inject constructor(
     private val repository: CartItemRepository
 ) {
 

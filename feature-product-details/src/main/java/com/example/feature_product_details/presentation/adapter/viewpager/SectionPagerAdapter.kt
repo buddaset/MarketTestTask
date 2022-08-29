@@ -6,7 +6,7 @@ import com.example.feature_product_details.presentation.model.SectionProductDeta
 import com.example.feature_product_details.presentation.screens.empty.EmptyFragment
 import com.example.feature_product_details.presentation.screens.shop.ShopSectionFragment
 
-class SectionPagerAdapter(
+internal class SectionPagerAdapter(
     fragment: Fragment,
     private val sections: List<SectionProductDetails>
 ): FragmentStateAdapter(fragment) {

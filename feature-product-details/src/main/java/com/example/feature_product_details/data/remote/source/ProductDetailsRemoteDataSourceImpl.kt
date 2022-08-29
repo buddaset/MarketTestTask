@@ -5,7 +5,7 @@ import com.example.feature_product_details.data.remote.model.ProductDetailsDto
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class ProductDetailsRemoteDataSourceImpl @Inject constructor(
+internal class ProductDetailsRemoteDataSourceImpl @Inject constructor(
     private val productDetailsApi: ProductDetailsApi
 ) : ProductDetailsRemoteDataSource {
 

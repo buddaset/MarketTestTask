@@ -3,7 +3,7 @@ package com.example.feature_product_details.presentation.model
 import com.example.feature_product_details.domain.model.ProductDetails
 import java.text.DecimalFormat
 
-data class ProductDetailsUi(
+internal data class ProductDetailsUi(
     val CPU: String,
     val camera: String,
     val capacity: List<String>,
@@ -20,7 +20,7 @@ data class ProductDetailsUi(
 )
 
 
-fun ProductDetails.toUi(): ProductDetailsUi =
+internal fun ProductDetails.toUi(): ProductDetailsUi =
     ProductDetailsUi(
         CPU = CPU,
         camera = camera,
@@ -36,5 +36,5 @@ fun ProductDetails.toUi(): ProductDetailsUi =
         title = title
     )
 
-fun formatPrice(price: Int): String =
+internal fun formatPrice(price: Int): String =
     DecimalFormat("#,###.00").format(price)

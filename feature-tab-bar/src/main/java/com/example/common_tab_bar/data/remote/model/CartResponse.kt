@@ -5,6 +5,6 @@ import kotlinx.serialization.Serializable
 
 
 @Serializable
-data class CartResponse(
+internal data class CartResponse(
   @SerialName("basket") val items: List<CartItemDto>
 )

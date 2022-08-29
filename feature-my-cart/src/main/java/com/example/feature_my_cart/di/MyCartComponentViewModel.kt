@@ -6,13 +6,13 @@ import com.example.feature_my_cart.di.dependency.MyCartDependencies
 import com.example.feature_my_cart.di.component.DaggerMyCartComponent
 import kotlin.properties.Delegates
 
-class MyCartComponentViewModel: ViewModel() {
+internal class MyCartComponentViewModel: ViewModel() {
 
     val myCartComponent =
         DaggerMyCartComponent.factory().create(MyCartDependenciesProvider.dependencies)
 }
 
-interface MyCartDependenciesProvider {
+internal interface MyCartDependenciesProvider {
 
     val dependencies: MyCartDependencies
 

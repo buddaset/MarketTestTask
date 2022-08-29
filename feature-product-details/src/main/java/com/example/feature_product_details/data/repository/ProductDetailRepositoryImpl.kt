@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
-class ProductDetailRepositoryImpl @Inject constructor(
+internal class ProductDetailRepositoryImpl @Inject constructor(
     private val remoteDataSource: ProductDetailsRemoteDataSource,
  private val dispatcher: Dispatcher) : ProductDetailRepository {
 
