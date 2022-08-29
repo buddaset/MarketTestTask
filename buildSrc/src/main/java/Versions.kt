@@ -57,6 +57,8 @@ object Versions {
 
     // SimpleRatingBar
     const val ratingBar = "0.1.5"
+    // Custom Layout Manager
+    const val customLayoutManager = "1.0.0"
 
 
 }
@@ -73,6 +75,8 @@ object Dependencies {
             "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
 
         const val simpleRatingBar = "com.iarcuschin:simpleratingbar:${Versions.ratingBar}"
+
+        const val customLayoutManager = "com.github.peceoqicka:GalleryLayoutManagerX:${Versions.customLayoutManager}"
 
     }
 

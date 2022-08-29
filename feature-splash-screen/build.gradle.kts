@@ -21,10 +21,7 @@ android {
 }
 dependencies {
 
-
-
     implementation(project(Modules.core_ui))
-
 
     implementation(Dependencies.UI.appCompat)
     implementation(Dependencies.UI.constraintLayout)
