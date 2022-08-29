@@ -25,18 +25,13 @@ class ProductImageAdapter : AsyncListDifferDelegationAdapter<String>(DIFF_UTIL_C
         }
     }
 
-
-
     companion object {
         private val DIFF_UTIL_CALLBACK = object : DiffUtil.ItemCallback<String>() {
             override fun areItemsTheSame(oldItem: String, newItem: String): Boolean =
                 oldItem == newItem
 
-
             override fun areContentsTheSame(oldItem: String, newItem: String): Boolean =
                 oldItem == newItem
-
-
         }
     }
 }

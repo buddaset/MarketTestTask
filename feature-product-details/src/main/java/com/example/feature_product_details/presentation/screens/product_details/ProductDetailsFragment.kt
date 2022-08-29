@@ -4,6 +4,7 @@ import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
@@ -13,6 +14,8 @@ import com.example.core.common.navigation.navigate
 import com.example.core.precentation.extension.collectFlow
 import com.example.core.precentation.extension.showToast
 import com.example.core.precentation.UiState
+import com.example.core.precentation.onError
+import com.example.core.precentation.onSuccess
 import com.example.disneyperson.core.delegate.viewBinding
 import com.example.feature_product_details.R
 import com.example.feature_product_details.databinding.FragmentProductDetailsBinding
@@ -91,28 +94,25 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
         SectionProductDetails.values().toList()
 
 
-    private fun handleState(state: UiState<ProductDetails>) {
-        Log.d("ProductDetails", "state  ---$state")
-        when (state) {
-            is UiState.Loading -> {}
-            is UiState.Success -> {
-                val data = state.data
+    private fun handleState(state: UiState<ProductDetails>) = with(binding) {
+        stateView.progressBar.isVisible = state is UiState.Loading
+        stateView.messageExceptionTextView.isVisible = state is UiState.Error
+        productDetailsGroup.isVisible = state is UiState.Success
 
-                Log.d("ProductDetails", "productDetails ---${state.data}")
-                adapter.items = data.images
-                binding.productRating.rating = data.rating.toFloat()
-                binding.addToCartButton.text =
-                    context?.getString(R.string.add_to_cart_1500, data.price)
-                binding.productNameTextView.text = data.title
-                if (data.isFavorites) binding.favoriteImageButton.setImageResource(R.drawable.ic_favorite_product_details_on)
-
-
-            }
-            is UiState.Error -> {
-                showToast(state.error.message.toString())
-            }
-        }
+        state
+            .onSuccess(::renderData)
+            .onError {error -> showToast(error.toString()) }
     }
 
+
+    private fun renderData(data: ProductDetails) = with(binding) {
+        adapter.items = data.images
+        binding.productRating.rating = data.rating.toFloat()
+        binding.addToCartButton.text =
+            context?.getString(R.string.add_to_cart_1500, data.price)
+        binding.productNameTextView.text = data.title
+        if (data.isFavorites) binding.favoriteImageButton.setImageResource(R.drawable.ic_favorite_product_details_on)
+
+    }
 
 }

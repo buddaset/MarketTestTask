@@ -141,9 +141,7 @@
         <RadioButton
             android:id="@+id/firstCapacityRadioButton"
             style="@style/RadioButtonCapacityShopSectionFragment"
-
-            tools:text="128 gb"
-            />
+            tools:text="128 gb" />
 
         <RadioButton
             android:id="@+id/secondCapacityRadioButton"

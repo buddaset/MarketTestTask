@@ -162,5 +162,23 @@
         app:layout_constraintStart_toStartOf="@id/containerSectionsView" />
 
 
+    <include
+        android:id="@+id/stateView"
+        layout="@layout/state_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/productDetailsGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="productImageRecyclerView, containerSectionsView,
+         productNameTextView,favoriteImageButton, productRating, sectionTabLayout, sectionViewPager,
+addToCartButton"/>
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 
