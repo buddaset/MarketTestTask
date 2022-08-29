@@ -4,7 +4,6 @@ import android.content.Context
 import android.graphics.Color
 import android.graphics.PorterDuff
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -16,9 +15,8 @@ import com.example.disneyperson.core.delegate.viewBinding
 import com.example.feature_product_details.R
 import com.example.feature_product_details.databinding.FragmentShopSectionBinding
 import com.example.feature_product_details.di.ProductDetailsComponentViewModel
-import com.example.feature_product_details.domain.model.ProductDetails
-import com.example.feature_product_details.presentation.factory.ViewModelFactory
-import com.example.feature_product_details.presentation.model.ProductDetailsUi
+import com.example.feature_product_details.presentation.common.factory.ViewModelFactory
+import com.example.feature_product_details.presentation.common.model.ProductDetailsUi
 import com.example.feature_product_details.presentation.screens.product_details.ProductDetailsViewModel
 import javax.inject.Inject
 

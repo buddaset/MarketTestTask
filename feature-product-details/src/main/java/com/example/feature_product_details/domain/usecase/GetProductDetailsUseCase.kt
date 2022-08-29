@@ -7,9 +7,7 @@ import javax.inject.Inject
 
 internal class GetProductDetailsUseCase @Inject constructor(
     private val repository: ProductDetailRepository) {
-
-
-
+    
     operator fun invoke(): Flow<ProductDetails> =
         repository.getProductDetail()
 }

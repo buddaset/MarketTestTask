@@ -5,6 +5,5 @@ import kotlinx.coroutines.flow.Flow
 
 internal interface MyCartRemoteDataSource {
 
-
     fun loadMyCart(): Flow<CartDto>
 }

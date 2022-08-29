@@ -1,9 +1,9 @@
-package com.example.feature_main_screen.presentation.mapper
+package com.example.feature_main_screen.presentation.common.mapper
 
 import com.example.feature_main_screen.domain.model.BestSeller
 import com.example.feature_main_screen.domain.model.HotSales
-import com.example.feature_main_screen.presentation.model.BestSellerUi
-import com.example.feature_main_screen.presentation.model.HotSalesUi
+import com.example.feature_main_screen.presentation.common.model.BestSellerUi
+import com.example.feature_main_screen.presentation.common.model.HotSalesUi
 import java.text.DecimalFormat
 
 
@@ -37,8 +37,8 @@ internal fun HotSales.toUi(): HotSalesUi =
     )
 
 
- fun formatPrice(price: Int): String =
-     "$${DecimalFormat("#,##0").format(price)}"
+internal fun formatPrice(price: Int): String =
+     "$${DecimalFormat("#,###").format(price)}"
 
 
 

@@ -3,8 +3,8 @@ package com.example.feature_main_screen.presentation.adapters.delegateAdapter
 import androidx.recyclerview.widget.PagerSnapHelper
 import com.example.feature_main_screen.databinding.BestSellerCardsItemBinding
 import com.example.feature_main_screen.databinding.HotSalesCardsItemBinding
-import com.example.feature_main_screen.presentation.model.BestSellerItemsUi
-import com.example.feature_main_screen.presentation.model.HotSalesItemsUi
+import com.example.feature_main_screen.presentation.common.model.BestSellerItemsUi
+import com.example.feature_main_screen.presentation.common.model.HotSalesItemsUi
 import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 

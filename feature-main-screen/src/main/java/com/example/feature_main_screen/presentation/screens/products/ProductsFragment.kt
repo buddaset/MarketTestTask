@@ -2,7 +2,6 @@ package com.example.feature_main_screen.presentation.screens.products
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 
 import androidx.fragment.app.Fragment
 import android.view.View
@@ -23,8 +22,8 @@ import com.example.feature_main_screen.databinding.FragmentProductsBinding
 import com.example.feature_main_screen.di.MainScreenComponentViewModel
 import com.example.feature_main_screen.presentation.adapters.delegateAdapter.ItemUi
 import com.example.feature_main_screen.presentation.adapters.delegateAdapter.MainScreenAdapter
-import com.example.feature_main_screen.presentation.factory.ViewModelFactory
-import com.example.feature_main_screen.presentation.model.MainScreenDataUi
+import com.example.feature_main_screen.presentation.common.factory.ViewModelFactory
+import com.example.feature_main_screen.presentation.common.model.MainScreenDataUi
 import javax.inject.Inject
 
 class ProductsFragment : Fragment(R.layout.fragment_products) {

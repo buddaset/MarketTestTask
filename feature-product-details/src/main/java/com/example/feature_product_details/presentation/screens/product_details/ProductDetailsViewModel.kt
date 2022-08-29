@@ -3,10 +3,9 @@ package com.example.feature_product_details.presentation.screens.product_details
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.core.precentation.UiState
-import com.example.feature_product_details.domain.model.ProductDetails
 import com.example.feature_product_details.domain.usecase.GetProductDetailsUseCase
-import com.example.feature_product_details.presentation.model.ProductDetailsUi
-import com.example.feature_product_details.presentation.model.toUi
+import com.example.feature_product_details.presentation.common.mapper.toUi
+import com.example.feature_product_details.presentation.common.model.ProductDetailsUi
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.*
 import javax.inject.Inject

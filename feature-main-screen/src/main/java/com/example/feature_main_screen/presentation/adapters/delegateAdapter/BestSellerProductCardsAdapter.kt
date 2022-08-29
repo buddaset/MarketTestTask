@@ -5,8 +5,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.example.core_ui.R
 import com.example.feature_main_screen.databinding.BestSellerItemBinding
-import com.example.feature_main_screen.domain.model.BestSeller
-import com.example.feature_main_screen.presentation.model.BestSellerUi
+import com.example.feature_main_screen.presentation.common.model.BestSellerUi
 import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 

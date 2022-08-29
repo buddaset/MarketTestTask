@@ -10,7 +10,7 @@ import com.example.disneyperson.core.delegate.viewBinding
 import com.example.feature_main_screen.R
 import com.example.feature_main_screen.databinding.CategoryPagerItemBinding
 import com.example.feature_main_screen.databinding.FragmentMainBinding
-import com.example.feature_main_screen.presentation.model.Category
+import com.example.feature_main_screen.presentation.common.model.Category
 import com.example.feature_main_screen.presentation.adapters.pagerAdapter.CategoryPagerAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 

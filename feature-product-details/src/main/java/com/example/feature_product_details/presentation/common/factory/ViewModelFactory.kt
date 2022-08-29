@@ -1,4 +1,4 @@
-package com.example.feature_product_details.presentation.factory
+package com.example.feature_product_details.presentation.common.factory
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

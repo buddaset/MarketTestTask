@@ -6,11 +6,8 @@ import retrofit2.http.GET
 
 internal interface CartApi {
 
-
-
     @GET(CART_PATH)
     fun loadMyCart() : Flow<CartDto>
-
 
 
     companion object {

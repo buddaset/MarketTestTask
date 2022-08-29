@@ -7,10 +7,10 @@ import com.example.core.precentation.UiState
 import com.example.feature_main_screen.R
 import com.example.feature_main_screen.domain.model.MainScreenData
 import com.example.feature_main_screen.domain.usecase.GetDataMainScreenUseCase
-import com.example.feature_main_screen.presentation.mapper.toUi
-import com.example.feature_main_screen.presentation.model.BestSellerItemsUi
-import com.example.feature_main_screen.presentation.model.HotSalesItemsUi
-import com.example.feature_main_screen.presentation.model.MainScreenDataUi
+import com.example.feature_main_screen.presentation.common.mapper.toUi
+import com.example.feature_main_screen.presentation.common.model.BestSellerItemsUi
+import com.example.feature_main_screen.presentation.common.model.HotSalesItemsUi
+import com.example.feature_main_screen.presentation.common.model.MainScreenDataUi
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.*
 

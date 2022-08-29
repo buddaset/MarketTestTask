@@ -1,23 +1,8 @@
-package com.example.feature_product_details.presentation.model
+package com.example.feature_product_details.presentation.common.mapper
 
 import com.example.feature_product_details.domain.model.ProductDetails
+import com.example.feature_product_details.presentation.common.model.ProductDetailsUi
 import java.text.DecimalFormat
-
-internal data class ProductDetailsUi(
-    val CPU: String,
-    val camera: String,
-    val capacity: List<String>,
-    val color: List<String>,
-    val id: String,
-    val images: List<String>,
-    val isFavorites: Boolean,
-    val price: String,
-    val rating: Float,
-    val sd: String,
-    val ssd: String,
-    val title: String
-
-)
 
 
 internal fun ProductDetails.toUi(): ProductDetailsUi =

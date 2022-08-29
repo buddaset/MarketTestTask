@@ -6,7 +6,9 @@ import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 internal class MyCartRemoteDataSourceImpl @Inject constructor(
-    private val cartApi: CartApi) : MyCartRemoteDataSource {
-    override fun loadMyCart(): Flow<CartDto>  =
+    private val cartApi: CartApi
+) : MyCartRemoteDataSource {
+
+    override fun loadMyCart(): Flow<CartDto> =
         cartApi.loadMyCart()
 }

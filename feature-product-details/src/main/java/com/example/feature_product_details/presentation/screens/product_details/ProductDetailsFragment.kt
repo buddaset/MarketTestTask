@@ -19,11 +19,11 @@ import com.example.disneyperson.core.delegate.viewBinding
 import com.example.feature_product_details.R
 import com.example.feature_product_details.databinding.FragmentProductDetailsBinding
 import com.example.feature_product_details.di.ProductDetailsComponentViewModel
-import com.example.feature_product_details.presentation.model.SectionProductDetails
+import com.example.feature_product_details.presentation.common.model.SectionProductDetails
 import com.example.feature_product_details.presentation.adapter.productimage.ProductImageAdapter
 import com.example.feature_product_details.presentation.adapter.viewpager.SectionPagerAdapter
-import com.example.feature_product_details.presentation.factory.ViewModelFactory
-import com.example.feature_product_details.presentation.model.ProductDetailsUi
+import com.example.feature_product_details.presentation.common.factory.ViewModelFactory
+import com.example.feature_product_details.presentation.common.model.ProductDetailsUi
 import com.google.android.material.tabs.TabLayoutMediator
 
 

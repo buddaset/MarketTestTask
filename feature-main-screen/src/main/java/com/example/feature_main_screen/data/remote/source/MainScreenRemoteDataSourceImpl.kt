@@ -9,7 +9,6 @@ internal class MainScreenRemoteDataSourceImpl @Inject constructor(
     private val mainScreenApi: MainScreenApi
 ) : MainScreenRemoteDataSource {
 
-
     override  fun loadMainScreenData(): Flow<MainScreenDataDto> =
         mainScreenApi.loadMainScreenData()
 

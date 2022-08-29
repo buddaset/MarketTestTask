@@ -1,4 +1,4 @@
-package com.example.feature_main_screen.presentation.model
+package com.example.feature_main_screen.presentation.common.model
 
 internal data class MainScreenDataUi(
     val bestSeller:  BestSellerItemsUi,
