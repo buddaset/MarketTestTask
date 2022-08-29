@@ -11,7 +11,7 @@ internal class MainScreenComponentViewModel : ViewModel() {
         DaggerMainScreenComponent.factory().create(MainScreenDependenciesProvider.dependencies)
 }
 
-interface MainScreenDependenciesProvider {
+internal interface MainScreenDependenciesProvider {
 
     val dependencies: MainScreenDependencies
 

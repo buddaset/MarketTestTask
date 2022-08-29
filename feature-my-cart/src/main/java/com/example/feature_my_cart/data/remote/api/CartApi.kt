@@ -4,13 +4,10 @@ import com.example.feature_my_cart.data.remote.model.CartDto
 import kotlinx.coroutines.flow.Flow
 import retrofit2.http.GET
 
-interface CartApi {
-
-
+internal interface CartApi {
 
     @GET(CART_PATH)
     fun loadMyCart() : Flow<CartDto>
-
 
 
     companion object {

@@ -2,28 +2,28 @@ package com.example.feature_product_details.presentation.screens.product_details
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.View
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.get
 import androidx.navigation.fragment.findNavController
 import com.example.core.common.navigation.navigate
-
-import com.example.core.precentation.Extension.collectFlow
-import com.example.core.precentation.Extension.showToast
+import com.example.core.precentation.extension.collectFlow
+import com.example.core.precentation.extension.showToast
 import com.example.core.precentation.UiState
+import com.example.core.precentation.onError
+import com.example.core.precentation.onSuccess
 import com.example.disneyperson.core.delegate.viewBinding
 import com.example.feature_product_details.R
 import com.example.feature_product_details.databinding.FragmentProductDetailsBinding
 import com.example.feature_product_details.di.ProductDetailsComponentViewModel
-import com.example.feature_product_details.domain.model.ProductDetails
-import com.example.feature_product_details.domain.model.SectionProductDetails
-import com.example.feature_product_details.presentation.adapter.photoproduct.ImageProductAdapter
+import com.example.feature_product_details.presentation.common.model.SectionProductDetails
+import com.example.feature_product_details.presentation.adapter.productimage.ProductImageAdapter
 import com.example.feature_product_details.presentation.adapter.viewpager.SectionPagerAdapter
-import com.example.feature_product_details.presentation.factory.ViewModelFactory
+import com.example.feature_product_details.presentation.common.factory.ViewModelFactory
+import com.example.feature_product_details.presentation.common.model.ProductDetailsUi
 import com.google.android.material.tabs.TabLayoutMediator
 
 
@@ -41,7 +41,7 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
 
     private val viewModel: ProductDetailsViewModel by viewModels { viewModelFactory }
 
-    private val adapter = ImageProductAdapter()
+    private val adapter = ProductImageAdapter()
 
 
     override fun onAttach(context: Context) {
@@ -57,31 +57,24 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
         setupPageAdapter()
         setupClickListener()
 
-        // todo create simple cache in repository for inner fragment
-
-
-        Log.d("LifeDetails", "viewModel --- parent  ---  v${viewModel.hashCode()}")
-
         collectFlow(viewModel.data, ::handleState)
-
-
     }
 
     private fun setupClickListener() = with(binding) {
 
-        backButton.setOnClickListener { findNavController().popBackStack() }
+        backImageButton.setOnClickListener { findNavController().popBackStack() }
 
-        myCardButton.setOnClickListener { navigate(R.id.action_productDetailsFragment_to_myCartFragment)}
+        myCartImageButton.setOnClickListener { navigate(R.id.action_productDetailsFragment_to_myCartFragment) }
     }
 
     private fun setupImageProductAdapter() = with(binding) {
-        imageProductRecyclerView.adapter = adapter
+        productImageRecyclerView.adapter = adapter
         val layoutManager = GalleryLayoutManager.create {
-            itemSpace = 100
-            viewTransformListener = SimpleViewTransformListener(1.0f, 1.2f)
+            itemSpace = ITEM_SPACE_IMAGE
+            viewTransformListener = SimpleViewTransformListener(SCALE_X, SCALE_Y)
         }
-        imageProductRecyclerView.layoutManager = layoutManager
-
+        productImageRecyclerView.layoutManager = layoutManager
+        productImageRecyclerView.setHasFixedSize(true)
 
     }
 
@@ -100,28 +93,31 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
         SectionProductDetails.values().toList()
 
 
-    private fun handleState(state: UiState<ProductDetails>) {
-        Log.d("ProductDetails", "state  ---$state")
-        when (state) {
-            is UiState.Loading -> {}
-            is UiState.Success -> {
-                val data = state.data
+    private fun handleState(state: UiState<ProductDetailsUi>) = with(binding) {
+        stateView.progressBar.isVisible = state is UiState.Loading
+        stateView.messageExceptionTextView.isVisible = state is UiState.Error
+        productDetailsGroup.isVisible = state is UiState.Success
 
-                Log.d("ProductDetails", "productDetails ---${state.data}")
-                adapter.items = data.images
-                binding.ratingProduct.rating = data.rating.toFloat()
-                binding.addToCartButton.text =
-                    context?.getString(R.string.add_to_cart_1500, data.price)
-                binding.titleProductName.text = data.title
-                if (data.isFavorites) binding.favoriteButton.setImageResource(R.drawable.ic_favorite_product_details_on)
-
-
-            }
-            is UiState.Error -> {
-                showToast(state.error.message.toString())
-            }
-        }
+        state
+            .onSuccess(::renderData)
+            .onError { error -> showToast(error.toString()) }
     }
 
+
+    private fun renderData(data: ProductDetailsUi) = with(binding) {
+        adapter.items = data.images
+        productRating.rating = data.rating
+        addToCartButton.text = context?.getString(R.string.add_to_cart_1500, data.price)
+        productNameTextView.text = data.title
+        if (data.isFavorites) favoriteImageButton.setImageResource(R.drawable.ic_favorite_product_details_on)
+
+    }
+
+    companion object {
+
+        const val ITEM_SPACE_IMAGE = 100
+        const val SCALE_X = 1f
+        const val SCALE_Y = 1.2f
+    }
 
 }

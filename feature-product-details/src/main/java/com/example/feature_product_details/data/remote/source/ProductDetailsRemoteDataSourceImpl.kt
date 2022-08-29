@@ -1,23 +1,16 @@
 package com.example.feature_product_details.data.remote.source
 
-import android.util.Log
 import com.example.feature_product_details.data.remote.api.ProductDetailsApi
 import com.example.feature_product_details.data.remote.model.ProductDetailsDto
-import java.lang.Exception
+import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class ProductDetailsRemoteDataSourceImpl @Inject constructor(
+internal class ProductDetailsRemoteDataSourceImpl @Inject constructor(
     private val productDetailsApi: ProductDetailsApi
 ) : ProductDetailsRemoteDataSource {
 
-    override suspend fun loadProductDetails(): ProductDetailsDto {
+    override fun loadProductDetails(): Flow<ProductDetailsDto> =
+        productDetailsApi.loadProductDetail()
 
-        try {
-            return productDetailsApi.loadProductDetail()
-        } catch (e: Exception) {
-            Log.d("ProductDetails", "source ---- exception $e")
-            throw e
-        }
 
-    }
 }

@@ -8,7 +8,7 @@ import dagger.Component
 
 @FeatureScope
 @Component(dependencies = [TabBarDependencies::class], modules = [TabBarModule::class])
-interface TabBarComponent {
+internal interface TabBarComponent {
 
     fun inject(fragment: TabBarFragment)
 

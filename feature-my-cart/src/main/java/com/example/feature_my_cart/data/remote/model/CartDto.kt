@@ -4,7 +4,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class CartDto(
+internal data class CartDto(
     @SerialName("basket") val basket: List<BasketDto>,
     @SerialName("delivery") val delivery: String,
     @SerialName("id") val id: String,

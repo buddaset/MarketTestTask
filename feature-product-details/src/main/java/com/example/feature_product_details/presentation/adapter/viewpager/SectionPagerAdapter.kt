@@ -2,11 +2,11 @@ package com.example.feature_product_details.presentation.adapter.viewpager
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.feature_product_details.domain.model.SectionProductDetails
+import com.example.feature_product_details.presentation.common.model.SectionProductDetails
 import com.example.feature_product_details.presentation.screens.empty.EmptyFragment
 import com.example.feature_product_details.presentation.screens.shop.ShopSectionFragment
 
-class SectionPagerAdapter(
+internal class SectionPagerAdapter(
     fragment: Fragment,
     private val sections: List<SectionProductDetails>
 ): FragmentStateAdapter(fragment) {

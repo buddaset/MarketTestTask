@@ -42,14 +42,23 @@ object Versions {
 
     // ViewPager2
     const val viewPager = "1.0.0"
+
     // AdapterDelegates
-    const val adapterDelegates ="4.3.2"
+    const val adapterDelegates = "4.3.2"
+
     // Glide
     const val glide = "4.13.2"
+
     // CarouselLayoutManager
     const val carouselRecyclerView = "2.0.22"
+
     // FlowAdapter for Retrofit
     const val flowAdapter = "0.2.0"
+
+    // SimpleRatingBar
+    const val ratingBar = "0.1.5"
+    // Custom Layout Manager
+    const val customLayoutManager = "1.0.0"
 
 
 }
@@ -57,7 +66,6 @@ object Versions {
 object Dependencies {
 
     object UI {
-        const val carouselRecyclerView = "com.github.hamedsj:CenterZoomLinearLayoutManager:0.0.1"
 
 
         const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
@@ -66,17 +74,23 @@ object Dependencies {
         const val constraintLayout =
             "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
 
+        const val simpleRatingBar = "com.iarcuschin:simpleratingbar:${Versions.ratingBar}"
+
+        const val customLayoutManager = "com.github.peceoqicka:GalleryLayoutManagerX:${Versions.customLayoutManager}"
+
     }
 
     object Glide {
 
-        const val glide ="com.github.bumptech.glide:glide:${Versions.glide}"
+        const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
         const val kapt = "com.github.bumptech.glide:compiler:${Versions.glide}"
     }
 
     object AdapterDelegates {
-        const val adapterDelegates = "com.hannesdorfmann:adapterdelegates4-kotlin-dsl:${Versions.adapterDelegates}"
-        const val viewBinding = "com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:${Versions.adapterDelegates}"
+        const val adapterDelegates =
+            "com.hannesdorfmann:adapterdelegates4-kotlin-dsl:${Versions.adapterDelegates}"
+        const val viewBinding =
+            "com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:${Versions.adapterDelegates}"
     }
 
     object Dagger2 {
@@ -91,7 +105,8 @@ object Dependencies {
         const val converter =
             "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:${Versions.converter}"
         const val interceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.interceptor}"
-        const val flowAdapter = "com.github.MohammadSianaki:Retrofit2-Flow-Call-Adapter:${Versions.flowAdapter}"
+        const val flowAdapter =
+            "com.github.MohammadSianaki:Retrofit2-Flow-Call-Adapter:${Versions.flowAdapter}"
 
     }
 
@@ -112,8 +127,6 @@ object Dependencies {
     }
 
 
-
-
     object Navigation {
         const val navigationComponentFragmentKtx =
             "androidx.navigation:navigation-fragment-ktx:${Versions.navigationComponent}"
@@ -128,7 +141,6 @@ object Dependencies {
         const val espresso = "androidx.test.espresso:espresso-core:${Versions.espresso}"
 
     }
-
 
 
 }
@@ -154,14 +166,15 @@ object ConfigVersions {
     const val compileSdkVersion = 32
     const val targetSdkVersion = 32
     const val minSdkVersion = 23
-    const val buildToolsVersion = "30.2.2"
     const val versionCode = 1
     const val versionName = "1.0"
     const val applicationId = "com.example.markettesttask"
-    const val kotlinVersion = "1.6.20"
+    const val kotlin = "1.6.20"
+    const val gradle = "7.0.4"
     val javaVersion = JavaVersion.VERSION_1_8
 
 }
+
 
 
 

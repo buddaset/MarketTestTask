@@ -6,7 +6,7 @@ import com.example.feature_my_cart.domain.model.Basket
 import com.example.feature_my_cart.domain.model.Cart
 
 
-fun CartDto.toDomain(): Cart =
+internal fun CartDto.toDomain(): Cart =
     Cart(
         basket = basket.toDomain(),
         delivery = delivery,
@@ -14,11 +14,11 @@ fun CartDto.toDomain(): Cart =
         total = total
     )
 
-fun List<BasketDto>.toDomain(): List<Basket> =
+internal fun List<BasketDto>.toDomain(): List<Basket> =
     this.map { basketDto -> basketDto.toDomain() }
 
 
-fun BasketDto.toDomain(): Basket =
+internal fun BasketDto.toDomain(): Basket =
     Basket(
         id = id,
         images = images,

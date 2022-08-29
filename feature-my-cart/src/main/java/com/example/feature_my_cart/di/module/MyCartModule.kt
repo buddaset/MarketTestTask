@@ -13,7 +13,7 @@ import retrofit2.Retrofit
 
 
 @Module
-interface MyCartModule {
+internal interface MyCartModule {
 
 
     @Binds

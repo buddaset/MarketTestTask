@@ -2,13 +2,13 @@ package com.example.feature_main_screen.presentation.adapters.delegateAdapter
 
 import androidx.recyclerview.widget.DiffUtil
 
-open class BaseDiffUtilItemCallback : DiffUtil.ItemCallback<DisplayableItem>() {
-    override fun areItemsTheSame(oldItem: DisplayableItem, newItem: DisplayableItem): Boolean =
+open class BaseDiffUtilItemCallback : DiffUtil.ItemCallback<ItemUi>() {
+    override fun areItemsTheSame(oldItem: ItemUi, newItem: ItemUi): Boolean =
         oldItem.itemId == newItem.itemId
 
 
 
-    override fun areContentsTheSame(oldItem: DisplayableItem, newItem: DisplayableItem): Boolean  =
+    override fun areContentsTheSame(oldItem: ItemUi, newItem: ItemUi): Boolean  =
         oldItem.equals(newItem)
 
 }

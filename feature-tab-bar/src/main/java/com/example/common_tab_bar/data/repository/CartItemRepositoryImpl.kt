@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
-class CartItemRepositoryImpl @Inject constructor(
+internal class CartItemRepositoryImpl @Inject constructor(
     private val countCartApi: CountCartApi) : CartItemRepository {
     override fun getCountItem(): Flow<CountCartItem> =
         countCartApi.loadCart()

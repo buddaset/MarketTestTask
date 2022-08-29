@@ -5,11 +5,9 @@ import com.example.feature_product_details.domain.repository.ProductDetailReposi
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class GetProductDetailsUseCase @Inject constructor(
+internal class GetProductDetailsUseCase @Inject constructor(
     private val repository: ProductDetailRepository) {
-
-
-
+    
     operator fun invoke(): Flow<ProductDetails> =
         repository.getProductDetail()
 }

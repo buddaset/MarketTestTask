@@ -16,7 +16,7 @@
     </fragment>
     <dialog
         android:id="@+id/filterBottomSheetDialogFragment"
-        android:name="com.example.feature_main_screen.presentation.screens.FilterBottomSheetDialogFragment"
+        android:name="com.example.feature_main_screen.presentation.screens.filter.FilterBottomSheetDialogFragment"
         android:label="FilterBottomSheetDialogFragment" >
 
     </dialog>

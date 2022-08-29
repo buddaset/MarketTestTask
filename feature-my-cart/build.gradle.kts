@@ -37,24 +37,13 @@ dependencies {
     implementation(Dependencies.UI.materialComponents)
 
     implementation(Dependencies.Navigation.navigationComponentFragmentKtx)
-    implementation(Dependencies.Navigation.navigationComponentUiKtx)
 
     implementation(Dependencies.Dagger2.dagger2)
-    implementation("com.github.peceoqicka:GalleryLayoutManagerX:1.0.0")
-    implementation("androidx.legacy:legacy-support-v4:1.0.0")
-
     kapt(Dependencies.Dagger2.kapt)
 
-
-    // Retrofit
     implementation(Dependencies.Retrofit.retrofit)
     implementation(Dependencies.Retrofit.jsonSerialization)
-    implementation(Dependencies.Retrofit.converter)
-    implementation(Dependencies.Retrofit.interceptor)
-    implementation(Dependencies.Retrofit.flowAdapter)
 
-
-    // Coroutines
     implementation(Dependencies.Kotlin.coroutinesCore)
     implementation(Dependencies.Kotlin.coroutinesAndroid)
 
@@ -62,8 +51,5 @@ dependencies {
     implementation(Dependencies.AdapterDelegates.viewBinding)
 
     implementation(Dependencies.Glide.glide)
-    kapt(Dependencies.Glide.kapt)
-
-
-
+    
 }

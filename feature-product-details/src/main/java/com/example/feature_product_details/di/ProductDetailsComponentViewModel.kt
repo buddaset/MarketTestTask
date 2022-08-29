@@ -11,7 +11,7 @@ internal class ProductDetailsComponentViewModel : ViewModel() {
         DaggerProductDetailsComponent.factory().create(ProductDetailsDependenciesProvider.dependencies)
 }
 
-interface ProductDetailsDependenciesProvider {
+internal interface ProductDetailsDependenciesProvider {
 
     val dependencies: ProductDetailsDependencies
 

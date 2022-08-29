@@ -5,7 +5,7 @@ import kotlinx.serialization.Serializable
 
 
 @Serializable
-data class ProductDetailsDto(
+internal data class ProductDetailsDto(
     @SerialName("CPU") val CPU: String,
     @SerialName("camera") val camera: String,
     @SerialName("capacity")  val capacity: List<String>,

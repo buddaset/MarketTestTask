@@ -1,13 +1,14 @@
 package com.example.feature_main_screen.data.remote.api
 
 import com.example.feature_main_screen.data.remote.model.MainScreenDataDto
+import kotlinx.coroutines.flow.Flow
 import retrofit2.http.GET
 
 internal interface MainScreenApi {
 
 
     @GET(MAIN_SCREEN_PATH)
-   suspend fun loadMainScreenData(): MainScreenDataDto
+    fun loadMainScreenData(): Flow<MainScreenDataDto>
 
 
 

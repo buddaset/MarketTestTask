@@ -1,5 +1,7 @@
 package com.example.markettesttask.di
 
+import com.example.core.common.dispatcher.Dispatcher
+import com.example.core.common.dispatcher.DispatcherMainUI
 import com.example.core.di.scope.ApplicationScope
 import com.example.markettesttask.BuildConfig
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
@@ -24,7 +26,7 @@ class NetworkModule {
     @ApplicationScope
     fun provideRetrofit(client: OkHttpClient, converterFactory: Converter.Factory): Retrofit =
         Retrofit.Builder()
-            .baseUrl(BASE_URL) //todo change on buildConfig
+            .baseUrl(BASE_URL)
             .client(client)
             .addCallAdapterFactory(FlowCallAdapterFactory.create())
             .addConverterFactory(converterFactory)
@@ -35,9 +37,7 @@ class NetworkModule {
     @Provides
     @ApplicationScope
     fun provideJsonFactory(): Converter.Factory {
-        val json = Json {
-            ignoreUnknownKeys = true
-        }
+        val json = Json { ignoreUnknownKeys = true }
         return json.asConverterFactory("application/json".toMediaType())
     }
 
@@ -45,9 +45,6 @@ class NetworkModule {
     @ApplicationScope
     fun provideOkHttpClient(): OkHttpClient =
         OkHttpClient.Builder()
-            .connectTimeout(TIME_OUT, TimeUnit.SECONDS)
-            .writeTimeout(TIME_OUT, TimeUnit.SECONDS)
-            .readTimeout(TIME_OUT, TimeUnit.SECONDS)
             .addInterceptor(createLoggingInterceptor())
             .build()
 
@@ -58,8 +55,12 @@ class NetworkModule {
 
     companion object {
 
-        private const val BASE_URL = "https://run.mocky.io/v3/"
-        private const val TIME_OUT: Long = 10
-    }
+        @Provides
+        @ApplicationScope
+        fun providesDispatcher(): Dispatcher =
+            DispatcherMainUI()
 
+
+        private const val BASE_URL = "https://run.mocky.io/v3/"
+    }
 }

@@ -7,7 +7,7 @@ import com.example.common_tab_bar.domain.usecase.GetCountCartItemUseCase
 import kotlinx.coroutines.flow.*
 import javax.inject.Inject
 
-class TabBarViewModel @Inject constructor(
+internal class TabBarViewModel @Inject constructor(
      getCountCartItemUseCase: GetCountCartItemUseCase
 ) : ViewModel() {
 

@@ -10,7 +10,7 @@ import dagger.Provides
 import retrofit2.Retrofit
 
 @Module
-interface TabBarModule {
+internal interface TabBarModule {
 
     @Binds
     @FeatureScope

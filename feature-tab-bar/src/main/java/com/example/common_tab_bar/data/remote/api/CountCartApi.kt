@@ -4,7 +4,7 @@ import com.example.common_tab_bar.data.remote.model.CartResponse
 import kotlinx.coroutines.flow.Flow
 import retrofit2.http.GET
 
-interface CountCartApi {
+internal interface CountCartApi {
 
 
     @GET(CART_PATH)
