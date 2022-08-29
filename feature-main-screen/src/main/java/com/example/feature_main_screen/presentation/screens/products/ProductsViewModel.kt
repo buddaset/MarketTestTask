@@ -20,8 +20,6 @@ internal class ProductsViewModel(
     private val resourceManager: ResourceManager
    ) : ViewModel() {
 
-
-
     @OptIn(ExperimentalCoroutinesApi::class)
     val data: StateFlow<UiState<MainScreenDataUi>> =
         getDataMainScreenUseCase()
@@ -32,7 +30,6 @@ internal class ProductsViewModel(
                 started = SharingStarted.WhileSubscribed(5000),
                 initialValue = UiState.Loading()
             )
-
 
     private fun handleSuccessData( data: MainScreenData) : UiState.Success<MainScreenDataUi> {
         val  dataUi = MainScreenDataUi(
@@ -47,9 +44,6 @@ internal class ProductsViewModel(
 
         return UiState.Success(data = dataUi)
     }
-
-
-
 
 }
 

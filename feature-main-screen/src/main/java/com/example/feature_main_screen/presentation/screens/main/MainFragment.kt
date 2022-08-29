@@ -53,6 +53,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
         filterImageView.setOnClickListener {
            navigate(R.id.action_mainFragment_to_filterBottomSheetDialogFragment)
+
         }
 
         categoryTabLayout.onTabSelectedListener { tab ->

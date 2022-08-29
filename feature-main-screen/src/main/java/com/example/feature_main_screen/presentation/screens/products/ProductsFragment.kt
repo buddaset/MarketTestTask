@@ -43,7 +43,6 @@ class ProductsFragment : Fragment(R.layout.fragment_products) {
         super.onAttach(context)
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -56,8 +55,6 @@ class ProductsFragment : Fragment(R.layout.fragment_products) {
     }
 
     private fun handleState(state: UiState<MainScreenDataUi>) = with(binding) {
-
-
         stateView.progressBar.isVisible = state is UiState.Loading
         stateView.messageExceptionTextView.isVisible = state is UiState.Error
         recyclerView.isVisible = state is UiState.Success
