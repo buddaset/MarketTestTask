@@ -2,6 +2,7 @@ package com.example.feature_main_screen.presentation.screens.products
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 
 import androidx.fragment.app.Fragment
 import android.view.View
@@ -64,14 +65,12 @@ class ProductsFragment : Fragment(R.layout.fragment_products) {
             .onError {error -> showToast(error.toString()) }
     }
 
-
-
     private fun renderData(data: MainScreenDataUi) {
         adapter.items = listOf( data.hotSales , data.bestSeller)
-
     }
 
     private fun onProductClick(item: ItemUi) {
+        Log.d("Navigate", "onProductClick")
         navigate(
             actionId = R.id.action_tabBarFragment_to_productDetailsFragment,
             hostId = global_host
