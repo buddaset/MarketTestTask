@@ -26,16 +26,12 @@ dependencies {
     implementation(project(Modules.core_ui))
 
 
-    implementation(Dependencies.AndroidKTX.core)
-    implementation(Dependencies.AndroidKTX.runtime)
-    implementation(Dependencies.AndroidKTX.fragment)
-
     implementation(Dependencies.UI.appCompat)
     implementation(Dependencies.UI.constraintLayout)
     implementation(Dependencies.UI.materialComponents)
 
     implementation(Dependencies.Navigation.navigationComponentFragmentKtx)
-    implementation(Dependencies.Navigation.navigationComponentUiKtx)
+
 
 
 
