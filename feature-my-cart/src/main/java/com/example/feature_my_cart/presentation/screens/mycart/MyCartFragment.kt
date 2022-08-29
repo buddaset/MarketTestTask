@@ -17,9 +17,9 @@ import com.example.disneyperson.core.delegate.viewBinding
 import com.example.feature_my_cart.R
 import com.example.feature_my_cart.databinding.FragmentMyCartBinding
 import com.example.feature_my_cart.di.MyCartComponentViewModel
-import com.example.feature_my_cart.domain.model.Cart
 import com.example.feature_my_cart.presentation.adapters.cart_adapter.MyCartAdapter
-import com.example.feature_my_cart.presentation.factory.ViewModelFactory
+import com.example.feature_my_cart.presentation.common.factory.ViewModelFactory
+import com.example.feature_my_cart.presentation.common.model.CartUi
 import javax.inject.Inject
 
 
@@ -60,7 +60,7 @@ class MyCartFragment : Fragment(R.layout.fragment_my_cart) {
     }
 
 
-    private fun handleState(state: UiState<Cart>) {
+    private fun handleState(state: UiState<CartUi>) {
         Log.d("MyCartFragment", "state  ---$state")
         when(state) {
             is UiState.Loading -> {}
@@ -76,12 +76,12 @@ class MyCartFragment : Fragment(R.layout.fragment_my_cart) {
         }
     }
 
-  private fun renderData(cart: Cart) = with(binding) {
+  private fun renderData(data: CartUi) = with(binding) {
 
 
-      adapter.items = cart.basket
-      deliveryTextView.text = cart.delivery
-      totalTextView.text = cart.total.toString()
+      adapter.items = data.basket
+      deliveryTextView.text = data.delivery
+      totalTextView.text = context?.getString(R.string.total_price_pattern, data.total)
 
 
 

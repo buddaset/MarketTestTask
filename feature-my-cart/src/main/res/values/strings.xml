@@ -7,4 +7,6 @@
     <string name="checkout_button">Checkout</string>
     <string name="total_title">Total</string>
     <string name="delivery_title">Delivery</string>
+    <string name="total_price_pattern">$%s us</string>
+    <string name="price">$%s</string>
 </resources>
