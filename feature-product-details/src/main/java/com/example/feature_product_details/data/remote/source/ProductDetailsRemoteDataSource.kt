@@ -1,8 +1,9 @@
 package com.example.feature_product_details.data.remote.source
 
 import com.example.feature_product_details.data.remote.model.ProductDetailsDto
+import kotlinx.coroutines.flow.Flow
 
 interface ProductDetailsRemoteDataSource {
 
-    suspend fun loadProductDetails(): ProductDetailsDto
+     fun loadProductDetails(): Flow<ProductDetailsDto>
 }

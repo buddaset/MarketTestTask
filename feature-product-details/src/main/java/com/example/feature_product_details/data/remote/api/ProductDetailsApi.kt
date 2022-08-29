@@ -1,13 +1,14 @@
 package com.example.feature_product_details.data.remote.api
 
 import com.example.feature_product_details.data.remote.model.ProductDetailsDto
+import kotlinx.coroutines.flow.Flow
 import retrofit2.http.GET
 
 interface ProductDetailsApi {
 
 
     @GET(PRODUCT_DETAIL_PATH)
-    suspend fun loadProductDetail(): ProductDetailsDto
+     fun loadProductDetail(): Flow<ProductDetailsDto>
 
 
     companion object {
