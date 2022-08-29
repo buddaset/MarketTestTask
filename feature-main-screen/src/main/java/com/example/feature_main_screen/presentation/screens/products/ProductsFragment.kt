@@ -70,7 +70,6 @@ class ProductsFragment : Fragment(R.layout.fragment_products) {
     }
 
     private fun onProductClick(item: ItemUi) {
-        Log.d("Navigate", "onProductClick")
         navigate(
             actionId = R.id.action_tabBarFragment_to_productDetailsFragment,
             hostId = global_host

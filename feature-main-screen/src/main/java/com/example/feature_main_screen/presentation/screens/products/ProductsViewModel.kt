@@ -24,11 +24,11 @@ internal class ProductsViewModel(
     val data: StateFlow<UiState<MainScreenDataUi>> =
         getDataMainScreenUseCase()
             .mapLatest { data -> handleSuccessData(data)  }
-            .catch { error -> UiState.Error<MainScreenDataUi>(error = error) }
+            .catch { error -> UiState.Error(error = error) }
             .stateIn(
                 scope = viewModelScope,
                 started = SharingStarted.WhileSubscribed(5000),
-                initialValue = UiState.Loading()
+                initialValue = UiState.Loading
             )
 
     private fun handleSuccessData( data: MainScreenData) : UiState.Success<MainScreenDataUi> {

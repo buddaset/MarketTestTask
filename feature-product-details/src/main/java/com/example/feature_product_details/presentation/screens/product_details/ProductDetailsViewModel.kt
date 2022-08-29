@@ -19,12 +19,12 @@ class ProductDetailsViewModel @Inject constructor(
     @OptIn(ExperimentalCoroutinesApi::class)
     val data: StateFlow<UiState<ProductDetailsUi>> =
         getProductDetailsUseCase()
-            .catch { error -> UiState.Error<ProductDetailsUi>(error = error) }
+            .catch { error -> UiState.Error(error = error) }
             .mapLatest { productDetails -> UiState.Success(data =productDetails.toUi()) }
             .stateIn(
                 scope = viewModelScope,
                 started = SharingStarted.WhileSubscribed(5000),
-                initialValue = UiState.Loading()
+                initialValue = UiState.Loading
             )
 
 

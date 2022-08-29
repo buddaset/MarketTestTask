@@ -9,17 +9,17 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.*
 
 class MyCartViewModel(
-    private val getMyCartUseCase: GetMyCartUseCase
+   getMyCartUseCase: GetMyCartUseCase
 ) : ViewModel() {
 
 
     @OptIn(ExperimentalCoroutinesApi::class)
     val data : StateFlow<UiState<Cart>> =
         getMyCartUseCase()
-            .catch { error -> UiState.Error<Cart>(error=error)}
+            .catch { error -> UiState.Error(error=error)}
             .mapLatest { cart -> UiState.Success(data = cart) }
             .stateIn(scope =  viewModelScope,
                 started = SharingStarted.WhileSubscribed(5000),
-                initialValue = UiState.Loading())
+                initialValue = UiState.Loading)
 
 }
