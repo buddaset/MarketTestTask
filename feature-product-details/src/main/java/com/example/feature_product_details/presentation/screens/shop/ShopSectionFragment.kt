@@ -18,6 +18,7 @@ import com.example.feature_product_details.databinding.FragmentShopSectionBindin
 import com.example.feature_product_details.di.ProductDetailsComponentViewModel
 import com.example.feature_product_details.domain.model.ProductDetails
 import com.example.feature_product_details.presentation.factory.ViewModelFactory
+import com.example.feature_product_details.presentation.model.ProductDetailsUi
 import com.example.feature_product_details.presentation.screens.product_details.ProductDetailsViewModel
 import javax.inject.Inject
 
@@ -47,7 +48,7 @@ class ShopSectionFragment : Fragment(R.layout.fragment_shop_section) {
         collectFlow(viewModel.data, ::handleState)
     }
 
-    private fun handleState(state: UiState<ProductDetails>) = with(binding) {
+    private fun handleState(state: UiState<ProductDetailsUi>) = with(binding) {
         if (state is UiState.Success) {
             val data = state.data
             processorTextView.text = data.CPU

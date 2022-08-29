@@ -7,5 +7,5 @@
 
 
     <string name="capacity_radio_button">%s  gb</string>
-    <string name="add_to_cart_1500">Add to cart "          "$%d</string>
+    <string name="add_to_cart_1500">Add to cart "          "$%s</string>
 </resources>

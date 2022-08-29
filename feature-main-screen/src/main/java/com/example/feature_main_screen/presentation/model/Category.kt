@@ -1,4 +1,4 @@
-package com.example.feature_main_screen.domain.model
+package com.example.feature_main_screen.presentation.model
 
 import com.example.feature_main_screen.R
 

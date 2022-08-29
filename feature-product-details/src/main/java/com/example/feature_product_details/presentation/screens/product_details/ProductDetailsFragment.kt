@@ -2,7 +2,6 @@ package com.example.feature_product_details.presentation.screens.product_details
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
@@ -20,11 +19,11 @@ import com.example.disneyperson.core.delegate.viewBinding
 import com.example.feature_product_details.R
 import com.example.feature_product_details.databinding.FragmentProductDetailsBinding
 import com.example.feature_product_details.di.ProductDetailsComponentViewModel
-import com.example.feature_product_details.domain.model.ProductDetails
-import com.example.feature_product_details.domain.model.SectionProductDetails
+import com.example.feature_product_details.presentation.model.SectionProductDetails
 import com.example.feature_product_details.presentation.adapter.productimage.ProductImageAdapter
 import com.example.feature_product_details.presentation.adapter.viewpager.SectionPagerAdapter
 import com.example.feature_product_details.presentation.factory.ViewModelFactory
+import com.example.feature_product_details.presentation.model.ProductDetailsUi
 import com.google.android.material.tabs.TabLayoutMediator
 
 
@@ -65,7 +64,7 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
 
         backImageButton.setOnClickListener { findNavController().popBackStack() }
 
-        myCartImageButton.setOnClickListener { navigate(R.id.action_productDetailsFragment_to_myCartFragment)}
+        myCartImageButton.setOnClickListener { navigate(R.id.action_productDetailsFragment_to_myCartFragment) }
     }
 
     private fun setupImageProductAdapter() = with(binding) {
@@ -94,24 +93,23 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
         SectionProductDetails.values().toList()
 
 
-    private fun handleState(state: UiState<ProductDetails>) = with(binding) {
+    private fun handleState(state: UiState<ProductDetailsUi>) = with(binding) {
         stateView.progressBar.isVisible = state is UiState.Loading
         stateView.messageExceptionTextView.isVisible = state is UiState.Error
         productDetailsGroup.isVisible = state is UiState.Success
 
         state
             .onSuccess(::renderData)
-            .onError {error -> showToast(error.toString()) }
+            .onError { error -> showToast(error.toString()) }
     }
 
 
-    private fun renderData(data: ProductDetails) = with(binding) {
+    private fun renderData(data: ProductDetailsUi) = with(binding) {
         adapter.items = data.images
-        binding.productRating.rating = data.rating.toFloat()
-        binding.addToCartButton.text =
-            context?.getString(R.string.add_to_cart_1500, data.price)
-        binding.productNameTextView.text = data.title
-        if (data.isFavorites) binding.favoriteImageButton.setImageResource(R.drawable.ic_favorite_product_details_on)
+        productRating.rating = data.rating
+        addToCartButton.text = context?.getString(R.string.add_to_cart_1500, data.price)
+        productNameTextView.text = data.title
+        if (data.isFavorites) favoriteImageButton.setImageResource(R.drawable.ic_favorite_product_details_on)
 
     }
 

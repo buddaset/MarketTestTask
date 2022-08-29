@@ -4,16 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import com.example.core.common.navigation.navigate
 import com.example.core.precentation.extension.onTabSelectedListener
 import com.example.disneyperson.core.delegate.viewBinding
 import com.example.feature_main_screen.R
 import com.example.feature_main_screen.databinding.CategoryPagerItemBinding
 import com.example.feature_main_screen.databinding.FragmentMainBinding
-import com.example.feature_main_screen.domain.model.Category
+import com.example.feature_main_screen.presentation.model.Category
 import com.example.feature_main_screen.presentation.adapters.pagerAdapter.CategoryPagerAdapter
-import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
 class MainFragment : Fragment(R.layout.fragment_main) {
