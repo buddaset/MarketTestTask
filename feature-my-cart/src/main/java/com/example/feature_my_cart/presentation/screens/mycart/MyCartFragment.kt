@@ -60,7 +60,7 @@ class MyCartFragment : Fragment(R.layout.fragment_my_cart) {
     private fun setupMyAdapter() = with(binding.myCartRecyclerView) {
         adapter = this@MyCartFragment.adapter
         layoutManager = LinearLayoutManager(requireContext())
-        addItemDecoration(VerticalSpaceItemDecorator(100))
+        addItemDecoration(VerticalSpaceItemDecorator())
 
     }
 

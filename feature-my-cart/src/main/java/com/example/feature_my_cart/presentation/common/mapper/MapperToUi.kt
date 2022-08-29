@@ -32,4 +32,4 @@ internal fun formatPriceItem(price: Int): String =
     DecimalFormat(".00").format(price)
 
 internal fun formatPriceTotal(price: Int): String =
-    DecimalFormat("#.###").format(price)
+    DecimalFormat("#,###").format(price)

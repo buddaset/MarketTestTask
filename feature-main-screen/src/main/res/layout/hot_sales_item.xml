@@ -96,7 +96,7 @@
             android:id="@+id/buyNowButton"
             android:layout_width="98dp"
             android:layout_height="36dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="16dp"
             android:backgroundTint="@color/white"
             android:fontFamily="@font/mark_pro_bold"
             android:textColor="@color/blue"
