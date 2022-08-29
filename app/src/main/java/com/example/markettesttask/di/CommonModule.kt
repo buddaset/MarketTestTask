@@ -12,7 +12,6 @@ import dagger.Provides
 @Module
 interface CommonModule {
 
-
     companion object {
 
         @Provides

@@ -26,21 +26,18 @@ class NetworkModule {
     @ApplicationScope
     fun provideRetrofit(client: OkHttpClient, converterFactory: Converter.Factory): Retrofit =
         Retrofit.Builder()
-            .baseUrl(BASE_URL) //todo change on buildConfig
+            .baseUrl(BASE_URL)
             .client(client)
             .addCallAdapterFactory(FlowCallAdapterFactory.create())
             .addConverterFactory(converterFactory)
             .build()
 
 
-
     @OptIn(ExperimentalSerializationApi::class)
     @Provides
     @ApplicationScope
     fun provideJsonFactory(): Converter.Factory {
-        val json = Json {
-            ignoreUnknownKeys = true
-        }
+        val json = Json { ignoreUnknownKeys = true }
         return json.asConverterFactory("application/json".toMediaType())
     }
 
@@ -48,7 +45,6 @@ class NetworkModule {
     @ApplicationScope
     fun provideOkHttpClient(): OkHttpClient =
         OkHttpClient.Builder()
-
             .addInterceptor(createLoggingInterceptor())
             .build()
 
@@ -59,7 +55,6 @@ class NetworkModule {
 
     companion object {
 
-
         @Provides
         @ApplicationScope
         fun providesDispatcher(): Dispatcher =
@@ -67,7 +62,5 @@ class NetworkModule {
 
 
         private const val BASE_URL = "https://run.mocky.io/v3/"
-        private const val TIME_OUT: Long = 10
     }
-
 }

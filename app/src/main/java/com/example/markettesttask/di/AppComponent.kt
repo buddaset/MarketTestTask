@@ -21,9 +21,6 @@ interface AppComponent :  MainScreenDependencies, ProductDetailsDependencies, My
     override val dispatcher: Dispatcher
     override val resourceManager: ResourceManager
 
-
-
-
     @Component.Factory
     interface Factory{
 
