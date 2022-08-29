@@ -9,7 +9,7 @@
 
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_top"
+        android:id="@+id/guidelineTop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -17,7 +17,7 @@
 
 
     <ImageButton
-        android:id="@+id/back_button"
+        android:id="@+id/backImageButton"
         style="@style/ImageButtonViewNavigationItem"
         android:layout_marginStart="42dp"
         android:layout_marginTop="16dp"
@@ -25,19 +25,19 @@
         android:src="@drawable/ic_arrow_left"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guideline_top" />
+        app:layout_constraintTop_toTopOf="@id/guidelineTop" />
 
     <TextView
         android:id="@+id/filterOptionsTitle"
         style="@style/NameTitleFragmentTextView"
         android:layout_marginStart="70dp"
         android:text="@string/product_details_title"
-        app:layout_constraintBottom_toBottomOf="@id/back_button"
-        app:layout_constraintStart_toEndOf="@id/back_button"
-        app:layout_constraintTop_toTopOf="@id/back_button" />
+        app:layout_constraintBottom_toBottomOf="@id/backImageButton"
+        app:layout_constraintStart_toEndOf="@id/backImageButton"
+        app:layout_constraintTop_toTopOf="@id/backImageButton" />
 
     <ImageButton
-        android:id="@+id/my_card_button"
+        android:id="@+id/myCartImageButton"
         style="@style/ImageButtonViewNavigationItem"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="30dp"
@@ -46,26 +46,26 @@
         android:src="@drawable/ic_my_cart"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guideline_top" />
+        app:layout_constraintTop_toTopOf="@id/guidelineTop" />
 
 
     <androidx.constraintlayout.widget.Barrier
-        android:id="@+id/barrier_title_product_details"
+        android:id="@+id/barrierTitleProductDetails"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:barrierDirection="bottom"
-        app:constraint_referenced_ids="back_button, my_card_button" />
+        app:constraint_referenced_ids="backImageButton, myCartImageButton" />
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/image_product_recycler_view"
+        android:id="@+id/productImageRecyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:paddingTop="12dp"
         app:layout_constraintBottom_toTopOf="@id/containerSectionsView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/barrier_title_product_details"
+        app:layout_constraintTop_toBottomOf="@id/barrierTitleProductDetails"
         tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/image_product_item"
         tools:orientation="horizontal" />
@@ -79,11 +79,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/image_product_recycler_view" />
+        app:layout_constraintTop_toBottomOf="@id/productImageRecyclerView" />
 
 
     <TextView
-        android:id="@+id/title_product_name"
+        android:id="@+id/productNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="38dp"
@@ -97,7 +97,7 @@
         tools:text="Galaxy Note 20 Ultra" />
 
     <ImageButton
-        android:id="@+id/favorite_button"
+        android:id="@+id/favoriteImageButton"
         style="@style/ImageButtonViewNavigationItem"
         android:layout_height="30dp"
         android:layout_marginTop="28dp"
@@ -110,7 +110,7 @@
         tools:ignore="contentDescription" />
 
     <com.iarcuschin.simpleratingbar.SimpleRatingBar
-        android:id="@+id/rating_product"
+        android:id="@+id/productRating"
         android:layout_width="wrap_content"
         android:layout_height="25dp"
         app:srb_isIndicator="true"
@@ -120,16 +120,16 @@
         app:srb_stepSize=".5"
         app:srb_starBorderWidth=".5"
         app:srb_starsSeparation="8dp"
-        app:layout_constraintStart_toStartOf="@id/title_product_name"
-        app:layout_constraintTop_toBottomOf="@id/title_product_name" />
+        app:layout_constraintStart_toStartOf="@id/productNameTextView"
+        app:layout_constraintTop_toBottomOf="@id/productNameTextView" />
 
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/section_tab_layout"
+        android:id="@+id/sectionTabLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="@id/containerSectionsView"
         app:layout_constraintStart_toStartOf="@id/containerSectionsView"
-        app:layout_constraintTop_toBottomOf="@id/rating_product"
+        app:layout_constraintTop_toBottomOf="@id/productRating"
         app:tabIndicator="@drawable/ic_tab_indicator"
         app:tabIndicatorColor="@color/orange"
         app:tabMode="fixed"
@@ -140,16 +140,16 @@
     </com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/section_view_pager"
+        android:id="@+id/sectionViewPager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/add_to_cart_button"
+        app:layout_constraintBottom_toTopOf="@id/addToCartButton"
         app:layout_constraintEnd_toEndOf="@id/containerSectionsView"
         app:layout_constraintStart_toStartOf="@id/containerSectionsView"
-        app:layout_constraintTop_toBottomOf="@id/section_tab_layout" />
+        app:layout_constraintTop_toBottomOf="@id/sectionTabLayout" />
 
     <Button
-        android:id="@+id/add_to_cart_button"
+        android:id="@+id/addToCartButton"
         style="@style/GlobalButtonView"
         android:text="@string/add_to_cart_1500"
         android:layout_marginStart="30dp"

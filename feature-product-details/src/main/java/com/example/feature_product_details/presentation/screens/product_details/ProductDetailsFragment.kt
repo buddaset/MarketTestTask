@@ -10,7 +10,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.get
 import androidx.navigation.fragment.findNavController
 import com.example.core.common.navigation.navigate
-
 import com.example.core.precentation.extension.collectFlow
 import com.example.core.precentation.extension.showToast
 import com.example.core.precentation.UiState
@@ -20,7 +19,7 @@ import com.example.feature_product_details.databinding.FragmentProductDetailsBin
 import com.example.feature_product_details.di.ProductDetailsComponentViewModel
 import com.example.feature_product_details.domain.model.ProductDetails
 import com.example.feature_product_details.domain.model.SectionProductDetails
-import com.example.feature_product_details.presentation.adapter.photoproduct.ImageProductAdapter
+import com.example.feature_product_details.presentation.adapter.productimage.ProductImageAdapter
 import com.example.feature_product_details.presentation.adapter.viewpager.SectionPagerAdapter
 import com.example.feature_product_details.presentation.factory.ViewModelFactory
 import com.google.android.material.tabs.TabLayoutMediator
@@ -40,7 +39,7 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
 
     private val viewModel: ProductDetailsViewModel by viewModels { viewModelFactory }
 
-    private val adapter = ImageProductAdapter()
+    private val adapter = ProductImageAdapter()
 
 
     override fun onAttach(context: Context) {
@@ -56,30 +55,23 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
         setupPageAdapter()
         setupClickListener()
 
-        // todo create simple cache in repository for inner fragment
-
-
-        Log.d("LifeDetails", "viewModel --- parent  ---  v${viewModel.hashCode()}")
-
         collectFlow(viewModel.data, ::handleState)
-
-
     }
 
     private fun setupClickListener() = with(binding) {
 
-        backButton.setOnClickListener { findNavController().popBackStack() }
+        backImageButton.setOnClickListener { findNavController().popBackStack() }
 
-        myCardButton.setOnClickListener { navigate(R.id.action_productDetailsFragment_to_myCartFragment)}
+        myCartImageButton.setOnClickListener { navigate(R.id.action_productDetailsFragment_to_myCartFragment)}
     }
 
     private fun setupImageProductAdapter() = with(binding) {
-        imageProductRecyclerView.adapter = adapter
+        productImageRecyclerView.adapter = adapter
         val layoutManager = GalleryLayoutManager.create {
             itemSpace = 100
             viewTransformListener = SimpleViewTransformListener(1.0f, 1.2f)
         }
-        imageProductRecyclerView.layoutManager = layoutManager
+        productImageRecyclerView.layoutManager = layoutManager
 
 
     }
@@ -108,11 +100,11 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
 
                 Log.d("ProductDetails", "productDetails ---${state.data}")
                 adapter.items = data.images
-                binding.ratingProduct.rating = data.rating.toFloat()
+                binding.productRating.rating = data.rating.toFloat()
                 binding.addToCartButton.text =
                     context?.getString(R.string.add_to_cart_1500, data.price)
-                binding.titleProductName.text = data.title
-                if (data.isFavorites) binding.favoriteButton.setImageResource(R.drawable.ic_favorite_product_details_on)
+                binding.productNameTextView.text = data.title
+                if (data.isFavorites) binding.favoriteImageButton.setImageResource(R.drawable.ic_favorite_product_details_on)
 
 
             }

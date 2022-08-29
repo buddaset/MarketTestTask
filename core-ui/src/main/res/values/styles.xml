@@ -7,7 +7,6 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:paddingTop">10dp</item>
         <item name="android:paddingBottom">10dp</item>
-
         <item name="android:textSize">20sp</item>
         <item name="android:textAllCaps">false</item>
         <item name="android:textColor">@color/white</item>
@@ -116,6 +115,34 @@
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">@color/gray</item>
     </style>
+
+    <style name="RadioButtonColorShopSectionFragment">
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:button">@null</item>
+        <item name="android:background">@drawable/bc_rb_color</item>
+        <item name="android:foreground">@drawable/ic_checkbox</item>
+        <item name="android:foregroundTint">@drawable/radio_button_color_selector</item>
+        <item name="android:foregroundGravity">center</item>
+    </style>
+
+
+    <style name="RadioButtonCapacityShopSectionFragment">
+        <item name="android:layout_width">70dp</item>
+        <item name="android:layout_height">34dp</item>
+        <item name="android:button">@null</item>
+        <item name="android:padding">6dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:fontFamily">@font/mark_pro_bold</item>
+        <item name="android:background">@drawable/capacity_radio_button_selector</item>
+        <item name="android:textColor">@drawable/capacity_text_view_selector</item>
+
+    </style>
+
+
+
+
 
 
     <style name="Widget.BottomNavigationView" parent="Widget.Design.BottomNavigationView">

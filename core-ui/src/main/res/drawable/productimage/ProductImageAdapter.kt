@@ -1,4 +1,4 @@
-package com.example.feature_product_details.presentation.adapter.photoproduct
+package com.example.feature_product_details.presentation.adapter.productimage
 
 import androidx.recyclerview.widget.DiffUtil
 import com.bumptech.glide.Glide
@@ -7,7 +7,7 @@ import com.example.feature_product_details.databinding.ImageProductItemBinding
 import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 
-class ImageProductAdapter : AsyncListDifferDelegationAdapter<String>(DIFF_UTIL_CALLBACK) {
+class ProductImageAdapter : AsyncListDifferDelegationAdapter<String>(DIFF_UTIL_CALLBACK) {
 
     init {
         delegatesManager

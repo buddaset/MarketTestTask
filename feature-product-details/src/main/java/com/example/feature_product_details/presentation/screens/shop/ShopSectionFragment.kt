@@ -28,11 +28,9 @@ class ShopSectionFragment : Fragment(R.layout.fragment_shop_section) {
 
     @Inject
     internal lateinit var viewModelFactory: ViewModelFactory
-
-    private val viewModel: ProductDetailsViewModel
-            by viewModels(ownerProducer = ::requireParentFragment) {
-                viewModelFactory
-            }
+    private val viewModel: ProductDetailsViewModel by viewModels(ownerProducer = ::requireParentFragment) {
+        viewModelFactory
+    }
 
 
     override fun onAttach(context: Context) {
@@ -46,11 +44,7 @@ class ShopSectionFragment : Fragment(R.layout.fragment_shop_section) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        Log.d("LifeDetails", "viewModel -- shop  ---  v${viewModel.hashCode()}")
-
-
         collectFlow(viewModel.data, ::handleState)
-
     }
 
     private fun handleState(state: UiState<ProductDetails>) = with(binding) {
@@ -77,31 +71,6 @@ class ShopSectionFragment : Fragment(R.layout.fragment_shop_section) {
         }
 
     }
-
-
-//  {
-//    "CPU": "Exynos 990",
-//    "camera": "108 + 12 mp",
-//    "capacity": [
-//    "126",
-//    "252"
-//    ],
-//    "color": [
-//    "#772D03",
-//    "#010035"
-//    ],
-//    "id": "3",
-//    "images": [
-//    "https://avatars.mds.yandex.net/get-mpic/5235334/img_id5575010630545284324.png/orig",
-//    "https://www.manualspdf.ru/thumbs/products/l/1260237-samsung-galaxy-note-20-ultra.jpg"
-//    ],
-//    "isFavorites": true,
-//    "price": 1500,
-//    "rating": 4.5,
-//    "sd": "256 GB",
-//    "ssd": "8 GB",
-//    "title": "Galaxy Note 20 Ultra"
-//  }
 
 
 }
