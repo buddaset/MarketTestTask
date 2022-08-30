@@ -27,8 +27,6 @@ import com.example.feature_product_details.presentation.common.model.ProductDeta
 import com.google.android.material.tabs.TabLayoutMediator
 
 
-import com.peceoqicka.x.gallerylayoutmanager.GalleryLayoutManager
-import com.peceoqicka.x.gallerylayoutmanager.SimpleViewTransformListener
 
 import javax.inject.Inject
 
@@ -53,7 +51,7 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setupImageProductAdapter()
+        productImageAdapter()
         setupPageAdapter()
         setupClickListener()
 
@@ -67,16 +65,16 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
         myCartImageButton.setOnClickListener { navigate(R.id.action_productDetailsFragment_to_myCartFragment) }
     }
 
-    private fun setupImageProductAdapter() = with(binding) {
-        productImageRecyclerView.adapter = adapter
-        val layoutManager = GalleryLayoutManager.create {
-            itemSpace = ITEM_SPACE_IMAGE
-            viewTransformListener = SimpleViewTransformListener(SCALE_X, SCALE_Y)
-        }
-        productImageRecyclerView.layoutManager = layoutManager
-        productImageRecyclerView.setHasFixedSize(true)
 
+    private fun productImageAdapter() = with(binding) {
+        productImageRecyclerView.adapter = adapter
+        productImageRecyclerView.apply {
+            setAlpha(true)
+            setInfinite(true)
+            setIntervalRatio(INTERVAL_RATIO)
+        }
     }
+
 
     private fun setupPageAdapter() = with(binding) {
         val sections = getSectionsProductDetails()
@@ -115,9 +113,7 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
 
     companion object {
 
-        const val ITEM_SPACE_IMAGE = 100
-        const val SCALE_X = 1f
-        const val SCALE_Y = 1.2f
+        const val INTERVAL_RATIO = 0.6f
     }
 
 }

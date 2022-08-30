@@ -20,6 +20,7 @@ internal class ProductImageAdapter : AsyncListDifferDelegationAdapter<String>(DI
         bind {
             Glide.with(itemView)
                 .load(item)
+                .centerInside()
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .into(binding.productImage)
         }
