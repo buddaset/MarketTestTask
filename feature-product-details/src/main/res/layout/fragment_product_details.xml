@@ -57,11 +57,12 @@
         app:constraint_referenced_ids="backImageButton, myCartImageButton" />
 
 
-    <androidx.recyclerview.widget.RecyclerView
+    <com.jackandphantom.carouselrecyclerview.CarouselRecyclerview
         android:id="@+id/productImageRecyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:paddingTop="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
         app:layout_constraintBottom_toTopOf="@id/containerSectionsView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -74,7 +75,6 @@
         android:id="@+id/containerSectionsView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
         android:background="@drawable/bc_container_sections"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -87,7 +87,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="38dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/mark_pro_medium"
         android:letterSpacing="-0.04"
         android:textColor="@color/blue"
@@ -100,7 +100,7 @@
         android:id="@+id/favoriteImageButton"
         style="@style/ImageButtonViewNavigationItem"
         android:layout_height="30dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="28dp"
         android:scaleType="center"
         android:src="@drawable/ic_favorite_product_details_off"
@@ -154,7 +154,7 @@
         android:text="@string/add_to_cart_1500"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="16dp"
         app:cornerRadius="10dp"
         android:gravity="center_horizontal"
         app:layout_constraintBottom_toBottomOf="@id/containerSectionsView"

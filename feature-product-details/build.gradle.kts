@@ -25,16 +25,13 @@ dependencies {
     implementation(project(Modules.core))
     implementation(project(Modules.core_ui))
 
-    implementation(Dependencies.AndroidKTX.core)
-    implementation(Dependencies.AndroidKTX.runtime)
-    implementation(Dependencies.AndroidKTX.viewModel)
-    implementation(Dependencies.AndroidKTX.fragment)
 
     implementation(Dependencies.UI.appCompat)
     implementation(Dependencies.UI.constraintLayout)
     implementation(Dependencies.UI.materialComponents)
     implementation(Dependencies.UI.simpleRatingBar)
-    implementation(Dependencies.UI.customLayoutManager)
+    implementation(Dependencies.UI.carouselRecyclerView)
+
 
     implementation(Dependencies.Navigation.navigationComponentFragmentKtx)
 

@@ -104,6 +104,7 @@
 
 
     <RadioGroup
+        android:id="@+id/colorRadioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -130,13 +131,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="4dp"
         android:checkedButton="@id/firstCapacityRadioButton"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/selectColorAndCapacityTitle">
+        app:layout_constraintBottom_toBottomOf="@id/colorRadioGroup"
+        app:layout_constraintTop_toTopOf="@id/colorRadioGroup">
 
         <RadioButton
             android:id="@+id/firstCapacityRadioButton"
