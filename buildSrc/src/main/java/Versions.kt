@@ -40,9 +40,6 @@ object Versions {
     // Interceptor
     const val interceptor = "4.9.0"
 
-    // ViewPager2
-    const val viewPager = "1.0.0"
-
     // AdapterDelegates
     const val adapterDelegates = "4.3.2"
 
@@ -50,15 +47,15 @@ object Versions {
     const val glide = "4.13.2"
 
     // CarouselLayoutManager
-    const val carouselRecyclerView = "2.0.22"
+    const val carouselRecyclerView = "1.2.5"
 
     // FlowAdapter for Retrofit
     const val flowAdapter = "0.2.0"
 
     // SimpleRatingBar
     const val ratingBar = "0.1.5"
-    // Custom Layout Manager
-    const val customLayoutManager = "1.0.0"
+
+
 
 
 }
@@ -76,7 +73,7 @@ object Dependencies {
 
         const val simpleRatingBar = "com.iarcuschin:simpleratingbar:${Versions.ratingBar}"
 
-        const val customLayoutManager = "com.github.peceoqicka:GalleryLayoutManagerX:${Versions.customLayoutManager}"
+        const val carouselRecyclerView = "com.github.sparrow007:carouselrecyclerview:${Versions.carouselRecyclerView}"
 
     }
 
@@ -172,6 +169,7 @@ object ConfigVersions {
     const val kotlin = "1.6.20"
     const val gradle = "7.0.4"
     val javaVersion = JavaVersion.VERSION_1_8
+    const val java = "1.8"
 
 }
 

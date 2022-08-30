@@ -37,9 +37,8 @@ android {
         targetCompatibility = ConfigVersions.javaVersion
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = ConfigVersions.java
     }
-
     buildFeatures {
         viewBinding = true
     }
@@ -55,13 +54,7 @@ dependencies {
     implementation(project(Modules.myCart))
     implementation(project(Modules.tabBar))
     implementation(project(Modules.splashScreen))
-
-
-    implementation(Dependencies.AndroidKTX.core)
-    implementation(Dependencies.AndroidKTX.runtime)
-    implementation(Dependencies.AndroidKTX.viewModel)
-    implementation(Dependencies.AndroidKTX.fragment)
-
+    
     implementation(Dependencies.UI.appCompat)
     implementation(Dependencies.UI.constraintLayout)
     implementation(Dependencies.UI.materialComponents)
@@ -69,15 +62,9 @@ dependencies {
     implementation(Dependencies.Navigation.navigationComponentFragmentKtx)
     implementation(Dependencies.Navigation.navigationComponentUiKtx)
 
-    testImplementation(Dependencies.Tests.junit)
-    androidTestImplementation(Dependencies.Tests.junitExt)
-    androidTestImplementation(Dependencies.Tests.junitExt)
-
     implementation(Dependencies.Dagger2.dagger2)
     kapt(Dependencies.Dagger2.kapt)
 
-
-    // Retrofit
     implementation(Dependencies.Retrofit.retrofit)
     implementation(Dependencies.Retrofit.jsonSerialization)
     implementation(Dependencies.Retrofit.converter)
@@ -85,9 +72,6 @@ dependencies {
     implementation(Dependencies.Retrofit.flowAdapter)
 
 
-    // Coroutines
-    implementation(Dependencies.Kotlin.coroutinesCore)
-    implementation(Dependencies.Kotlin.coroutinesAndroid)
 
 
 
