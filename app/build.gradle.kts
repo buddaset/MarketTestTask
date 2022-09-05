@@ -21,6 +21,7 @@ android {
 
 
         buildConfigField("String", "BASE_URL", "\"${properties["BASE_URL"]}\"")
+        buildConfigField("String","DATABASE_NAME","\"market_app_database\"")
     }
 
     buildTypes {

@@ -1,9 +1,8 @@
-package com.example.markettesttask.di
+package com.example.markettesttask.di.module
 
 import com.example.core.common.dispatcher.Dispatcher
 import com.example.core.common.dispatcher.DispatcherMainUI
 import com.example.core.di.scope.ApplicationScope
-import com.example.markettesttask.BuildConfig
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import dagger.Module
 import dagger.Provides
@@ -16,7 +15,6 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Converter
 import retrofit2.Retrofit
-import java.util.concurrent.TimeUnit
 
 @Module
 class NetworkModule {
