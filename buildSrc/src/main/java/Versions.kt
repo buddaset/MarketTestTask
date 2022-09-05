@@ -54,6 +54,8 @@ object Versions {
 
     // SimpleRatingBar
     const val ratingBar = "0.1.5"
+    // Room Database
+    const val  room = "2.4.3"
 
 
 
@@ -136,6 +138,13 @@ object Dependencies {
         const val junit = "junit:junit:${Versions.junit}"
         const val junitExt = "androidx.test.ext:junit:${Versions.junitExt}"
         const val espresso = "androidx.test.espresso:espresso-core:${Versions.espresso}"
+
+    }
+
+    object Database {
+
+        const val room = "androidx.room:room-runtime:${Versions.room}"
+        const val kapt =  "androidx.room:room-compiler:${Versions.room}"
 
     }
 

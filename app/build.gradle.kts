@@ -71,7 +71,8 @@ dependencies {
     implementation(Dependencies.Retrofit.interceptor)
     implementation(Dependencies.Retrofit.flowAdapter)
 
-
+    implementation(Dependencies.Database.room)
+    kapt(Dependencies.Database.kapt)
 
 
 
