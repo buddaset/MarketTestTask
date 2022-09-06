@@ -6,5 +6,5 @@ import kotlinx.coroutines.flow.Flow
 internal interface ProductDetailRepository {
 
 
-    fun getProductDetail(): Flow<ProductDetails>
+    fun getProductDetails(): Flow<ProductDetails>
 }
