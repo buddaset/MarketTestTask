@@ -54,10 +54,9 @@ object Versions {
 
     // SimpleRatingBar
     const val ratingBar = "0.1.5"
+
     // Room Database
-    const val  room = "2.4.3"
-
-
+    const val room = "2.4.3"
 
 
 }
@@ -75,7 +74,8 @@ object Dependencies {
 
         const val simpleRatingBar = "com.iarcuschin:simpleratingbar:${Versions.ratingBar}"
 
-        const val carouselRecyclerView = "com.github.sparrow007:carouselrecyclerview:${Versions.carouselRecyclerView}"
+        const val carouselRecyclerView =
+            "com.github.sparrow007:carouselrecyclerview:${Versions.carouselRecyclerView}"
 
     }
 
@@ -144,7 +144,8 @@ object Dependencies {
     object Database {
 
         const val room = "androidx.room:room-runtime:${Versions.room}"
-        const val kapt =  "androidx.room:room-compiler:${Versions.room}"
+        const val kapt = "androidx.room:room-compiler:${Versions.room}"
+        const val ktx = "androidx.room:room-ktx:${Versions.room}"
 
     }
 

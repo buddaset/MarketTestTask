@@ -51,6 +51,9 @@ dependencies {
 
     implementation(Dependencies.Glide.glide)
 
+    implementation(Dependencies.Database.room)
+    implementation(Dependencies.Database.ktx)
+
 
 
 

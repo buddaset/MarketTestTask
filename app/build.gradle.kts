@@ -73,6 +73,7 @@ dependencies {
     implementation(Dependencies.Retrofit.flowAdapter)
 
     implementation(Dependencies.Database.room)
+    implementation(Dependencies.Database.ktx)
     kapt(Dependencies.Database.kapt)
 
 
