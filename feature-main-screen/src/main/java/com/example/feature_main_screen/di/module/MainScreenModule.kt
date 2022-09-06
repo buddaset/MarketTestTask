@@ -1,6 +1,8 @@
 package com.example.feature_main_screen.di.module
 
 import com.example.core.di.scope.FeatureScope
+import com.example.feature_main_screen.data.local.source.MainScreenLocalDataSource
+import com.example.feature_main_screen.data.local.source.MainScreenLocalDataSourceImpl
 import com.example.feature_main_screen.data.remote.api.MainScreenApi
 import com.example.feature_main_screen.data.remote.source.MainScreenRemoteDataSource
 import com.example.feature_main_screen.data.remote.source.MainScreenRemoteDataSourceImpl
@@ -23,6 +25,8 @@ internal interface MainScreenModule {
     fun bindMainScreenRemoteDataSource(impl: MainScreenRemoteDataSourceImpl): MainScreenRemoteDataSource
 
 
+    @Binds
+    fun bindMainScreenLocalDataSource(impl: MainScreenLocalDataSourceImpl): MainScreenLocalDataSource
 
 
 
