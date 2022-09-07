@@ -9,6 +9,7 @@ import com.example.core.di.scope.ApplicationScope
 import com.example.feature_main_screen.data.local.dao.MainScreenDataDao
 import com.example.feature_main_screen.di.dependency.MainScreenDependencies
 import com.example.feature_my_cart.di.dependency.MyCartDependencies
+import com.example.feature_product_details.data.local.dao.ProductDetailsDao
 import com.example.feature_product_details.di.dependency.ProductDetailsDependencies
 import com.example.markettesttask.di.module.CommonModule
 import com.example.markettesttask.di.module.DatabaseModule
@@ -25,7 +26,10 @@ interface AppComponent :  MainScreenDependencies, ProductDetailsDependencies, My
     override val retrofit: Retrofit
     override val dispatcher: Dispatcher
     override val resourceManager: ResourceManager
+
     override val mainScreenDataDao : MainScreenDataDao
+    override val productDetailsDao: ProductDetailsDao
+
 
     @Component.Factory
     interface Factory{

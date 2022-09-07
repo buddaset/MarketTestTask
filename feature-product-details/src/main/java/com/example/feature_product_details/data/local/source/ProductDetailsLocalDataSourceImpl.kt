@@ -3,8 +3,9 @@ package com.example.feature_product_details.data.local.source
 import com.example.feature_product_details.data.local.dao.ProductDetailsDao
 import com.example.feature_product_details.data.local.model.ProductDetailsEntity
 import kotlinx.coroutines.flow.Flow
+import javax.inject.Inject
 
-class ProductDetailsLocalDataSourceImpl(
+class ProductDetailsLocalDataSourceImpl @Inject constructor(
     private val productDetailsDao: ProductDetailsDao
 ): ProductDetailsLocalDataSource {
 
@@ -14,6 +15,7 @@ class ProductDetailsLocalDataSourceImpl(
     }
 
     override fun getProductDetails(): Flow<ProductDetailsEntity> =
-      productDetailsDao.getProductDetails()
+        productDetailsDao.getProductDetails()
+
 
 }

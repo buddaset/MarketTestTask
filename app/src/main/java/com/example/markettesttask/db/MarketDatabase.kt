@@ -4,15 +4,27 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import com.example.feature_main_screen.data.local.dao.MainScreenDataDao
 import com.example.feature_main_screen.data.local.model.BestSellerEntity
 import com.example.feature_main_screen.data.local.model.HotSalesEntity
+import com.example.feature_product_details.data.local.converter.ProductDetailsConverter
+import com.example.feature_product_details.data.local.dao.ProductDetailsDao
+import com.example.feature_product_details.data.local.model.ProductDetailsEntity
 import com.example.markettesttask.BuildConfig
 
-@Database(entities = [HotSalesEntity::class, BestSellerEntity::class], version = 1)
+@Database(entities = [
+    HotSalesEntity::class,
+    BestSellerEntity::class,
+    ProductDetailsEntity::class],
+
+    version = 1)
+
+@TypeConverters(ProductDetailsConverter::class)
 abstract class MarketDatabase : RoomDatabase() {
 
     abstract fun mainScreenDataDao(): MainScreenDataDao
+    abstract fun productDetailsDao(): ProductDetailsDao
 
 
     companion object {
