@@ -5,12 +5,13 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
+import com.example.common_tab_bar.data.local.TabBarDao
 import com.example.feature_main_screen.data.local.dao.MainScreenDataDao
 import com.example.feature_main_screen.data.local.model.BestSellerEntity
 import com.example.feature_main_screen.data.local.model.HotSalesEntity
 import com.example.feature_my_cart.data.local.dao.CartDao
 import com.example.feature_my_cart.data.local.model.BasketEntity
-import com.example.feature_my_cart.data.local.model.CartBasketCrossRefEntity
+import com.example.core.data.local.model.CartBasketCrossRefEntity
 import com.example.feature_my_cart.data.local.model.CartEntity
 import com.example.feature_product_details.data.local.converter.ProductDetailsConverter
 import com.example.feature_product_details.data.local.dao.ProductDetailsDao
@@ -35,9 +36,11 @@ abstract class MarketDatabase : RoomDatabase() {
     abstract fun mainScreenDataDao(): MainScreenDataDao
     abstract fun productDetailsDao(): ProductDetailsDao
     abstract fun cartDao(): CartDao
+    abstract fun tabBarDao(): TabBarDao
 
 
     companion object {
+
 
         @Volatile
         private var INSTANCE: MarketDatabase? = null

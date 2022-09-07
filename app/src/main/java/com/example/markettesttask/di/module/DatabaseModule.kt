@@ -1,6 +1,7 @@
 package com.example.markettesttask.di.module
 
 import android.content.Context
+import com.example.common_tab_bar.data.local.TabBarDao
 import com.example.core.di.scope.ApplicationScope
 import com.example.feature_main_screen.data.local.dao.MainScreenDataDao
 import com.example.feature_my_cart.data.local.dao.CartDao
@@ -37,6 +38,11 @@ interface DatabaseModule {
         @Provides
         fun provideCartDao(db: MarketDatabase): CartDao =
             db.cartDao()
+
+
+        @Provides
+        fun provideTabBarDao(db: MarketDatabase): TabBarDao =
+            db.tabBarDao()
 
     }
 }

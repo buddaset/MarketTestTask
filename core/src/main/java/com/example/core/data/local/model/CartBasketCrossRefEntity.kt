@@ -1,4 +1,4 @@
-package com.example.feature_my_cart.data.local.model
+package com.example.core.data.local.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

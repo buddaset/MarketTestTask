@@ -2,7 +2,7 @@ package com.example.feature_my_cart.data.local.dao
 
 import androidx.room.*
 import com.example.feature_my_cart.data.local.model.BasketEntity
-import com.example.feature_my_cart.data.local.model.CartBasketCrossRefEntity
+import com.example.core.data.local.model.CartBasketCrossRefEntity
 import com.example.feature_my_cart.data.local.model.CartEntity
 import com.example.feature_my_cart.data.local.model.CartWithBasketTuple
 import kotlinx.coroutines.flow.Flow

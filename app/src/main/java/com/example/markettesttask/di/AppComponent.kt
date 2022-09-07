@@ -23,12 +23,7 @@ import retrofit2.Retrofit
 @Component(modules = [NetworkModule::class, CommonModule::class, DatabaseModule::class])
 interface AppComponent :  MainScreenDependencies, ProductDetailsDependencies, MyCartDependencies, TabBarDependencies {
 
-    override val retrofit: Retrofit
-    override val dispatcher: Dispatcher
-    override val resourceManager: ResourceManager
 
-    override val mainScreenDataDao : MainScreenDataDao
-    override val productDetailsDao: ProductDetailsDao
 
 
     @Component.Factory
