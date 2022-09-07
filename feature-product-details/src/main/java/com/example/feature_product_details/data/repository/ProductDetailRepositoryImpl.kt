@@ -5,7 +5,6 @@ import com.example.feature_product_details.data.local.model.ProductDetailsEntity
 import com.example.feature_product_details.data.local.source.ProductDetailsLocalDataSource
 import com.example.feature_product_details.data.mapper.toDomain
 import com.example.feature_product_details.data.mapper.toEntity
-import com.example.feature_product_details.data.remote.model.ProductDetailsDto
 import com.example.feature_product_details.data.remote.source.ProductDetailsRemoteDataSource
 import com.example.feature_product_details.domain.model.ProductDetails
 import com.example.feature_product_details.domain.repository.ProductDetailRepository
@@ -18,16 +17,17 @@ internal class ProductDetailRepositoryImpl @Inject constructor(
     private val dispatcher: Dispatcher
 ) : ProductDetailRepository {
 
-    override fun getProductDetails(): Flow<ProductDetails> =
-        localDataSource.getProductDetails()
-            .onEmpty { loadProductDetails() }
-            .map {  productDetailsEntity -> productDetailsEntity.toDomain() }
+    override fun getProductDetails(): Flow<ProductDetails> = localDataSource.getProductDetails()
+            .transform { productDetailsEntity -> emit(checkEmptyLocalSource(productDetailsEntity)) }
             .flowOn(dispatcher.io)
 
 
-    private suspend fun loadProductDetails(): ProductDetails =
+    private suspend fun checkEmptyLocalSource(data: ProductDetailsEntity?) : ProductDetails =
+        data?.toDomain() ?: loadAndSaveProductDetails().toDomain()
+
+    private suspend fun loadAndSaveProductDetails(): ProductDetailsEntity =
         remoteDataSource.loadProductDetails()
-            .onEach { productDetailsDto -> localDataSource.save(productDetailsDto.toEntity()) }
-            .map { productDetailsDto -> productDetailsDto.toDomain() }
+            .map { productDetailsDto -> productDetailsDto.toEntity() }
+            .onEach { productDetailsEntity -> localDataSource.save(productDetailsEntity) }
             .first()
 }
