@@ -43,4 +43,6 @@ dependencies {
     implementation(Dependencies.Kotlin.coroutinesCore)
     implementation(Dependencies.Kotlin.coroutinesAndroid)
 
+    implementation(Dependencies.Database.room)
+
 }

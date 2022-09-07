@@ -26,4 +26,6 @@ dependencies {
     implementation(Dependencies.Kotlin.coroutinesAndroid)
 
     implementation(Dependencies.Navigation.navigationComponentFragmentKtx)
+
+    implementation(Dependencies.Database.room)
 }

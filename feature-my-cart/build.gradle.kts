@@ -51,5 +51,7 @@ dependencies {
     implementation(Dependencies.AdapterDelegates.viewBinding)
 
     implementation(Dependencies.Glide.glide)
+
+    implementation(Dependencies.Database.room)
     
 }

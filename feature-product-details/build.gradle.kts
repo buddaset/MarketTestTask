@@ -50,6 +50,8 @@ dependencies {
 
     implementation(Dependencies.Glide.glide)
 
+    implementation(Dependencies.Database.room)
+
 
 
 

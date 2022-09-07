@@ -1,4 +1,4 @@
-package com.example.markettesttask.di
+package com.example.markettesttask.di.module
 
 import android.content.Context
 import com.example.core.common.dispatcher.Dispatcher

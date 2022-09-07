@@ -21,6 +21,7 @@ android {
 
 
         buildConfigField("String", "BASE_URL", "\"${properties["BASE_URL"]}\"")
+        buildConfigField("String","DATABASE_NAME","\"market_app_database\"")
     }
 
     buildTypes {
@@ -71,7 +72,9 @@ dependencies {
     implementation(Dependencies.Retrofit.interceptor)
     implementation(Dependencies.Retrofit.flowAdapter)
 
-
+    implementation(Dependencies.Database.room)
+    implementation(Dependencies.Database.ktx)
+    kapt(Dependencies.Database.kapt)
 
 
 
