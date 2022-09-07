@@ -2,6 +2,7 @@ package com.example.feature_my_cart.data.local.dao
 
 import androidx.room.*
 import com.example.feature_my_cart.data.local.model.BasketEntity
+import com.example.feature_my_cart.data.local.model.CartBasketCrossRefEntity
 import com.example.feature_my_cart.data.local.model.CartEntity
 import com.example.feature_my_cart.data.local.model.CartWithBasketTuple
 import kotlinx.coroutines.flow.Flow
@@ -18,13 +19,22 @@ interface CartDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertCart(cart: CartEntity)
 
+    @Insert(onConflict =OnConflictStrategy.REPLACE )
+    suspend fun insertCartBasketCrossRef(list: List<CartBasketCrossRefEntity>)
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertBaskets(list: List<BasketEntity>)
 
     @Transaction
-    suspend fun insertData(cart: CartEntity) {
+    suspend fun saveData(cart: CartEntity) {
+        val listCartWithBasket = cart.basket.map { basket ->
+            CartBasketCrossRefEntity( cartId = cart.id, basketId = basket.id) }
+
         insertCart(cart)
         insertBaskets(cart.basket)
+        insertCartBasketCrossRef(listCartWithBasket)
+
+
     }
 
 
