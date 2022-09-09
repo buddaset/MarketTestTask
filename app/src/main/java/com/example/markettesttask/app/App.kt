@@ -10,7 +10,7 @@ import com.example.markettesttask.di.DaggerAppComponent
 
 class App: Application() {
 
-    private val appComponent: AppComponent by lazy {
+    val appComponent: AppComponent by lazy {
         DaggerAppComponent.factory().create(applicationContext)
     }
 

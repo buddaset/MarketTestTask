@@ -3,13 +3,15 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id ("kotlinx-serialization")
     id ("kotlin-kapt")
+    id ("com.google.gms.google-services")
 
 }
 
 android {
-    compileSdk = ConfigVersions.compileSdkVersion
+
 
     defaultConfig {
+        compileSdk = ConfigVersions.compileSdkVersion
         applicationId = ConfigVersions.applicationId
         minSdk = ConfigVersions.minSdkVersion
         targetSdk = ConfigVersions.targetSdkVersion
@@ -35,7 +37,7 @@ android {
     }
     compileOptions {
         sourceCompatibility = ConfigVersions.javaVersion
-        targetCompatibility = ConfigVersions.javaVersion
+        targetCompatibility =  ConfigVersions.javaVersion
     }
     kotlinOptions {
         jvmTarget = ConfigVersions.java
@@ -43,6 +45,7 @@ android {
     buildFeatures {
         viewBinding = true
     }
+    buildToolsVersion = ConfigVersions.buildTools
 }
 
 dependencies {
@@ -64,6 +67,7 @@ dependencies {
     implementation(Dependencies.Navigation.navigationComponentUiKtx)
 
     implementation(Dependencies.Dagger2.dagger2)
+    implementation("com.google.firebase:firebase-messaging-ktx:23.0.8")
     kapt(Dependencies.Dagger2.kapt)
 
     implementation(Dependencies.Retrofit.retrofit)
@@ -75,6 +79,10 @@ dependencies {
     implementation(Dependencies.Database.room)
     implementation(Dependencies.Database.ktx)
     kapt(Dependencies.Database.kapt)
+
+    implementation(Dependencies.Firebase.bom)
+    implementation(Dependencies.Firebase.messaging)
+
 
 
 

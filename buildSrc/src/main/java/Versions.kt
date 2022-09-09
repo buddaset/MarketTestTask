@@ -57,11 +57,19 @@ object Versions {
 
     // Room Database
     const val room = "2.4.3"
+    // FireBase
+    const val firebaseBom = "30.2.0"
 
 
 }
 
 object Dependencies {
+
+    object Firebase {
+
+        const val bom ="com.google.firebase:firebase-bom:${Versions.firebaseBom}"
+        const val messaging = "com.google.firebase:firebase-messaging"
+    }
 
     object UI {
 
@@ -180,6 +188,7 @@ object ConfigVersions {
     const val gradle = "7.0.4"
     val javaVersion = JavaVersion.VERSION_1_8
     const val java = "1.8"
+    const val  buildTools = "31.0.0"
 
 }
 

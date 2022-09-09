@@ -11,6 +11,7 @@ import com.example.feature_main_screen.di.dependency.MainScreenDependencies
 import com.example.feature_my_cart.di.dependency.MyCartDependencies
 import com.example.feature_product_details.data.local.dao.ProductDetailsDao
 import com.example.feature_product_details.di.dependency.ProductDetailsDependencies
+import com.example.firebase.MarketFirebaseMessagingService
 import com.example.markettesttask.di.module.CommonModule
 import com.example.markettesttask.di.module.DatabaseModule
 import com.example.markettesttask.di.module.NetworkModule
@@ -25,6 +26,7 @@ interface AppComponent :  MainScreenDependencies, ProductDetailsDependencies, My
 
 
 
+    fun inject(service: MarketFirebaseMessagingService)
 
     @Component.Factory
     interface Factory{

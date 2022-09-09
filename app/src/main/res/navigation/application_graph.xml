@@ -34,6 +34,7 @@
         <action
             app:popUpTo="@id/splashScreenFragment"
             app:popUpToInclusive="true"
+            app:launchSingleTop="true"
             android:id="@+id/action_splashScreenFragment_to_tabBarFragment"
             app:destination="@id/tabBarFragment" />
     </fragment>
