@@ -52,9 +52,8 @@ class FireBaseNotifications @Inject constructor(
 
 
     private fun createPendingIntent(): PendingIntent {
-        val intent =
-            Intent(context, Class.forName(resourceManager.getString(R.string.path_main_activity)))
-                .setAction(Intent.ACTION_VIEW)
+        val intentAction = resourceManager.getString(R.string.intent_action_navigate)
+        val intent = Intent(intentAction)
 
         return PendingIntent.getActivity(
             context,

@@ -18,22 +18,19 @@
         tools:targetApi="32">
 
         <activity
-            android:screenOrientation="portrait"
             android:name=".activity.MainActivity"
             android:exported="true"
             android:launchMode="singleTop"
-
-            >
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
 
             <intent-filter>
-            <action android:name="android.intent.action.VIEW" />
-            <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="com.example.markettesttask.intent.action.navigate" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
 
         </activity>

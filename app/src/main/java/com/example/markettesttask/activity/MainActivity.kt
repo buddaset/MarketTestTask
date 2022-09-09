@@ -1,11 +1,15 @@
 package com.example.markettesttask.activity
 
 import android.content.Intent
+
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import com.example.markettesttask.R
+import com.example.core_ui.R.string.intent_action_navigate
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
+
+  
 
 
     override fun onNewIntent(intent: Intent?) {
@@ -18,11 +22,13 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     private fun handle(intent: Intent) {
         when (intent.action) {
 
-            Intent.ACTION_VIEW -> {
+            getString(intent_action_navigate) -> {
                 findNavController(R.id.global_host).navigate(R.id.myCartFragment)
                 }
             }
     }
+
+
 
 }
 
