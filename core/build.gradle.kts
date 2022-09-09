@@ -16,6 +16,7 @@ android {
 
 dependencies {
 
+    implementation(project(Modules.core_ui))
 
     implementation(Dependencies.AndroidKTX.fragment)
     implementation(Dependencies.UI.materialComponents)
