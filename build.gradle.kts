@@ -7,8 +7,8 @@ buildscript {
 plugins {
 
     id("com.android.application") version ConfigVersions.gradle apply false
-    id("com.android.library") version ConfigVersions.gradle apply false
-    id("org.jetbrains.kotlin.android") version ConfigVersions.kotlin apply false
+    id("com.android.library") version "7.0.4" apply false
+    id("org.jetbrains.kotlin.android") version "1.7.10" apply false
     id("org.jetbrains.kotlin.jvm") version ConfigVersions.kotlin apply false
     id("org.jetbrains.kotlin.plugin.serialization") version ConfigVersions.kotlin
     id("com.google.gms.google-services") version "4.3.2"
