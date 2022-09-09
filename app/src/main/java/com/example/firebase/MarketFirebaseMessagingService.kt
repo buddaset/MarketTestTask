@@ -3,12 +3,14 @@ package com.example.firebase
 import android.annotation.SuppressLint
 import android.app.PendingIntent
 import android.content.Context
+import android.content.Intent
 import android.util.Log
 import androidx.core.app.NotificationChannelCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.navigation.NavDeepLinkBuilder
 import com.example.markettesttask.R
+import com.example.markettesttask.activity.MainActivity
 import com.example.markettesttask.app.App
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
@@ -64,7 +66,7 @@ class FireBaseNotifications @Inject constructor(private val context: Context): N
 
     override fun showNotification(remoteMessage: RemoteMessage) {
         initialize()
-        val pendingIntent = createPendingIntent()
+        val pendingIntent = createPendingIntent2()
 
         val builder = NotificationCompat.Builder(context, CHANNEL_FIREBASE_NAME)
             .setContentTitle(remoteMessage.notification?.title)
@@ -78,7 +80,11 @@ class FireBaseNotifications @Inject constructor(private val context: Context): N
         notificationManagerCompat.notify(CART_NOTIFICATION_ID, builder.build())
     }
 
-    @SuppressLint("ResourceType")
+
+    private fun createPendingIntent2(): PendingIntent {
+        return  PendingIntent.getActivity(context, REQUIRE_CODE, Intent(context, MainActivity::class.java).setAction(Intent.ACTION_VIEW), PendingIntent.FLAG_UPDATE_CURRENT)
+    }
+
     private fun createPendingIntent(): PendingIntent  =
         NavDeepLinkBuilder(context)
             .setGraph(R.navigation.application_graph)
@@ -90,5 +96,6 @@ class FireBaseNotifications @Inject constructor(private val context: Context): N
 
         private const val CHANNEL_FIREBASE_NAME = "fire_base"
         private const val CART_NOTIFICATION_ID = 1001
+        private const val REQUIRE_CODE = 10
     }
 }
