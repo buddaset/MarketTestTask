@@ -58,7 +58,8 @@ dependencies {
     implementation(project(Modules.myCart))
     implementation(project(Modules.tabBar))
     implementation(project(Modules.splashScreen))
-    
+    implementation(project(Modules.mapLocation))
+
     implementation(Dependencies.UI.appCompat)
     implementation(Dependencies.UI.constraintLayout)
     implementation(Dependencies.UI.materialComponents)

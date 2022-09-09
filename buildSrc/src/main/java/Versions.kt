@@ -173,6 +173,7 @@ object Modules {
     const val myCart = ":feature-my-cart"
     const val tabBar = ":feature-tab-bar"
     const val splashScreen = ":feature-splash-screen"
+    const val mapLocation = ":feature-map-location"
 
 
 }
