@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "545059842036",
+    "project_id": "markettestproject",
+    "storage_bucket": "markettestproject.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:545059842036:android:653d544d2fd5c57e0abba1",
+        "android_client_info": {
+          "package_name": "com.example.markettesttask"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "545059842036-oq6glgpdbjkebrumh7hcjl4anus15qm6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8lcl6xLSqUI_TGqm7MwEQ6YIc-nw9A0Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "545059842036-oq6glgpdbjkebrumh7hcjl4anus15qm6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
