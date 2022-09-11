@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_tabBarFragment_to_productDetailsFragment"
             app:destination="@id/productDetailsFragment" />
+        <action
+            android:id="@+id/action_tabBarFragment_to_yandexMapFragment"
+            app:destination="@id/yandexMapFragment" />
     </fragment>
 
     <fragment
@@ -38,4 +41,8 @@
             android:id="@+id/action_splashScreenFragment_to_tabBarFragment"
             app:destination="@id/tabBarFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/yandexMapFragment"
+        android:name="com.example.feature_map_location.presentation.screens.maplocation.YandexMapFragment"
+        android:label="YandexMapFragment" />
 </navigation>

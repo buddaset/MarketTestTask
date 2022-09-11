@@ -59,6 +59,8 @@ object Versions {
     const val room = "2.4.3"
     // FireBase
     const val firebaseBom = "30.2.0"
+    // FCM
+    const val fcm = "23.0.8"
 
 
 }
@@ -68,7 +70,7 @@ object Dependencies {
     object Firebase {
 
         const val bom ="com.google.firebase:firebase-bom:${Versions.firebaseBom}"
-        const val messaging = "com.google.firebase:firebase-messaging"
+        const val messaging = "com.google.firebase:firebase-messaging-ktx:${Versions.fcm}"
     }
 
     object UI {
@@ -171,6 +173,7 @@ object Modules {
     const val myCart = ":feature-my-cart"
     const val tabBar = ":feature-tab-bar"
     const val splashScreen = ":feature-splash-screen"
+    const val mapLocation = ":feature-map-location"
 
 
 }

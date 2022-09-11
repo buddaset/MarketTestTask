@@ -58,7 +58,8 @@ dependencies {
     implementation(project(Modules.myCart))
     implementation(project(Modules.tabBar))
     implementation(project(Modules.splashScreen))
-    
+    implementation(project(Modules.mapLocation))
+
     implementation(Dependencies.UI.appCompat)
     implementation(Dependencies.UI.constraintLayout)
     implementation(Dependencies.UI.materialComponents)
@@ -67,7 +68,7 @@ dependencies {
     implementation(Dependencies.Navigation.navigationComponentUiKtx)
 
     implementation(Dependencies.Dagger2.dagger2)
-    implementation("com.google.firebase:firebase-messaging-ktx:23.0.8")
+
     kapt(Dependencies.Dagger2.kapt)
 
     implementation(Dependencies.Retrofit.retrofit)
@@ -82,6 +83,7 @@ dependencies {
 
     implementation(Dependencies.Firebase.bom)
     implementation(Dependencies.Firebase.messaging)
+
 
 
 

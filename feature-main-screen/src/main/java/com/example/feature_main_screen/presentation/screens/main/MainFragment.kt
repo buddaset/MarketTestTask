@@ -49,6 +49,11 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
     private fun setupListeners() = with(binding) {
 
+        locationTextView.setOnClickListener {
+            navigate(R.id.action_tabBarFragment_to_yandexMapFragment,
+                hostId = com.example.core.R.id.global_host)
+        }
+
         filterImageView.setOnClickListener {
            navigate(R.id.action_mainFragment_to_filterBottomSheetDialogFragment)
 
