@@ -43,6 +43,6 @@
     </fragment>
     <fragment
         android:id="@+id/yandexMapFragment"
-        android:name="com.example.feature_map_location.YandexMapFragment"
+        android:name="com.example.feature_map_location.presentation.screens.maplocation.YandexMapFragment"
         android:label="YandexMapFragment" />
 </navigation>

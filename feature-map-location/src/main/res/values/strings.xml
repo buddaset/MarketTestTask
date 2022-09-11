@@ -1,4 +1,8 @@
 <resources>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="find_me">Find me!</string>
+    <string name="permission_required">Camera access is required to display the camera preview.</string>
+    <string name="ok">OK</string>
+    <string name="permission_granted">Permission is granted. You can use the camera now.</string>
 </resources>
