@@ -23,14 +23,18 @@ import com.example.feature_map_location.presentation.common.model.Marker
 import com.yandex.mapkit.Animation
 import com.yandex.mapkit.MapKitFactory
 import com.yandex.mapkit.geometry.Point
+import com.yandex.mapkit.layers.ObjectEvent
 import com.yandex.mapkit.map.CameraPosition
 import com.yandex.mapkit.user_location.UserLocationLayer
+import com.yandex.mapkit.user_location.UserLocationObjectListener
+import com.yandex.mapkit.user_location.UserLocationView
 import com.yandex.runtime.image.ImageProvider
 
-class YandexMapFragment : Fragment(R.layout.fragment_yandex_map){
+class YandexMapFragment : Fragment(R.layout.fragment_yandex_map) {
 
     private val binding: FragmentYandexMapBinding by viewBinding()
     private var isRationalShown = false
+    private var permissionLocation = false
     private val userLocationLayer by lazy { userLocationLayer() }
 
     private lateinit var requestPermissionLauncher: ActivityResultLauncher<String>
@@ -59,10 +63,10 @@ class YandexMapFragment : Fragment(R.layout.fragment_yandex_map){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-        setupClickListener()
         addMarkers()
         setStartPosition()
+        setupClickListener()
+
     }
 
     override fun onStart() {
@@ -96,8 +100,15 @@ class YandexMapFragment : Fragment(R.layout.fragment_yandex_map){
 
 
     private fun setupClickListener() {
-        binding.findMe.setOnClickListener { checkGrantedPermission() }
 
+        binding.findMe.setOnClickListener {
+            if (permissionLocation) {
+                moveCameraToUserPosition()
+            } else {
+                checkGrantedPermission()
+            }
+
+        }
     }
 
 
@@ -143,25 +154,33 @@ class YandexMapFragment : Fragment(R.layout.fragment_yandex_map){
     }
 
     private fun onLocationPermissionNotGranted() {
-        Toast.makeText(context, "not grandet permission", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, R.string.permission_not_granted_text, Toast.LENGTH_SHORT).show()
     }
 
     private fun onLocationPermissionGranted() {
-        getUserLocation()
+        onMapReady()
+    }
+
+    private fun setAnchor() = with(binding) {
+        userLocationLayer.setAnchor(
+            PointF((mapView.width * 0.5).toFloat(), (mapView.height * 0.5).toFloat()),
+            PointF((mapView.width * 0.5).toFloat(), (mapView.height * 0.83).toFloat())
+        )
     }
 
 
 
-
-    private fun getUserLocation()  = with(binding){
+    private fun onMapReady()  {
         userLocationLayer.apply {
             isVisible = true
-            isHeadingEnabled = false
-            setAnchor(
-                PointF((mapView.width * 0.5).toFloat(), (mapView.height * 0.5).toFloat()),
-                PointF((mapView.width * 0.5).toFloat(), (mapView.height * 0.83).toFloat())
-            )
+            isHeadingEnabled = true
 
+            setObjectListener( object :UserLocationObjectListener{
+                override fun onObjectAdded(p0: UserLocationView) { setAnchor() }
+                override fun onObjectRemoved(p0: UserLocationView) {}
+                override fun onObjectUpdated(p0: UserLocationView, p1: ObjectEvent) {}
+
+            })
             moveCameraToUserPosition()
             resetAnchor()
 
@@ -196,14 +215,14 @@ class YandexMapFragment : Fragment(R.layout.fragment_yandex_map){
     private fun showLocationPermissionExplanationDialog() {
         context?.let {
             AlertDialog.Builder(it)
-                .setMessage("We need this permission")
-                .setPositiveButton("ok") { dialog, _ ->
+                .setMessage(R.string.permission_dialog_explanation_text)
+                .setPositiveButton(R.string.dialog_positive_button) { dialog, _ ->
                     isRationalShown = true
                     requestLocationPermission()
                     dialog.dismiss()
 
                 }
-                .setNegativeButton("no") { dialog, _ ->
+                .setNegativeButton(R.string.dialog_negative_button) { dialog, _ ->
                     dialog.dismiss()
                 }
                 .show()
@@ -213,8 +232,8 @@ class YandexMapFragment : Fragment(R.layout.fragment_yandex_map){
     private fun showLocationPermissionDeniedDialog() {
         context?.let {
             androidx.appcompat.app.AlertDialog.Builder(it)
-                .setMessage("this feature is not available without location permission")
-                .setPositiveButton("ok") { dialog, _ ->
+                .setMessage(R.string.permission_dialog_denied_text)
+                .setPositiveButton(R.string.dialog_positive_button) { dialog, _ ->
                     startActivity(
                         Intent(
                             Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
@@ -223,7 +242,7 @@ class YandexMapFragment : Fragment(R.layout.fragment_yandex_map){
                     )
                     dialog.dismiss()
                 }
-                .setNegativeButton("cancel") { dialog, _ ->
+                .setNegativeButton(R.string.dialog_negative_button) { dialog, _ ->
                     dialog.dismiss()
                 }
                 .show()

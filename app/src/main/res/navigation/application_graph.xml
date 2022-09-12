@@ -3,46 +3,49 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/application_graph"
-    app:startDestination="@id/splashScreenFragment">
+    app:startDestination="@id/tabBarFragment">
     <fragment
         android:id="@+id/tabBarFragment"
         android:name="com.example.common_tab_bar.presentation.screens.tabbar.TabBarFragment"
         android:label="fragment_tab_bar"
-        tools:layout="@layout/fragment_tab_bar" >
+        tools:layout="@layout/fragment_tab_bar">
         <action
             android:id="@+id/action_tabBarFragment_to_productDetailsFragment"
             app:destination="@id/productDetailsFragment" />
         <action
             android:id="@+id/action_tabBarFragment_to_yandexMapFragment"
             app:destination="@id/yandexMapFragment" />
+        <deepLink
+            android:id="@+id/deepLink2"
+            app:uri="www.mysite.com/home" />
     </fragment>
 
     <fragment
         android:id="@+id/productDetailsFragment"
         android:name="com.example.feature_product_details.presentation.screens.product_details.ProductDetailsFragment"
-        android:label="ProductDetailsFragment" >
+        android:label="ProductDetailsFragment">
         <action
             android:id="@+id/action_productDetailsFragment_to_myCartFragment"
             app:destination="@id/myCartFragment" />
+        <deepLink
+            android:id="@+id/deepLink3"
+            app:uri="www.mysite.com/productDetails" />
     </fragment>
 
     <fragment
         android:id="@+id/myCartFragment"
         android:name="com.example.feature_my_cart.presentation.screens.mycart.MyCartFragment"
-        android:label="MyCartFragment" />
-    <fragment
-        android:id="@+id/splashScreenFragment"
-        android:name="com.example.feature_splash_screen.presentation.SplashScreenFragment"
-        android:label="SplashScreenFragment" >
-        <action
-            app:popUpTo="@id/splashScreenFragment"
-            app:popUpToInclusive="true"
-            app:launchSingleTop="true"
-            android:id="@+id/action_splashScreenFragment_to_tabBarFragment"
-            app:destination="@id/tabBarFragment" />
+        android:label="MyCartFragment">
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="www.mysite.com/cart" />
     </fragment>
     <fragment
         android:id="@+id/yandexMapFragment"
         android:name="com.example.feature_map_location.presentation.screens.maplocation.YandexMapFragment"
-        android:label="YandexMapFragment" />
+        android:label="YandexMapFragment">
+        <deepLink
+            android:id="@+id/deepLink4"
+            app:uri="www.mysite.com/location" />
+    </fragment>
 </navigation>

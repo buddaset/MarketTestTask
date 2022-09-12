@@ -1,8 +1,12 @@
 <resources>
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="find_me">Find me!</string>
+    <string name="permission_not_granted_text">Location permission not granted</string>
+    <string name="permission_dialog_explanation_text">To continue please grant access to locations</string>
     <string name="permission_required">Camera access is required to display the camera preview.</string>
-    <string name="ok">OK</string>
+    <string name="permission_dialog_denied_text">This feature is not available without location permissions. Open app settings?</string>
+    <string name="dialog_positive_button">OK</string>
+    <string name="dialog_negative_button">Cancel</string>
     <string name="permission_granted">Permission is granted. You can use the camera now.</string>
 </resources>

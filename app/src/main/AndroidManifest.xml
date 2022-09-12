@@ -15,18 +15,22 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MarketTestTask"
+        android:theme="@style/Theme.App.Starting"
         tools:targetApi="32">
 
         <activity
             android:name=".activity.MainActivity"
             android:exported="true"
             android:launchMode="singleTop"
+            android:theme="@style/Theme.App.Starting"
             android:screenOrientation="portrait">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            <nav-graph android:value="@navigation/application_graph" />
 
 
             <intent-filter>

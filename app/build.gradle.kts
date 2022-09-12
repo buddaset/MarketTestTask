@@ -57,12 +57,12 @@ dependencies {
     implementation(project(Modules.productDetails))
     implementation(project(Modules.myCart))
     implementation(project(Modules.tabBar))
-    implementation(project(Modules.splashScreen))
     implementation(project(Modules.mapLocation))
 
     implementation(Dependencies.UI.appCompat)
     implementation(Dependencies.UI.constraintLayout)
     implementation(Dependencies.UI.materialComponents)
+    implementation(Dependencies.UI.splashScreen)
 
     implementation(Dependencies.Navigation.navigationComponentFragmentKtx)
     implementation(Dependencies.Navigation.navigationComponentUiKtx)
@@ -83,6 +83,7 @@ dependencies {
 
     implementation(Dependencies.Firebase.bom)
     implementation(Dependencies.Firebase.messaging)
+
 
 
 
