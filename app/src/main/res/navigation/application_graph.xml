@@ -23,10 +23,13 @@
     <fragment
         android:id="@+id/productDetailsFragment"
         android:name="com.example.feature_product_details.presentation.screens.product_details.ProductDetailsFragment"
-        android:label="ProductDetailsFragment" >
+        android:label="ProductDetailsFragment">
         <action
             android:id="@+id/action_productDetailsFragment_to_myCartFragment"
             app:destination="@id/myCartFragment" />
+        <deepLink
+            android:id="@+id/deepLink3"
+            app:uri="www.mysite.com/productDetails" />
     </fragment>
 
     <fragment
@@ -40,5 +43,9 @@
     <fragment
         android:id="@+id/yandexMapFragment"
         android:name="com.example.feature_map_location.presentation.screens.maplocation.YandexMapFragment"
-        android:label="YandexMapFragment" />
+        android:label="YandexMapFragment">
+        <deepLink
+            android:id="@+id/deepLink4"
+            app:uri="www.mysite.com/location" />
+    </fragment>
 </navigation>

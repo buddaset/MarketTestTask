@@ -18,12 +18,13 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
     override fun onNewIntent(intent: Intent?) {
         super.onNewIntent(intent)
-        if (intent !=null)
-            handle(intent)
+        if (intent !=null) {
+            handleIntent(intent)
+        }
     }
 
 
-    private fun handle(intent: Intent) {
+    private fun handleIntent(intent: Intent) {
         val navController = findNavController(R.id.global_host)
         when (intent.action) {
 
