@@ -85,6 +85,7 @@ dependencies {
     implementation(Dependencies.Firebase.messaging)
 
 
+    implementation("androidx.core:core-splashscreen:1.0.0")
 
 
 
