@@ -6,6 +6,9 @@ plugins {
 android {
     compileSdk = ConfigVersions.compileSdkVersion
 
+
+
+
     defaultConfig {
         minSdk = ConfigVersions.minSdkVersion
         targetSdk = ConfigVersions.targetSdkVersion
@@ -33,6 +36,6 @@ dependencies {
     implementation(Dependencies.UI.constraintLayout)
     implementation(Dependencies.UI.materialComponents)
 
-    implementation("com.yandex.android:maps.mobile:4.2.0-lite")
+    implementation(Dependencies.YandexMap.mapKit)
 
 }

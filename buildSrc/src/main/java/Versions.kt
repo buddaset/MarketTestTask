@@ -61,11 +61,20 @@ object Versions {
     const val firebaseBom = "30.2.0"
     // FCM
     const val fcm = "23.0.8"
+    // Splash Screen
+    const val splash = "1.0.0"
+        // MapKit
+    const val mapKit = "4.2.0-lite"
 
 
 }
 
 object Dependencies {
+
+    object YandexMap{
+
+     const val mapKit =   "com.yandex.android:maps.mobile:${Versions.mapKit}"
+    }
 
     object Firebase {
 
@@ -86,6 +95,8 @@ object Dependencies {
 
         const val carouselRecyclerView =
             "com.github.sparrow007:carouselrecyclerview:${Versions.carouselRecyclerView}"
+
+        const val splashScreen = "androidx.core:core-splashscreen:${Versions.splash}"
 
     }
 
