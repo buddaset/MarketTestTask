@@ -3,6 +3,7 @@ package com.example.feature_product_details.presentation.screens.product_details
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.core.precentation.UiState
+import com.example.feature_product_details.domain.model.ProductDetails
 import com.example.feature_product_details.domain.usecase.GetProductDetailsUseCase
 import com.example.feature_product_details.presentation.common.mapper.toUi
 import com.example.feature_product_details.presentation.common.model.ProductDetailsUi
@@ -18,13 +19,17 @@ internal class ProductDetailsViewModel @Inject constructor(
     @OptIn(ExperimentalCoroutinesApi::class)
     val data: StateFlow<UiState<ProductDetailsUi>> =
         getProductDetailsUseCase()
-            .catch { error -> UiState.Error(error = error) }
-            .mapLatest { productDetails -> UiState.Success(data =productDetails.toUi()) }
+            .mapLatest { productDetails -> handleSuccess(productDetails) }
+            .catch { error -> emit(UiState.Error(error = error)) }
             .stateIn(
                 scope = viewModelScope,
                 started = SharingStarted.WhileSubscribed(5000),
                 initialValue = UiState.Loading
             )
+
+
+    private fun handleSuccess(productDetails: ProductDetails) : UiState<ProductDetailsUi> =
+        UiState.Success(data =productDetails.toUi())
 
 
 

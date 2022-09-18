@@ -24,14 +24,14 @@ internal class ProductsViewModel(
     val data: StateFlow<UiState<MainScreenDataUi>> =
         getDataMainScreenUseCase()
             .mapLatest { data -> handleSuccessData(data)  }
-            .catch { error -> UiState.Error(error = error) }
+            .catch { error -> emit(UiState.Error(error = error)) }
             .stateIn(
                 scope = viewModelScope,
                 started = SharingStarted.WhileSubscribed(5000),
                 initialValue = UiState.Loading
             )
 
-    private fun handleSuccessData( data: MainScreenData) : UiState.Success<MainScreenDataUi> {
+    private fun handleSuccessData( data: MainScreenData) : UiState<MainScreenDataUi> {
         val  dataUi = MainScreenDataUi(
             bestSeller = BestSellerItemsUi(
                 title = resourceManager.getString(R.string.best_seller_title),

@@ -18,10 +18,14 @@ internal class MyCartViewModel(
     @OptIn(ExperimentalCoroutinesApi::class)
     val data : StateFlow<UiState<CartUi>> =
         getMyCartUseCase()
-            .catch { error -> UiState.Error(error=error)}
-            .mapLatest { cart -> UiState.Success(data = cart.toUi()) }
+            .mapLatest { cart -> handleSuccess(cart) }
+            .catch { error -> emit(UiState.Error(error=error))}
             .stateIn(scope =  viewModelScope,
                 started = SharingStarted.WhileSubscribed(5000),
                 initialValue = UiState.Loading)
+
+
+    private fun handleSuccess(cart: Cart) : UiState<CartUi> =
+        UiState.Success(data =cart.toUi())
 
 }

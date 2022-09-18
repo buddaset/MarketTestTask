@@ -41,6 +41,8 @@ class ProductsFragment : Fragment(R.layout.fragment_products) {
         ViewModelProvider(this).get<MainScreenComponentViewModel>()
             .mainScreenComponent.inject(this)
         super.onAttach(context)
+
+     
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
