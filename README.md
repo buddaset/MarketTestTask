@@ -10,6 +10,8 @@
 - Retrofit
 - Json-Serialization
 - Glide
+- Firebase 
+- MapKit
 - Jet pack
   - Navigation Component
   - Library KTX
